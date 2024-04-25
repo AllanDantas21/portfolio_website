@@ -1,5 +1,6 @@
 import Logo from './logo'
 import NextLink from 'next/link'
+import dynamic from "next/dynamic";
 import {
     Container,
     Box,
@@ -72,10 +73,30 @@ const Navbar = props => {
                 Projects
                 </LinkItem>
             </Stack>
+
             <Box flex={1} align="right">
                 <Box ml={2} display={{base: 'inline-block', md: 'none'}}>
                     <Menu>
-                        <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label="Options" />
+                        <MenuButton 
+                        as={IconButton} 
+                        icon={<HamburgerIcon />} 
+                        variant="outline" 
+                        aria-label="Options"
+                        />
+                        <MenuList>
+                            <NextLink href="/" passHref>
+                              <MenuItem as={Link}>About</MenuItem>
+                            </NextLink>
+                            <NextLink href="/Works" passHref>
+                              <MenuItem as={Link}>Works</MenuItem>
+                            </NextLink>
+                            <NextLink href="/Projects" passHref>
+                              <MenuItem as={Link}>Projects</MenuItem>
+                            </NextLink>
+                            <NextLink  href='https://github.com/AllanDantas21'>
+                              <MenuItem as={Link}>View Github</MenuItem>
+                            </NextLink>
+                        </MenuList>
                     </Menu>
                 </Box>
             </Box>
@@ -83,4 +104,5 @@ const Navbar = props => {
         </Box>
     )
 }
-export default Navbar
+
+export default dynamic (() => Promise.resolve(Navbar), {ssr: false})
