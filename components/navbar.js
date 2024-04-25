@@ -14,23 +14,20 @@ import {
     IconButton,
     useColorModeValue
 } from '@chakra-ui/react'
-import { HamburgerIcon, HumburgerIcon } from '@chakra-ui/icons'
-import { Children } from 'react'
+import { HamburgerIcon } from '@chakra-ui/icons'
 
-const LinkItem = ({ href, path, Children }) => {
+const LinkItem = ({ href, path, children }) => {
     const active = path === href
     const inactiveColor = useColorModeValue('gray.800', 'whiteAlpha.900')
     return (
         <NextLink legacyBehavior href={href}>
-            <a>
             <Link
               p={2}
               bg={active ? 'glassTeal' : undefined}
               color = {active ? '#202023' : inactiveColor}
-            >
-            {Children}
+              >
+            {children}
             </Link>
-            </a>
         </NextLink>
     )
 }
@@ -68,16 +65,17 @@ const Navbar = props => {
             flexGrow={1}
             mt={{base: 4, nmd: 0}}
             >
-                <LinkItem href="/works" path={path}>
+                <LinkItem  href="/works" path={path}>
                 Works
+                </LinkItem>
+                <LinkItem  href="/Projects" path={path}>
+                Projects
                 </LinkItem>
             </Stack>
             <Box flex={1} align="right">
                 <Box ml={2} display={{base: 'inline-block', md: 'none'}}>
                     <Menu>
-                        <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label="Options">
-
-                        </MenuButton>
+                        <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label="Options" />
                     </Menu>
                 </Box>
             </Box>
@@ -85,5 +83,4 @@ const Navbar = props => {
         </Box>
     )
 }
-
 export default Navbar
