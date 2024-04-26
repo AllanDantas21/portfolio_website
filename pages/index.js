@@ -1,16 +1,17 @@
 import NextLink from 'next/link'
 import { 
-     Container,
-     Box,
-     Heading,
-     Image,
-     Button,
-     List,
-     ListItem,
-     Link,
-     useColorModeValue } from '@chakra-ui/react'
+  Container,
+  Box,
+  Heading,
+  Image,
+  Button,
+  List,
+  ListItem,
+  Link,
+  useColorModeValue } from '@chakra-ui/react'
 import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons'
 import { IoLogoLinkedin, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
+import Layout from '../components/layouts/article'
 import Section from '../components/section.js'
 import Paragraph from '../components/paragraph.js'
 import { BioSection, BioYear } from '../components/bio.js'
@@ -18,6 +19,7 @@ import { Si42 } from "react-icons/si"
 
 const Page = () => {
     return (
+      <Layout>
         <Container>
         <Box borderRadius="lg" 
         bg={useColorModeValue('whiteAlpha.500','whiteAlpha.200')} 
@@ -160,6 +162,7 @@ const Page = () => {
           </Button>
         </Box>
         </Container>
+        </Layout>
 )
 }
 

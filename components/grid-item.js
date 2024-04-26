@@ -56,6 +56,7 @@ export const GridItemStyle = () => (
     styles={`
       .grid-item-thumbnail {
         border-radius: 12px;
+        zIndex: -1;
       }
     `}
   />
