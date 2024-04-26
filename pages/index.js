@@ -1,10 +1,20 @@
+import NextLink from 'next/link'
 import { 
      Container,
      Box,
-     Heading, 
+     Heading,
      Image,
+     Button,
+     List,
+     ListItem,
+     Link,
      useColorModeValue } from '@chakra-ui/react'
+import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons'
+import { IoLogoLinkedin, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
 import Section from '../components/section.js'
+import Paragraph from '../components/paragraph.js'
+import { BioSection, BioYear } from '../components/bio.js'
+import { Si42 } from "react-icons/si"
 
 const Page = () => {
     return (
@@ -16,7 +26,6 @@ const Page = () => {
         align="center">
                 Hello! i'm a ecole 42 student!
             </Box>
-
             <Box display={{md:'flex'}}>
                 <Box flexGrow={1}>
                     <Heading as="h2" Variant="page-title">
@@ -41,13 +50,115 @@ const Page = () => {
              </Box>
             </Box>
           <Section delay={0.1}>
-            <Heading as="h5" Variant="section-title">
+            <Heading as="h3" Variant="section-title">
             About
             </Heading>
-            {/* <Paragraph>
-                asdaipduioa
-            </Paragraph> */}
+            <Paragraph>
+            Hello, I'm a software engineering student at 42Rio, 
+            passionate about technology and 
+            committed to developing myself as a Full Stack programmer.
+            </Paragraph>
+          <Box align="center" my={4}>
+          <Button
+            as={NextLink}
+            href="/projects"
+            scroll={false}
+            rightIcon={<ChevronRightIcon />}
+            colorScheme="teal"
+          >
+            My portfolio
+          </Button>
+        </Box>
           </Section>
+
+          <Section delay={0.2}>
+            <Heading as="h3" variant='section-title'>
+            Bio
+            </Heading>
+            <BioSection>
+              <BioYear> Set 2003</BioYear>
+              Born in Colinas, Maranhão.
+            </BioSection>
+            <BioSection>
+              <BioYear> Dec 2007</BioYear>
+              Move to Rio de janeiro.
+            </BioSection>
+            <BioSection>
+              <BioYear> Dec 2022</BioYear>
+              I start studying systems development - Estácio.
+            </BioSection>
+            <BioSection>
+              <BioYear> July 2023</BioYear>
+              I start studying software engineering - Ecole 42.
+            </BioSection>
+            <BioSection>
+              <BioYear> May 2024 to present</BioYear>
+              Working as full stack developer
+            </BioSection>
+          </Section>
+
+          <Section delay={0.3}>
+        <Heading as="h3" variant="section-title">
+          On the web
+        </Heading>
+        <List>
+          <ListItem>
+            <Link href="https://github.com/Allandantas21" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<IoLogoGithub />}
+              >
+                @Allandantas21
+              </Button>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="https://www.linkedin.com/in/adn21/" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<IoLogoLinkedin />}
+              >
+                @Allan Dantas
+              </Button>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="https://instagram.com/Allan.dants" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<IoLogoInstagram />}
+              >
+                @Allan.dants
+              </Button>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="https://profile.intra.42.fr/users/aldantas" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<Si42 />}
+              >
+                @Aldantas (for 42 students)
+              </Button>
+            </Link>
+          </ListItem>
+        </List>
+        </Section>
+        <Box align="center" my={4}>
+          <Button
+            as={NextLink}
+            href="mailto:Allandantas21@gmail.com"
+            scroll={false}
+            rightIcon={<ChevronRightIcon />}
+            colorScheme="teal"
+          >
+            Send me a Email
+          </Button>
+        </Box>
         </Container>
 )
 }

@@ -16,7 +16,8 @@ import {
     useColorModeValue
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
-import ThemeToggleButton from './theme-toggle-button.js';
+import ThemeToggleButton from './theme-toggle-button.js'
+
 
 const LinkItem = ({ href, path, children }) => {
     const active = path === href
@@ -43,12 +44,13 @@ const Navbar = props => {
           as="nav"
           w="100%"
           bg={useColorModeValue('#fffff40', '#20202380')}
-          style={{backdropFilter:'blur(10px'}}
-          zindex={1}
+          style={{backdropFilter:'blur(10px)'}}
+          zindex={2}
         {...props}
         >
          <Container 
-            display="flex" p={2} 
+            display="flex"
+            p={2} 
             maxW="container.md" 
             wrap="wrap" 
             align="center" 
@@ -61,17 +63,29 @@ const Navbar = props => {
             </Flex>
 
             <Stack
-            direction={{base: 'collumn', md: 'row'}}
-            display={{base: 'none', md: 'flex'}}
-            width={{base: 'full', md: 'auto'}}
+            direction={{ base: 'column', md: 'row' }}
+            display={{ base: 'none', md: 'flex' }}
+            width={{ base: 'full', md: 'auto' }}
+            alignItems="center"
             flexGrow={1}
-            mt={{base: 4, nmd: 0}}
+            mt={{ base: 4, md: 0 }}
             >
                 <LinkItem  href="/works" path={path}>
                 Works
                 </LinkItem>
                 <LinkItem  href="/Projects" path={path}>
                 Projects
+                </LinkItem>
+                <LinkItem  
+                target="_blank"
+                href="https://github.com/AllanDantas21"
+                path={path}
+                display="inline-flex"
+                alignItems="center"
+                style={{ gap: 4 }}
+                pl={2}
+                >
+                source
                 </LinkItem>
             </Stack>
 
