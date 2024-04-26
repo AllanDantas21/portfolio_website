@@ -73,19 +73,19 @@ const Navbar = props => {
                 <LinkItem  href="/works" path={path}>
                 Works
                 </LinkItem>
-                <LinkItem  href="/Projects" path={path}>
-                Projects
+                <LinkItem  href="/skills" path={path}>
+                Skills
                 </LinkItem>
                 <LinkItem  
                 target="_blank"
-                href="https://github.com/AllanDantas21"
+                href="https://github.com/AllanDantas21/Portfolio-Website"
                 path={path}
                 display="inline-flex"
                 alignItems="center"
                 style={{ gap: 4 }}
                 pl={2}
                 >
-                source
+                Source
                 </LinkItem>
             </Stack>
 
@@ -106,8 +106,8 @@ const Navbar = props => {
                             <NextLink href="/Works" passHref>
                               <MenuItem as={Link}>Works</MenuItem>
                             </NextLink>
-                            <NextLink href="/Projects" passHref>
-                              <MenuItem as={Link}>Projects</MenuItem>
+                            <NextLink href="/More" passHref>
+                              <MenuItem as={Link}>More</MenuItem>
                             </NextLink>
                             <NextLink  href='https://github.com/AllanDantas21'>
                               <MenuItem as={Link}>View Github</MenuItem>
