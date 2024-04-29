@@ -27,7 +27,7 @@ const Projects = () => {
                     This project consists of graphically creating a schematic representation of a terrain in relief.
                     </WorkGridItem>
                     <WorkGridItem id="Libft" title="Libft" thumbnail={imgLibft}> 
-                    In this project we have to recreate some libc functions
+                    In this project we have to recreate some libc functions.
                     </WorkGridItem>
                 </Section>
                 <Section Section delay={0.1}>

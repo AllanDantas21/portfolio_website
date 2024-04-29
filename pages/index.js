@@ -87,15 +87,15 @@ const Page = () => {
             </BioSection>
             <BioSection>
               <BioYear> Dec 2022</BioYear>
-              I start studying systems development - Estácio.
+              Start studying systems development - Estácio.
             </BioSection>
             <BioSection>
               <BioYear> July 2023</BioYear>
-              I start studying software engineering - Ecole 42.
+              Start studying software engineering - Ecole 42.
             </BioSection>
             <BioSection>
               <BioYear> May 2024 to present</BioYear>
-              Working as full stack developer
+              Working as full stack developer.
             </BioSection>
           </Section>
 
