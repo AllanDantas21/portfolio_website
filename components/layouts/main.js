@@ -15,7 +15,8 @@ const Main = ({ children, router }) => (
     <Box as="main" pb={8}>
         <Head>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <title>Allan's - homepage</title>
+            <link rel="favicon"  href="/favicon.ico" type="image/x-icon" />
+            <title>Allan's - Homepage</title>
         </Head>
 
         <Navbar path={router.asPath} />

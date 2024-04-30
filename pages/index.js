@@ -98,7 +98,7 @@ const Page = () => {
               Working as full stack developer.
             </BioSection>
           </Section>
-
+          
           <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
           On the web

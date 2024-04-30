@@ -23,18 +23,18 @@ const Projects = () => {
 
             <SimpleGrid columns={[1,1,2]} gap={10}>
                 <Section delay={0.1}>
-                    <WorkGridItem id="Fdf" title="Fil de Fer" thumbnail={imgFdf}>  
+                    <WorkGridItem id="fdf" title="Fil de Fer" thumbnail={imgFdf}>  
                     This project consists of graphically creating a schematic representation of a terrain in relief.
                     </WorkGridItem>
-                    <WorkGridItem id="Libft" title="Libft" thumbnail={imgLibft}> 
-                    In this project we have to recreate some libc functions.
+                    <WorkGridItem id="libft" title="Libft" thumbnail={imgLibft}> 
+                    Libft is a project for Standard C library override functions that should be done from the ground up, and must behave the same as the originals
                     </WorkGridItem>
                 </Section>
                 <Section Section delay={0.1}>
-                    <WorkGridItem id="Push-swap" title="Push Swap" thumbnail={imgPushswap}>  
+                    <WorkGridItem id="push-swap" title="Push Swap" thumbnail={imgPushswap}>  
                     is a project that involves sorting a list of integers using a limited set of operations.
                     </WorkGridItem>
-                    <WorkGridItem id="Minitalk" title="Minitalk" thumbnail={imgMinitalk}>  
+                    <WorkGridItem id="minitalk" title="Minitalk" thumbnail={imgMinitalk}>  
                     The purpose of this project is to code a small data exchange program using UNIX signals.
                     </WorkGridItem>
                 </Section>
