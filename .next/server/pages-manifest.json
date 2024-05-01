@@ -1,8 +1,9 @@
 {
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/projects/fdf": "pages/projects/fdf.js",
+  "/_document": "pages/_document.js",
+  "/skills": "pages/skills.js",
+  "/projects/push-swap": "pages/projects/push-swap.js",
   "/projects": "pages/projects.js",
   "/": "pages/index.js"
 }
