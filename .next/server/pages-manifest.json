@@ -1,9 +1,11 @@
 {
-  "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/_app": "pages/_app.js",
+  "/projects/libft": "pages/projects/libft.js",
   "/skills": "pages/skills.js",
-  "/projects/push-swap": "pages/projects/push-swap.js",
+  "/": "pages/index.js",
   "/projects": "pages/projects.js",
-  "/": "pages/index.js"
+  "/projects/minitalk": "pages/projects/minitalk.js",
+  "/projects/push-swap": "pages/projects/push-swap.js"
 }

@@ -32,6 +32,21 @@
       "static/chunks/main.js",
       "static/chunks/pages/projects.js"
     ],
+    "/projects/libft": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/projects/libft.js"
+    ],
+    "/projects/minitalk": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/projects/minitalk.js"
+    ],
+    "/projects/push-swap": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/projects/push-swap.js"
+    ],
     "/skills": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
