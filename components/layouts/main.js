@@ -1,16 +1,7 @@
 import Head from 'next/head'
-import dynamic from 'next/dynamic'
 import Navbar from '../navbar.js'
 import { Box, Container } from '@chakra-ui/react'
-import { Analytics } from "@vercel/analytics/react"
-import VoxelDogLoader from '../voxel-dog-loader'
-
-
-const LazyVoxelDog = dynamic(() => import('../voxel-dog'), {
-    ssr: false,
-    loading: () => <VoxelDogLoader />
-  })
-  
+import { Analytics } from "@vercel/analytics/react"  
 
 const Main = ({ children, router }) => (
     <Box as="main" pb={8}>
@@ -24,7 +15,6 @@ const Main = ({ children, router }) => (
 
         <Container maxW="container.md" pt={14}>
             <Analytics />
-             {/* <LazyVoxelDog /> */}
             {children}
         </Container>
     </Box>
