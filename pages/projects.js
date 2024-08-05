@@ -11,8 +11,8 @@ import Layout from '../components/layouts/article'
 const Projects = () => {
     var imgFdf = require('../public/images/content/fdf.png');
     var imgPushswap = require('../public/images/content/pushswap.png');
-    var imgLibft = require('../public/images/content/libft.png');
-    var imgMinitalk = require('../public/images/content/minitalk.jpg');
+    var imgPhilo = require('../public/images/content/philo.png')
+    var imgMinishell = require('../public/images/content/minishell.png')
 
     return (
         <Layout title="Projects">
@@ -26,16 +26,16 @@ const Projects = () => {
                     <WorkGridItem id="fdf" title="Fil de Fer" thumbnail={imgFdf}>  
                     This project consists of graphically creating a schematic representation of a terrain in relief.
                     </WorkGridItem>
-                    <WorkGridItem id="libft" title="Libft" thumbnail={imgLibft}> 
-                    Libft is a project for Standard C library override functions that should be done from the ground up, and must behave the same as the originals
+                    <WorkGridItem id="philo" title="philosophers" thumbnail={imgPhilo}> 
+                    the famous Dining Philosophers problem, all with the same basic rules.
                     </WorkGridItem>
                 </Section>
                 <Section Section delay={0.1}>
                     <WorkGridItem id="push-swap" title="Push Swap" thumbnail={imgPushswap}>  
                     is a project that involves sorting a list of integers using a limited set of operations.
                     </WorkGridItem>
-                    <WorkGridItem id="minitalk" title="Minitalk" thumbnail={imgMinitalk}>  
-                    The purpose of this project is to code a small data exchange program using UNIX signals.
+                    <WorkGridItem id="minishell" title="Minishell" thumbnail={imgMinishell}>  
+                    This project is about creating a simple shell. Yes, a little bash.
                     </WorkGridItem>
                 </Section>
             </SimpleGrid>

@@ -12,26 +12,24 @@ import {
   import Layout from '../../components/layouts/article'
   
   const Project = () => (
-    <Layout title="Libft">
+    <Layout title="Philo">
       <Container>
         <Title>
-          Libft <Badge>10/2023</Badge>
+          philosophers <Badge>05/2024</Badge>
         </Title>
-        <P>
-        Libft is an individual project at 42 that requires us to re-create some standard C library functions including
-         some additional ones that can be used later to build a library of useful functions for the rest of the program.
-        </P>
+        <P> </P>
         <P style={{fontSize:18, padding:5}}>
-            We need to recreate all this functions
+        This project is a training to multi-threads/multi-process programming with the use of mutex and semaphore.
+It contains 3 different programs simulating a twist of the famous Dining Philosophers problem, all with the same basic rules.
         </P>
-        <WorkImage src="/images/content/libft1.0.png" alt="fdf result"/>
+        <WorkImage src="/images/content/philo1.png" alt="philo image"/>
         <P>is a project to understand the basis of functions in c.
         Great for improving knowledge in memory allocation and programming logic</P>
         <List ml={4} my={4}>
           <ListItem>
             <Meta>Repository</Meta>
-            <Link href="https://github.com/AllanDantas21/ft_libft/" target="_blank">
-            https://github.com/AllanDantas21/ft_libft <ExternalLinkIcon mx="2px" />
+            <Link href="https://github.com/AllanDantas21/philosophers" target="_blank">
+            https://github.com/AllanDantas21/philosophers <ExternalLinkIcon mx="2px" />
             </Link>
           </ListItem>
         </List>
