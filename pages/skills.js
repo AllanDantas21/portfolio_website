@@ -22,10 +22,6 @@ import {
   } from '@chakra-ui/react'
 
 const Skills = () => {
-    var imgFdf = require('../public/images/content/fdf.png');
-    var imgPushswap = require('../public/images/content/pushswap.png');
-    var imgLibft = require('../public/images/content/libft.png');
-    var imgMinitalk = require('../public/images/content/minitalk.jpg');
 
     return (
         <Layout title="skills">
