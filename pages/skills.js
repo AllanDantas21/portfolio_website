@@ -37,7 +37,7 @@ const Skills = () => {
             This section is to talk about my technical skills.
             </Paragraph>
             <Paragraph style={{margin:8}}>
-            At École 42, I developed strong skills in C programming, efficient algorithms, operating systems like Unix/Linux, networking and protocols, and web development using HTML, CSS, JavaScript, and modern frameworks.
+            At École 42, I developed strong skills in C/C++ programming, efficient algorithms, operating systems like Unix/Linux, networking and protocols, and web development using HTML, CSS, JavaScript, and modern frameworks.
             These hard skills enable me to solve complex problems and collaborate in development teams.
             </Paragraph>
             <Heading as='h1' fontSize={20} mb={4}>
