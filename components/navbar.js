@@ -78,7 +78,7 @@ const Navbar = props => {
           mt={{ base: 4, md: 0 }}
         >
            <LinkItem  href="/projects" path={path}>
-                Projects
+                42 Projects
             </LinkItem>
             <LinkItem  href="/skills" path={path}>
             Skills
@@ -113,7 +113,7 @@ const Navbar = props => {
                       <MenuItem as={Link}>About</MenuItem>
                     </NextLink>
                     <NextLink href="/projects" passHref>
-                      <MenuItem as={Link}>Projects</MenuItem>
+                      <MenuItem as={Link}>42Projects</MenuItem>
                     </NextLink>
                     <NextLink href="/skills" passHref>
                       <MenuItem as={Link}>Skills</MenuItem>

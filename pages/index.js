@@ -94,7 +94,7 @@ const Page = () => {
               Start studying software engineering - Ecole 42.
             </BioSection>
             <BioSection>
-              <BioYear> May 2024 to present</BioYear>
+              <BioYear> June 2024 to present</BioYear>
               Working as front end developer.
             </BioSection>
           </Section>
