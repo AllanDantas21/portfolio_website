@@ -27,12 +27,12 @@ const Projects = () => {
                     This project consists of graphically creating a schematic representation of a terrain in relief.
                     </WorkGridItem>
                     <WorkGridItem id="philo" title="philosophers" thumbnail={imgPhilo}> 
-                    the famous Dining Philosophers problem, all with the same basic rules.
+                    The famous Dining Philosophers problem, all with the same basic rules.
                     </WorkGridItem>
                 </Section>
                 <Section Section delay={0.1}>
                     <WorkGridItem id="push-swap" title="Push Swap" thumbnail={imgPushswap}>  
-                    is a project that involves sorting a list of integers using a limited set of operations.
+                    Is a project that involves sorting a list of integers using a limited set of operations.
                     </WorkGridItem>
                     <WorkGridItem id="minishell" title="Minishell" thumbnail={imgMinishell}>  
                     This project is about creating a simple shell. Yes, a little bash.
