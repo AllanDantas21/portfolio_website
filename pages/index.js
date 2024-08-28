@@ -153,12 +153,12 @@ const Page = () => {
         <Box align="center" my={4}>
           <Button
             as={NextLink}
-            href="mailto:Allandantas21@gmail.com"
+            href="https://drive.google.com/file/d/1ZhIe-Toqcr0nGjjk7cOF4odok3ELKY6e/view?usp=sharing"
             scroll={false}
             rightIcon={<ChevronRightIcon />}
             colorScheme="teal"
           >
-            Send me a Email
+            See my curriculum
           </Button>
         </Box>
         </Container>
