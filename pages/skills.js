@@ -4,9 +4,10 @@ import {
     Progress,
     Code 
 } from '@chakra-ui/react'
-import { SiCoursera,
+import {
+         SiMicrosoftsqlserver,
          SiDotnet,
-         SiJavascript,
+         SiPython,
          SiLinux,
          SiZsh, 
          SiNodedotjs
@@ -20,6 +21,7 @@ const Skills = () => {
     return (
         <Layout title="skills">
         <Container>
+
             <Heading as='h1' fontSize={20} mb={4}>
                 Skills
             </Heading>
@@ -35,16 +37,20 @@ const Skills = () => {
             These hard skills enable me to solve complex problems and collaborate in development teams.
             </Paragraph>
             <Heading as='h1' fontSize={20} mb={4}>
+                       
+            </Heading>
+            <Paragraph style={{margin:8}}>
+            In addition to my studies at École 42, I have also gained practical experience working at 42labs. This experience has allowed me to apply my technical skills in real-world projects, further enhancing my abilities in software development, debugging, and project management. Working in a collaborative environment at 42labs has also improved my communication and teamwork skills, making me a more effective and versatile developer.
+            </Paragraph>
+            </Section>
             <div style={{display:'flex'}}>
-            <SiCoursera style={{margin:4}}/>
-            <SiJavascript style={{margin:4}}/>
+            <SiMicrosoftsqlserver style={{margin:4}}/>
+            <SiPython style={{margin:4}}/>
             <SiNodedotjs style={{margin:4}}/>
             <SiLinux style={{margin:4}}/>
             <SiZsh style={{margin:4}} />
             <SiDotnet style={{margin:4}}/>
             </div>
-            </Heading>
-            </Section>
 
             <Section  delay={0.1}>
             <Heading as='h1' fontSize={20} mb={4}>
@@ -66,6 +72,7 @@ const Skills = () => {
             </Paragraph>
             <Progress value={80} />
             </Section>
+            
         </Container>
         </Layout>
     )
