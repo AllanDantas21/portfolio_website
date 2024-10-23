@@ -14,12 +14,6 @@ import { SiCoursera,
 import Section from '../components/section'
 import Layout from '../components/layouts/article'
 import Paragraph from '../components/paragraph';
-import {
-    Alert,
-    AlertIcon,
-    AlertTitle,
-    AlertDescription,
-  } from '@chakra-ui/react'
 
 const Skills = () => {
 
