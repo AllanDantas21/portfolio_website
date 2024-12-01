@@ -12,15 +12,30 @@ import {
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { IoLogoLinkedin, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
+import { Si42 } from "react-icons/si"
+import { motion } from 'framer-motion'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
-import { Si42 } from "react-icons/si"
-import { motion } from 'framer-motion'
 
 const MotionBox = motion(Box)
 const MotionButton = motion(Button)
+
+const SocialLink = ({ href, icon, label }) => (
+  <ListItem>
+    <Link href={href} target="_blank">
+      <MotionButton
+        variant="ghost"
+        colorScheme="teal"
+        leftIcon={icon}
+        whileHover={{ scale: 1.1 }}
+      >
+        {label}
+      </MotionButton>
+    </Link>
+  </ListItem>
+)
 
 const Page = () => {
   return (
@@ -113,54 +128,10 @@ const Page = () => {
             On the web
           </Heading>
           <List>
-            <ListItem key="github">
-              <Link href="https://github.com/Allandantas21" target="_blank">
-                <MotionButton
-                  variant="ghost"
-                  colorScheme="teal"
-                  leftIcon={<IoLogoGithub />}
-                  whileHover={{ scale: 1.1 }}
-                >
-                  @Allandantas21
-                </MotionButton>
-              </Link>
-            </ListItem>
-            <ListItem key="linkedin">
-              <Link href="https://www.linkedin.com/in/adn21/" target="_blank">
-                <MotionButton
-                  variant="ghost"
-                  colorScheme="teal"
-                  leftIcon={<IoLogoLinkedin />}
-                  whileHover={{ scale: 1.1 }}
-                >
-                  @Allan Dantas
-                </MotionButton>
-              </Link>
-            </ListItem>
-            <ListItem key="instagram">
-              <Link href="https://instagram.com/Allan.dants" target="_blank">
-                <MotionButton
-                  variant="ghost"
-                  colorScheme="teal"
-                  leftIcon={<IoLogoInstagram />}
-                  whileHover={{ scale: 1.1 }}
-                >
-                  @Allan.dants
-                </MotionButton>
-              </Link>
-            </ListItem>
-            <ListItem key="42">
-              <Link href="https://profile.intra.42.fr/users/aldantas" target="_blank">
-                <MotionButton
-                  variant="ghost"
-                  colorScheme="teal"
-                  leftIcon={<Si42 />}
-                  whileHover={{ scale: 1.1 }}
-                >
-                  @Aldantas (for 42 students)
-                </MotionButton>
-              </Link>
-            </ListItem>
+            <SocialLink href="https://github.com/Allandantas21" icon={<IoLogoGithub />} label="@Allandantas21" />
+            <SocialLink href="https://www.linkedin.com/in/adn21/" icon={<IoLogoLinkedin />} label="@Allan Dantas" />
+            <SocialLink href="https://instagram.com/Allan.dants" icon={<IoLogoInstagram />} label="@Allan.dants" />
+            <SocialLink href="https://profile.intra.42.fr/users/aldantas" icon={<Si42 />} label="@Aldantas (for 42 students)" />
           </List>
         </Section>
         <Box align="center" my={4}>
