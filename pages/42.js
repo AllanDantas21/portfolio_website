@@ -5,6 +5,7 @@ const Game = () => {
     const [targetPosition, setTargetPosition] = useState({ top: '50%', left: '50%' });
     const [timeLeft, setTimeLeft] = useState(42);
     const [gameOver, setGameOver] = useState(false);
+    const [gameWon, setGameWon] = useState(false);
 
     const moveTarget = () => {
         const top = Math.random() * 90 + '%';
@@ -14,8 +15,14 @@ const Game = () => {
 
     const handleClick = () => {
         if (!gameOver) {
-            setScore(score + 1);
-            moveTarget();
+            const newScore = score + 1;
+            setScore(newScore);
+            if (newScore >= 42) {
+                setGameOver(true);
+                setGameWon(true);
+            } else {
+                moveTarget();
+            }
         }
     };
 
@@ -23,19 +30,20 @@ const Game = () => {
         setScore(0);
         setTimeLeft(42);
         setGameOver(false);
+        setGameWon(false);
         moveTarget();
     };
 
     useEffect(() => {
-        if (timeLeft > 0) {
+        if (timeLeft > 0 && !gameOver) {
             const timer = setInterval(() => {
                 setTimeLeft(prevTime => prevTime - 1);
             }, 1000);
             return () => clearInterval(timer);
-        } else {
+        } else if (timeLeft === 0) {
             setGameOver(true);
         }
-    }, [timeLeft]);
+    }, [timeLeft, gameOver]);
 
     useEffect(() => {
         if (!gameOver) {
@@ -58,7 +66,11 @@ const Game = () => {
         }}>
             <h1 style={{ color: 'black' }}>Score: {score}</h1>
             <h2 style={{ color: 'black' }}>Time Left: {timeLeft}s</h2>
-            {gameOver && <h2 style={{ color: 'black' }}>Game Over!</h2>}
+            {gameOver && (
+                <h2 style={{ color: 'black' }}>
+                    {gameWon ? 'You Win!' : 'Game Over!'}
+                </h2>
+            )}
             <button onClick={resetGame} style={{ color: 'black', position: 'absolute', top: '10px', right: '10px', fontWeight: 'bold' }}>Reset</button>
             {!gameOver && (
                 <div

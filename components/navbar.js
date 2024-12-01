@@ -77,11 +77,14 @@ const Navbar = props => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-           <LinkItem  href="/projects" path={path}>
-                42 Projects
-            </LinkItem>
-            <LinkItem  href="/skills" path={path}>
+          <LinkItem href="/projects" path={path}>
+            42 Projects
+          </LinkItem>
+          <LinkItem href="/skills" path={path}>
             Skills
+          </LinkItem>
+          <LinkItem href="/terminal" path={path}>
+            Terminal
           </LinkItem>
           <LinkItem
             target="_blank"
@@ -109,18 +112,18 @@ const Navbar = props => {
                 aria-label="Options"
               />
               <MenuList>
-                    <NextLink href="/" passHref>
-                      <MenuItem as={Link}>About</MenuItem>
-                    </NextLink>
-                    <NextLink href="/projects" passHref>
-                      <MenuItem as={Link}>42Projects</MenuItem>
-                    </NextLink>
-                    <NextLink href="/skills" passHref>
-                      <MenuItem as={Link}>Skills</MenuItem>
-                    </NextLink>
-                    <NextLink  href='https://github.com/AllanDantas21'>
-                      <MenuItem as={Link}>View Github</MenuItem>
-                    </NextLink>
+                <NextLink href="/" passHref>
+                  <MenuItem as={Link}>About</MenuItem>
+                </NextLink>
+                <NextLink href="/projects" passHref>
+                  <MenuItem as={Link}>42Projects</MenuItem>
+                </NextLink>
+                <NextLink href="/skills" passHref>
+                  <MenuItem as={Link}>Skills</MenuItem>
+                </NextLink>
+                <NextLink href='https://github.com/AllanDantas21'>
+                  <MenuItem as={Link}>View Github</MenuItem>
+                </NextLink>
               </MenuList>
             </Menu>
           </Box>

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 
 const initialHistory = [
     'Welcome to my terminal portfolio!',
-    'Type "help" for available commands.'
+    'What is the answer to life, the universe, and everything?'
 ];
 
 const commands = {
@@ -24,6 +24,10 @@ const Terminal = () => {
 
     const handleCommand = (cmd) => {
         const trimmedCmd = cmd.trim().toLowerCase();
+        if (trimmedCmd === '42') {
+            window.location.href = '/42';
+            return '';
+        }
         if (commands[trimmedCmd]) {
             return commands[trimmedCmd](setHistory);
         }
