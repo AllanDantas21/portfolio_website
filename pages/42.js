@@ -29,7 +29,7 @@ const Game = () => {
     useEffect(() => {
         if (timeLeft > 0) {
             const timer = setInterval(() => {
-                setTimeLeft(timeLeft - 1);
+                setTimeLeft(prevTime => prevTime - 1);
             }, 1000);
             return () => clearInterval(timer);
         } else {
