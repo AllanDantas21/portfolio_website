@@ -59,7 +59,7 @@ const Game = () => {
             <h1 style={{ color: 'black' }}>Score: {score}</h1>
             <h2 style={{ color: 'black' }}>Time Left: {timeLeft}s</h2>
             {gameOver && <h2 style={{ color: 'black' }}>Game Over!</h2>}
-            <button onClick={resetGame} style={{ color: 'black',position: 'absolute', top: '10px', right: '10px' }}>Reset</button>
+            <button onClick={resetGame} style={{ color: 'black', position: 'absolute', top: '10px', right: '10px', fontWeight: 'bold' }}>Reset</button>
             {!gameOver && (
                 <div
                     onClick={handleClick}
