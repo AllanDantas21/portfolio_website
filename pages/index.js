@@ -12,12 +12,12 @@ import {
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { IoLogoLinkedin, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
-import { Si42 } from "react-icons/si"
-import { motion } from 'framer-motion'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
+import { Si42 } from "react-icons/si"
+import { motion } from 'framer-motion'
 
 const MotionBox = motion(Box)
 const MotionButton = motion(Button)

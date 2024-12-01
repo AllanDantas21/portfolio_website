@@ -23,13 +23,13 @@ const projects = [
 const Projects = () => (
     <Layout title="Projects">
         <Container>
-            <Heading as="h3" fontSize={20} mb={4}>
+            <Heading as="h3" fontSize="2xl" mb={6}>
                 Ecole 42 Projects
             </Heading>
-            <SimpleGrid columns={[1,1,2]} gap={10}>
+            <SimpleGrid columns={[1, 1, 2]} gap={8}>
                 {projects.map(project => (
                     <Section delay={0.1} key={project.id}>
-                        <WorkGridItem {...project}>
+                        <WorkGridItem {...project} thumbnailSize="200px">
                             {project.description}
                         </WorkGridItem>
                     </Section>
