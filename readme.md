@@ -1,6 +1,6 @@
 # Portfolio Website
 
-Welcome to my portfolio website project! This project showcases my skills, projects, and experiences in web development.
+my portfolio website project!
 
 ## Table of Contents
 
