@@ -53,11 +53,11 @@ const Terminal = () => {
         <div className="terminal">
             <div className="terminal-output" ref={terminalRef}>
                 {history.map((line, i) => (
-                    <div key={i} className={line.startsWith('>') ? 'command-line' : ''}>{line}</div>
+                    <div key={i} className={line.startsWith('>') ? 'command-line' : 'initial-command'}>{line}</div>
                 ))}
             </div>
             <form onSubmit={handleSubmit} className="terminal-form">
-                <span>{'>'}</span>
+                <span className="prompt">{'>'}</span>
                 <input
                     type="text"
                     value={input}
@@ -83,14 +83,20 @@ const Terminal = () => {
                 .command-line {
                     color: green;
                 }
+                .initial-command {
+                    color: white;
+                }
                 .terminal-form {
                     display: flex;
                     align-items: center;
                 }
+                .prompt {
+                    color: white;
+                }
                 .terminal-input {
                     background-color: transparent;
                     border: none;
-                    color: inherit;
+                    color: white;
                     flex: 1;
                     margin-left: 8px;
                     outline: none;
