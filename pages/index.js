@@ -16,8 +16,8 @@ import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import { motion } from 'framer-motion'
-import { SOCIAL_LINKS } from '../constants/social-links.js'
-import { BIO_DATA } from '../constants/bio-data.js'
+import { SOCIAL_LINKS } from '../data/social-links.js'
+import { BIO_DATA } from '../data/bio-data.js'
 
 const MotionBox = motion(Box)
 const MotionButton = motion(Button)

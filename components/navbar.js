@@ -17,7 +17,7 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
-import { IoLogoGithub } from 'react-icons/io5'
+import { menuItems, mobileMenuItems } from '../data/navbar-data.js'
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
@@ -42,9 +42,7 @@ const MenuLink = forwardRef((props, ref) => (
   <Link ref={ref} as={NextLink} {...props} />
 ))
 
-const Navbar = props => {
-  const { path } = props
-
+const Navbar = ({ path, ...props }) => {
   return (
     <Box
       position="fixed"
@@ -77,27 +75,12 @@ const Navbar = props => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href="/projects" path={path}>
-            42 Projects
-          </LinkItem>
-          <LinkItem href="/skills" path={path}>
-            Skills
-          </LinkItem>
-          <LinkItem href="/terminal" path={path}>
-            Terminal
-          </LinkItem>
-          <LinkItem
-            target="_blank"
-            href="https://github.com/AllanDantas21/Portfolio-Website"
-            path={path}
-            display="inline-flex"
-            alignItems="center"
-            style={{ gap: 4 }}
-            pl={2}
-          >
-            <IoLogoGithub />
-            Source
-          </LinkItem>
+          {menuItems.map(item => (
+            <LinkItem key={item.href} href={item.href} path={path} {...item}>
+              {item.icon}
+              {item.label}
+            </LinkItem>
+          ))}
         </Stack>
 
         <Box flex={1} align="right">
@@ -112,18 +95,11 @@ const Navbar = props => {
                 aria-label="Options"
               />
               <MenuList>
-                <NextLink href="/" passHref>
-                  <MenuItem as={Link}>About</MenuItem>
-                </NextLink>
-                <NextLink href="/projects" passHref>
-                  <MenuItem as={Link}>42Projects</MenuItem>
-                </NextLink>
-                <NextLink href="/skills" passHref>
-                  <MenuItem as={Link}>Skills</MenuItem>
-                </NextLink>
-                <NextLink href='https://github.com/AllanDantas21'>
-                  <MenuItem as={Link}>View Github</MenuItem>
-                </NextLink>
+                {mobileMenuItems.map(item => (
+                  <NextLink key={item.href} href={item.href} passHref>
+                    <MenuItem as={Link}>{item.label}</MenuItem>
+                  </NextLink>
+                ))}
               </MenuList>
             </Menu>
           </Box>

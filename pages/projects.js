@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 import { memo } from 'react'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
-import { projects } from '../data/projects'
+import { PROJECTS } from '../data/projects.js'
 
 const Layout = dynamic(() => import('../components/layouts/article'), {
     ssr: true
@@ -16,7 +16,7 @@ const Projects = () => (
                 Ecole 42 Projects
             </Heading>
             <SimpleGrid columns={[1, 1, 2]} gap={8}>
-                {projects.map(project => (
+                {PROJECTS.map(project => (
                     <Section delay={0.1} key={project.id}>
                         <WorkGridItem {...project} thumbnailSize="200px">
                             {project.description}
