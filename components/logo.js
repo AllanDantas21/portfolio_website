@@ -23,22 +23,23 @@ const LogoBox = styled.span`
 `
 
 const Logo = () => {
-    
-    return (
-        <Link href="/">
-                <LogoBox>
-                <FootprintIcon />
-                <Text
-                    color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-                    fontFamily='M PLUS Rounded 1c'
-                    fontWeiht="bold"
-                    ml={3}
-                    >
-                    Allan Dantas
-                </Text>
-                </LogoBox>
-        </Link>
-    )
+  const textColor = useColorModeValue('gray.800', 'whiteAlpha.900')
+
+  return (
+    <Link href="/">
+      <LogoBox>
+        <FootprintIcon />
+        <Text
+          color={textColor}
+          fontFamily="M PLUS Rounded 1c"
+          fontWeight="bold"
+          ml={3}
+        >
+          Allan Dantas
+        </Text>
+      </LogoBox>
+    </Link>
+  )
 }
 
 export default Logo

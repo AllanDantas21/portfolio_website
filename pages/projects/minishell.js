@@ -9,23 +9,22 @@ import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Title, WorkImage, Meta } from '../../components/projects';
 import P from '../../components/paragraph';
 import Layout from '../../components/layouts/article';
+import minishellData from '../../data/projects-data/minishell.js';
 
 const Project = () => (
-  <Layout title="Minishell">
+  <Layout title={minishellData.title}>
     <Container>
       <Title>
-        Minishell <Badge>04/2024</Badge>
+        {minishellData.title} <Badge>{minishellData.date}</Badge>
       </Title>
-      <P>As beautiful as a shell</P>
-      <P>
-        In this project we created our own bash, on a smaller scale. The purpose is to make us work with multiple processes, file descriptors, user input handling, among several other minor challenges. By undertaking this project, we gained knowledge of how bash works under the hood, how our input is handled, and how commands given to it are executed.
-      </P>
-      <WorkImage src="/images/content/bash.webp" alt="Minishell project image" />
+      <P>{minishellData.description1}</P>
+      <P>{minishellData.description2}</P>
+      <WorkImage src={minishellData.image1} alt={minishellData.alt1} />
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Repository</Meta>
-          <Link href="https://github.com/AllanDantas21/42cursus_minishell/" target="_blank">
-            https://github.com/AllanDantas21/42cursus_minishell/ <ExternalLinkIcon mx="2px" />
+          <Link href={minishellData.repoLink} target="_blank">
+            {minishellData.repoLink} <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
       </List>
