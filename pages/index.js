@@ -11,13 +11,13 @@ import {
   useColorModeValue 
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
-import { IoLogoLinkedin, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
-import { Si42 } from "react-icons/si"
 import { motion } from 'framer-motion'
+import { SOCIAL_LINKS } from '../constants/social-links.js'
+import { BIO_DATA } from '../constants/bio-data.js'
 
 const MotionBox = motion(Box)
 const MotionButton = motion(Button)
@@ -102,36 +102,21 @@ const Page = () => {
           <Heading as="h3" variant='section-title'>
             Bio
           </Heading>
-          <BioSection>
-            <BioYear>Sep 2003</BioYear>
-            Born in Colinas, Maranhão.
-          </BioSection>
-          <BioSection>
-            <BioYear>Dec 2007</BioYear>
-            Moved to Rio de Janeiro.
-          </BioSection>
-          <BioSection>
-            <BioYear>Dec 2022</BioYear>
-            Started studying systems development - Estácio.
-          </BioSection>
-          <BioSection>
-            <BioYear>Jul 2023</BioYear>
-            Started studying software engineering - Ecole 42.
-          </BioSection>
-          <BioSection>
-            <BioYear>Oct 2024 to present</BioYear>
-            Working in 42Labs.
-          </BioSection>
+          {BIO_DATA.map(({ year, text }) => (
+            <BioSection key={year}>
+              <BioYear>{year}</BioYear>
+              {text}
+            </BioSection>
+          ))}
         </Section>
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
             On the web
           </Heading>
           <List>
-            <SocialLink href="https://github.com/Allandantas21" icon={<IoLogoGithub />} label="@Allandantas21" />
-            <SocialLink href="https://www.linkedin.com/in/adn21/" icon={<IoLogoLinkedin />} label="@Allan Dantas" />
-            <SocialLink href="https://instagram.com/Allan.dants" icon={<IoLogoInstagram />} label="@Allan.dants" />
-            <SocialLink href="https://profile.intra.42.fr/users/aldantas" icon={<Si42 />} label="@Aldantas (for 42 students)" />
+            {SOCIAL_LINKS.map((link) => (
+              <SocialLink key={link.href} {...link} />
+            ))}
           </List>
         </Section>
         <Box align="center" my={4}>
