@@ -17,7 +17,10 @@ import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import { motion } from 'framer-motion'
 import { SOCIAL_LINKS } from '../data/social-links.js'
-import { BIO_DATA } from '../data/bio-data.js'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
 
 const MotionBox = motion(Box)
 const MotionButton = motion(Button)
@@ -38,9 +41,29 @@ const SocialLink = ({ href, icon, label }) => (
 )
 
 const Page = () => {
+  const { t, i18n } = useTranslation('common')
+  const router = useRouter()
+  const [currentLang, setCurrentLang] = useState(i18n.language)
+
+  const toggleLanguage = () => {
+    const newLang = currentLang === 'en' ? 'pt' : 'en'
+    setCurrentLang(newLang)
+    router.push(router.pathname, router.asPath, { locale: newLang })
+  }
+
+  const bioData = [
+    { year: "Sep 2003", text: t('bornInColinas') },
+    { year: "Dec 2007", text: t('movedToRio') },
+    { year: "Dec 2022", text: t('startedStudyingEstacio') },
+    { year: "Jul 2023", text: t('startedStudyingEcole42') },
+    { year: "Oct 2024 to present", text: t('workingIn42Labs') }
+  ]
+
   return (
     <Layout>
       <Container>
+        <Box display="flex" justifyContent="flex-end" mb={4}>
+        </Box>
         <MotionBox 
           borderRadius="lg" 
           bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} 
@@ -49,14 +72,14 @@ const Page = () => {
           align="center"
           whileHover={{ scale: 1.1 }}
         >
-          Hello! I'm an Ecole 42 student!
+          {t('hello')}
         </MotionBox>
         <Box display={{ md: 'flex' }}>
           <Box flexGrow={1}>
             <Heading as="h2" variant="page-title">
-              Allan Dantas
+              {t('name')}
             </Heading>
-            <p>Software Engineering Student</p>
+            <p>{t('softwareEngineeringStudent')}</p>
           </Box>
           <Box 
             flexShrink={0} 
@@ -72,18 +95,16 @@ const Page = () => {
               display="inline-block" 
               borderRadius="full" 
               src="images/allan.jpeg" 
-              alt="Allan Dantas"
+              alt={t('name')}
             />
           </Box>
         </Box>
         <Section delay={0.1}>
           <Heading as="h3" variant="section-title">
-            About
+            {t('about')}
           </Heading>
           <Paragraph>
-            Hello, I'm a software engineering student at 42Rio, 
-            passionate about technology and 
-            committed to developing myself as a Full Stack programmer.
+            {t('aboutDescription')}
           </Paragraph>
           <Box align="center" my={4}>
             <MotionButton
@@ -94,24 +115,24 @@ const Page = () => {
               colorScheme="teal"
               whileHover={{ scale: 1.1 }}
             >
-              My portfolio
+              {t('myPortfolio')}
             </MotionButton>
           </Box>
         </Section>
         <Section delay={0.2}>
           <Heading as="h3" variant='section-title'>
-            Bio
+            {t('bio')}
           </Heading>
-          {BIO_DATA.map(({ year, text }) => (
-            <BioSection key={year}>
-              <BioYear>{year}</BioYear>
-              {text}
+          {bioData.map((bio) => (
+            <BioSection key={bio.year}>
+              <BioYear>{bio.year}</BioYear>
+              {bio.text}
             </BioSection>
           ))}
         </Section>
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
-            On the web
+            {t('onTheWeb')}
           </Heading>
           <List>
             {SOCIAL_LINKS.map((link) => (
@@ -128,12 +149,18 @@ const Page = () => {
             colorScheme="teal"
             whileHover={{ scale: 1.1 }}
           >
-            See my curriculum
+            {t('seeMyCurriculum')}
           </MotionButton>
         </Box>
       </Container>
     </Layout>
   )
 }
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common'])),
+  },
+})
 
 export default Page

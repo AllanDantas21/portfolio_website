@@ -13,11 +13,15 @@ import {
   MenuList,
   MenuButton,
   IconButton,
-  useColorModeValue
+  useColorModeValue,
+  Button
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 import { menuItems, mobileMenuItems } from '../data/navbar-data.js'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
+import { useTranslation } from 'next-i18next'
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
@@ -43,6 +47,16 @@ const MenuLink = forwardRef((props, ref) => (
 ))
 
 const Navbar = ({ path, ...props }) => {
+  const { i18n } = useTranslation('common')
+  const router = useRouter()
+  const [currentLang, setCurrentLang] = useState(i18n.language)
+
+  const toggleLanguage = () => {
+    const newLang = currentLang === 'en' ? 'pt' : 'en'
+    setCurrentLang(newLang)
+    router.push(router.pathname, router.asPath, { locale: newLang })
+  }
+
   return (
     <Box
       position="fixed"
@@ -83,7 +97,15 @@ const Navbar = ({ path, ...props }) => {
           ))}
         </Stack>
 
-        <Box flex={1} align="right">
+        <Box flex={1} align="right" display="flex" alignItems="center" justifyContent="flex-end">
+          <Button 
+            onClick={toggleLanguage} 
+            colorScheme="teal" 
+            mr={2}
+            minW="100px"
+          >
+            {currentLang === 'en' ? 'Português' : 'English'}
+          </Button>
           <ThemeToggleButton />
 
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
