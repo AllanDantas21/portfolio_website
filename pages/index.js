@@ -16,7 +16,8 @@ import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import { motion } from 'framer-motion'
-import { SOCIAL_LINKS } from '../data/social-links.js'
+import { IoLogoLinkedin, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
+import { Si42 } from "react-icons/si"
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useRouter } from 'next/router'
@@ -52,11 +53,17 @@ const Page = () => {
   }
 
   const bioData = [
-    { year: "Sep 2003", text: t('bornInColinas') },
-    { year: "Dec 2007", text: t('movedToRio') },
-    { year: "Dec 2022", text: t('startedStudyingEstacio') },
-    { year: "Jul 2023", text: t('startedStudyingEcole42') },
-    { year: "Oct 2024 to present", text: t('workingIn42Labs') }
+    { year: t('sep2003'), text: t('bornInColinas') },
+    { year: t('jul2023'), text: t('startedStudyingEcole42') },
+    { year: t('oct2024ToFeb2025'), text: t('workingIn42Labs') },
+    { year: t('mar2025ToPresent'), text: t('workingInCI&T') }
+  ]
+
+  const socialLinks = [
+    { href: "https://github.com/Allandantas21", icon: <IoLogoGithub />, label: "@Allandantas21" },
+    { href: "https://www.linkedin.com/in/adn21/", icon: <IoLogoLinkedin />, label: "@Allan Dantas" },
+    { href: "https://instagram.com/Allan.dants", icon: <IoLogoInstagram />, label: "@Allan.dants" },
+    { href: "https://profile.intra.42.fr/users/aldantas", icon: <Si42 />, label: t('42link') }
   ]
 
   return (
@@ -135,7 +142,7 @@ const Page = () => {
             {t('onTheWeb')}
           </Heading>
           <List>
-            {SOCIAL_LINKS.map((link) => (
+            {socialLinks.map((link) => (
               <SocialLink key={link.href} {...link} />
             ))}
           </List>
