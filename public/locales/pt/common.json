@@ -2,11 +2,6 @@
   "notFound": "Não encontrado",
   "notFoundMessage": "A página que você está procurando não foi encontrada.",
   "returnHome": "Voltar para a página inicial",
-  "score": "Pontuação",
-  "timeLeft": "Tempo Restante",
-  "youWin": "Você Ganhou!",
-  "gameOver": "Fim de Jogo!",
-  "reset": "Reiniciar",
   "hello": "Olá! Sou um estudante da Ecole 42!",
   "name": "Allan Dantas",
   "softwareEngineeringStudent": "Estudante de Engenharia de Software",
@@ -39,6 +34,13 @@
   "oct2024ToFeb2025": "Out 2024 a Fev 2025",
   "mar2025ToPresent": "Mar 2025 até o presente",
   "42link": "@Aldantas (para alunos da 42)",
+  "game": {
+    "reset": "Reiniciar",
+    "timeLeft": "Tempo Restante",
+    "score": "Pontuação",
+    "win": "Você Ganhou!",
+    "over": "Fim de Jogo!"
+  },
   "terminal": {
     "welcome": "Bem-vindo ao meu portfólio terminal!",
     "question": "Qual é a resposta para a vida, o universo e tudo mais?",

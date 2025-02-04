@@ -2,11 +2,6 @@
   "notFound": "Not found",
   "notFoundMessage": "The page you're looking for was not found.",
   "returnHome": "Return to home",
-  "score": "Score",
-  "timeLeft": "Time Left",
-  "youWin": "You Win!",
-  "gameOver": "Game Over!",
-  "reset": "Reset",
   "hello": "Hello! I'm an Ecole 42 student!",
   "name": "Allan Dantas",
   "softwareEngineeringStudent": "Software Engineering Student",
@@ -40,6 +35,13 @@
   "oct2024ToFeb2025": "Oct 2024 to Feb 2025",
   "mar2025ToPresent": "Mar 2025 to present",
   "42link": "@Aldantas (for 42 students)",
+  "game": {
+    "reset": "Reset",
+    "timeLeft": "Time Left",
+    "score": "Score",
+    "win": "You Win!",
+    "over": "Game Over!"
+  },
   "terminal": {
     "welcome": "Welcome to my terminal portfolio!",
     "question": "What is the answer to life, the universe, and everything?",
@@ -55,7 +57,6 @@
   "skills.softText": "At École 42, I've developed skills in teamwork, problem-solving, self-learning, resilience, and adaptability. These soft skills are crucial for effective collaboration, tackling challenges, and continuous learning and professional growth.",
   "projectsTitle": "Projects",
   "ecole42Projects": "Ecole 42 Projects",
-  
   "projects": {
     "fdf": {
       "title": "Fil de Fer",
