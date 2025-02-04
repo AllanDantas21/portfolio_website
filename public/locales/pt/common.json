@@ -38,5 +38,23 @@
   "jul2023": "Jul 2023",
   "oct2024ToFeb2025": "Out 2024 a Fev 2025",
   "mar2025ToPresent": "Mar 2025 até o presente",
-  "42link": "@Aldantas (para alunos da 42)"
+  "42link": "@Aldantas (para alunos da 42)",
+  "projects": {
+    "fdf": {
+      "title": "Fil de Fer",
+      "description": "Este projeto consiste em criar graficamente uma representação esquemática de um terreno em relevo."
+    },
+    "philo": {
+      "title": "philosophers",
+      "description": "O famoso problema dos Filósofos Jantando, todos com as mesmas regras básicas."
+    },
+    "push-swap": {
+      "title": "Push Swap",
+      "description": "É um projeto que envolve ordenar uma lista de inteiros usando um conjunto limitado de operações."
+    },
+    "minishell": {
+      "title": "Minishell",
+      "description": "Este projeto é sobre criar um shell simples. Sim, um pequeno bash."
+    }
+  }
 } 

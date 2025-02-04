@@ -39,5 +39,25 @@
   "jul2023": "Jul 2023",
   "oct2024ToFeb2025": "Oct 2024 to Feb 2025",
   "mar2025ToPresent": "Mar 2025 to present",
-  "42link": "@Aldantas (for 42 students)"
+  "42link": "@Aldantas (for 42 students)",
+  "projectsTitle": "Projects",
+  "ecole42Projects": "Ecole 42 Projects",
+  "projects": {
+    "fdf": {
+      "title": "Fil de Fer",
+      "description": "This project consists of graphically creating a schematic representation of a terrain in relief."
+    },
+    "philo": {
+      "title": "Philosophers",
+      "description": "The famous Dining Philosophers problem, all with the same basic rules."
+    },
+    "push-swap": {
+      "title": "Push Swap",
+      "description": "Is a project that involves sorting a list of integers using a limited set of operations."
+    },
+    "minishell": {
+      "title": "Minishell",
+      "description": "This project is about creating a simple shell. Yes, a little bash."
+    }
+  }
 } 
