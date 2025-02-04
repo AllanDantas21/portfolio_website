@@ -39,6 +39,10 @@
   "oct2024ToFeb2025": "Out 2024 a Fev 2025",
   "mar2025ToPresent": "Mar 2025 até o presente",
   "42link": "@Aldantas (para alunos da 42)",
+  "skills.techIntro": "Esta seção é sobre minhas habilidades técnicas.",
+  "skills.hardTechnical": "Na 42Rio, eu desenvolvi sólidas habilidades em C/C++, algoritmos eficientes, sistemas operacionais como Unix/Linux, redes, protocolos e desenvolvimento web com frameworks modernos. Essas hard skills me permitem solucionar problemas complexos e colaborar de forma eficaz em equipes de desenvolvimento.",
+  "skills.hardExperience": "Além dos meus estudos na 42Rio, adquiri experiência prática na 42labs. Essa experiência me possibilitou aplicar meus conhecimentos técnicos em projetos reais, refinando minhas habilidades em desenvolvimento de software, debugging e gerenciamento de projetos. Trabalhar num ambiente colaborativo também aprimorou minha comunicação e espírito de equipe, tornando-me um desenvolvedor mais eficaz e versátil.",
+  "skills.softText": "Na 42Rio, desenvolvi habilidades em trabalho em equipe, resolução de problemas, autoaprendizagem, resiliência e adaptabilidade. Essas soft skills são essenciais para uma colaboração eficaz, para superar desafios e para meu crescimento profissional contínuo.",
   "projectsTitle": "Projetos",
   "ecole42Projects": "Projetos da 42Rio",
   "projects": {

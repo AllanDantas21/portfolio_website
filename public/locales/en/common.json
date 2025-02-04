@@ -40,8 +40,13 @@
   "oct2024ToFeb2025": "Oct 2024 to Feb 2025",
   "mar2025ToPresent": "Mar 2025 to present",
   "42link": "@Aldantas (for 42 students)",
+  "skills.techIntro": "This section is to talk about my technical skills.",
+  "skills.hardTechnical": "At École 42, I developed strong skills in C/C++ programming, efficient algorithms, operating systems like Unix/Linux, networking and protocols, and web development using HTML, CSS, JavaScript, and modern frameworks. These hard skills enable me to solve complex problems and collaborate in development teams.",
+  "skills.hardExperience": "In addition to my studies at École 42, I have also gained practical experience working at 42labs. This experience has allowed me to apply my technical skills in real-world projects, further enhancing my abilities in software development, debugging, and project management. Working in a collaborative environment at 42labs has also improved my communication and teamwork skills, making me a more effective and versatile developer.",
+  "skills.softText": "At École 42, I've developed skills in teamwork, problem-solving, self-learning, resilience, and adaptability. These soft skills are crucial for effective collaboration, tackling challenges, and continuous learning and professional growth.",
   "projectsTitle": "Projects",
   "ecole42Projects": "Ecole 42 Projects",
+  
   "projects": {
     "fdf": {
       "title": "Fil de Fer",
