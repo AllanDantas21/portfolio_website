@@ -39,6 +39,15 @@
   "oct2024ToFeb2025": "Out 2024 a Fev 2025",
   "mar2025ToPresent": "Mar 2025 até o presente",
   "42link": "@Aldantas (para alunos da 42)",
+  "terminal": {
+    "welcome": "Bem-vindo ao meu portfólio terminal!",
+    "question": "Qual é a resposta para a vida, o universo e tudo mais?",
+    "help": "Comandos disponíveis: help, about, skills, projects, clear",
+    "about": "Oi! Eu sou Allan Dantas, um desenvolvedor de software.",
+    "skills": "Minhas habilidades incluem: C/C++, Python, Node.js, etc.",
+    "projects": "Veja meus projetos em github.com/allandantas21",
+    "commandNotFound": "Comando não encontrado: {{cmd}}. Digite 'help' para comandos disponíveis."
+  },
   "skills.techIntro": "Esta seção é sobre minhas habilidades técnicas.",
   "skills.hardTechnical": "Na 42Rio, eu desenvolvi sólidas habilidades em C/C++, algoritmos eficientes, sistemas operacionais como Unix/Linux, redes, protocolos e desenvolvimento web com frameworks modernos. Essas hard skills me permitem solucionar problemas complexos e colaborar de forma eficaz em equipes de desenvolvimento.",
   "skills.hardExperience": "Além dos meus estudos na 42Rio, adquiri experiência prática na 42labs. Essa experiência me possibilitou aplicar meus conhecimentos técnicos em projetos reais, refinando minhas habilidades em desenvolvimento de software, debugging e gerenciamento de projetos. Trabalhar num ambiente colaborativo também aprimorou minha comunicação e espírito de equipe, tornando-me um desenvolvedor mais eficaz e versátil.",

@@ -40,6 +40,15 @@
   "oct2024ToFeb2025": "Oct 2024 to Feb 2025",
   "mar2025ToPresent": "Mar 2025 to present",
   "42link": "@Aldantas (for 42 students)",
+  "terminal": {
+    "welcome": "Welcome to my terminal portfolio!",
+    "question": "What is the answer to life, the universe, and everything?",
+    "help": "Available commands: help, about, skills, projects, clear",
+    "about": "Hi! I'm Allan Dantas, a software developer.",
+    "skills": "My skills include: C/C++, Python, Node.js, etc.",
+    "projects": "Check out my projects at github.com/allandantas21",
+    "commandNotFound": "Command not found: {{cmd}}. Type 'help' for available commands."
+  },
   "skills.techIntro": "This section is to talk about my technical skills.",
   "skills.hardTechnical": "At École 42, I developed strong skills in C/C++ programming, efficient algorithms, operating systems like Unix/Linux, networking and protocols, and web development using HTML, CSS, JavaScript, and modern frameworks. These hard skills enable me to solve complex problems and collaborate in development teams.",
   "skills.hardExperience": "In addition to my studies at École 42, I have also gained practical experience working at 42labs. This experience has allowed me to apply my technical skills in real-world projects, further enhancing my abilities in software development, debugging, and project management. Working in a collaborative environment at 42labs has also improved my communication and teamwork skills, making me a more effective and versatile developer.",

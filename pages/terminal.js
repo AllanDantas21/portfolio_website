@@ -1,26 +1,28 @@
 import { useState, useEffect, useRef } from 'react';
-
-const initialHistory = [
-    'Welcome to my terminal portfolio!',
-    'What is the answer to life, the universe, and everything?'
-];
-
-const commands = {
-    help: () => 'Available commands: help, about, skills, projects, clear',
-    about: () => 'Hi! I\'m Allan Dantas, a software developer.',
-    skills: () => 'My skills include: JavaScript, React, Node.js, etc.',
-    projects: () => 'Check out my projects at github.com/allandantas21',
-    clear: (setHistory) => {
-        setHistory([]);
-        setTimeout(() => setHistory(initialHistory), 100);
-        return '';
-    },
-};
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const Terminal = () => {
-    const [input, setInput] = useState('');
+    const { t } = useTranslation('common');
+    const initialHistory = [
+        t('terminal.welcome', "Welcome to my terminal portfolio!"),
+        t('terminal.question', "What is the answer to life, the universe, and everything?")
+    ];
     const [history, setHistory] = useState(initialHistory);
     const terminalRef = useRef(null);
+    const [input, setInput] = useState('');
+
+    const commands = {
+        help: () => t('terminal.help', "Available commands: help, about, skills, projects, clear"),
+        about: () => t('terminal.about', "Hi! I'm Allan Dantas, a software developer."),
+        skills: () => t('terminal.skills', "My skills include: JavaScript, React, Node.js, etc."),
+        projects: () => t('terminal.projects', "Check out my projects at github.com/allandantas21"),
+        clear: () => {
+            setHistory([]);
+            setTimeout(() => setHistory(initialHistory), 100);
+            return '';
+        },
+    };
 
     const handleCommand = (cmd) => {
         const trimmedCmd = cmd.trim().toLowerCase();
@@ -29,9 +31,9 @@ const Terminal = () => {
             return '';
         }
         if (commands[trimmedCmd]) {
-            return commands[trimmedCmd](setHistory);
+            return commands[trimmedCmd]();
         }
-        return `Command not found: ${cmd}. Type 'help' for available commands.`;
+        return t('terminal.commandNotFound', { cmd }, `Command not found: ${cmd}. Type 'help' for available commands.`);
     };
 
     const handleSubmit = (e) => {
@@ -107,3 +109,11 @@ const Terminal = () => {
 };
 
 export default Terminal;
+
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ['common']))
+        }
+    };
+}
