@@ -39,13 +39,15 @@
   "oct2024ToFeb2025": "Out 2024 a Fev 2025",
   "mar2025ToPresent": "Mar 2025 até o presente",
   "42link": "@Aldantas (para alunos da 42)",
+  "projectsTitle": "Projetos",
+  "ecole42Projects": "Projetos da 42Rio",
   "projects": {
     "fdf": {
       "title": "Fil de Fer",
       "description": "Este projeto consiste em criar graficamente uma representação esquemática de um terreno em relevo."
     },
     "philo": {
-      "title": "philosophers",
+      "title": "Philosophers",
       "description": "O famoso problema dos Filósofos Jantando, todos com as mesmas regras básicas."
     },
     "push-swap": {
