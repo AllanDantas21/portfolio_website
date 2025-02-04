@@ -1,37 +1,55 @@
 {
-  "hello": "Hello! I'm an Ecole 42 student!",
-  "name": "Allan Dantas",
-  "softwareEngineeringStudent": "Software Engineering Student",
-  "aboutDescription": "Hello, I'm a software engineering student at 42Rio, passionate about technology and committed to developing myself as a Full Stack programmer.",
-  "myPortfolio": "My portfolio",
-  "about": "About",
-  "bio": "Bio",
-  "onTheWeb": "On the web",
-  "seeMyCurriculum": "See my curriculum",
-  "skills_title": "Skills",
-  "hardSkills": "Hard Skills",
-  "softSkills": "Soft Skills",
-  "languages": "Languages",
-  "portuguese": "Portuguese",
-  "english": "English",
-  "availableCommands": "Available commands: help, about, skills, projects, clear",
-  "aboutMe": "Hi! I'm Allan Dantas, a software developer.",
-  "mySkills": "My skills include: JavaScript, React, Node.js, etc.",
-  "checkProjects": "Check out my projects at github.com/allandantas21",
-  "commandNotFound": "Command not found: {{cmd}}. Type 'help' for available commands.",
-  "bornInColinas": "Born in Colinas, Maranhão.",
-  "movedToRio": "Moved to Rio de Janeiro.",
-  "startedStudyingEstacio": "Started studying systems development - Estácio.",
-  "startedStudyingEcole42": "Started studying software engineering - Ecole 42.",
-  "workingIn42Labs": "Working in 42Labs.",
-  "workingInCI&T": "Working in CI&T.",
-  "sep2003": "Sep 2003",
-  "dec2007": "Dec 2007",
-  "dec2022": "Dec 2022",
-  "jul2023": "Jul 2023",
-  "oct2024ToFeb2025": "Oct 2024 to Feb 2025",
-  "mar2025ToPresent": "Mar 2025 to present",
-  "42link": "@Aldantas (for 42 students)",
+  "general": {
+    "greeting": "Hello! I'm an Ecole 42 student!",
+    "name": "Allan Dantas",
+    "title": "Software Engineering Student",
+    "bio": "Hi! I'm Allan Dantas, a software developer."
+  },
+  "description": {
+    "about": "Hello, I'm a software engineering student at 42Rio, passionate about technology and committed to developing myself as a Full Stack programmer.",
+    "portfolio": "My Portfolio"
+  },
+  "navigation": {
+    "about": "About",
+    "biography": "Bio",
+    "web": "On the web",
+    "resume": "See my Curriculum",
+    "commands": "Available commands: help, about, skills, projects, clear"
+  },
+  "skills": {
+    "skillsTitle": "Skills",
+    "hardSkills": "Hard Skills",
+    "softSkills": "Soft Skills",
+    "techIntro": "This section is to talk about my technical skills.",
+    "hardTechnical": "At École 42, I developed strong skills in C/C++ programming, efficient algorithms, operating systems like Unix/Linux, networking and protocols, and web development using modern frameworks. These hard skills enable me to solve complex problems and collaborate in development teams.",
+    "hardExperience": "In addition to my studies at École 42, I have gained practical experience working at 42labs. This experience has allowed me to apply my technical skills in real-world projects, further enhancing my abilities in software development, debugging, and project management. Working in a collaborative environment at 42labs has also improved my communication and teamwork skills, making me a more effective and versatile developer.",
+    "soft": "At École 42, I've developed skills in teamwork, problem-solving, self-learning, resilience, and adaptability. These soft skills are crucial for effective collaboration, tackling challenges, and continuous professional growth.",
+    "languages": "Languages"
+  },
+  "timeline": {
+    "dates": {
+      "sep2003": "Sep 2003",
+      "jul2023": "Jul 2023",
+      "oct2024ToFeb2025": "Oct 2024 to Feb 2025",
+      "mar2025ToPresent": "Mar 2025 to present"
+    },
+    "events": {
+      "bornInColinas": "Born in Colinas, Maranhão.",
+      "startedStudyingEcole42": "Started studying software engineering - Ecole 42.",
+      "workingIn42Labs": "Started working at 42Labs.",
+      "workingInCI&T": "Working at CI&T."
+    }
+  },
+  "footer": {
+    "resumeLink": "https://drive.google.com/file/d/1ZhIe-Toqcr0nGjjk7cOF4odok3ELKY6e/view?usp=sharing",
+    "seeMyCurriculum": "See my Curriculum"
+  },
+  "social": {
+    "github": "@Allandantas21",
+    "linkedin": "@Allan Dantas",
+    "instagram": "@Allan.dants",
+    "fortytwo": "@Aldantas (for 42 students)"
+  },
   "notFound": {
     "title": "Not Found",
     "description": "The page you're looking for was not found.",
@@ -53,20 +71,14 @@
     "projects": "Check out my projects at github.com/allandantas21",
     "commandNotFound": "Command not found: {{cmd}}. Type 'help' for available commands."
   },
-  "skills": {
-    "techIntro": "This section is to talk about my technical skills.",
-    "hardTechnical": "At École 42, I developed strong skills in C/C++ programming, efficient algorithms, operating systems like Unix/Linux, networking and protocols, and web development using HTML, CSS, JavaScript, and modern frameworks. These hard skills enable me to solve complex problems and collaborate in development teams.",
-    "hardExperience": "In addition to my studies at École 42, I have also gained practical experience working at 42labs. This experience has allowed me to apply my technical skills in real-world projects, further enhancing my abilities in software development, debugging, and project management. Working in a collaborative environment at 42labs has also improved my communication and teamwork skills, making me a more effective and versatile developer.",
-    "softText": "At École 42, I've developed skills in teamwork, problem-solving, self-learning, resilience, and adaptability. These soft skills are crucial for effective collaboration, tackling challenges, and continuous learning and professional growth."
-  },
-  "projectsTitle": "Projects",
-  "ecole42Projects": "Ecole 42 Projects",
   "projects": {
+    "projectsTitle": "Projects",
+    "ecole42Projects": "Ecole 42 Projects",
     "fdf": {
       "title": "Fdf - Fil de Fer",
       "description": "This project consists of graphically creating a schematic representation of a terrain in relief.",
       "description1": "FdF is a project in which we convert a file with a grid of height values into a 3D wireframe using a simple graphics library called MiniLibX.",
-      "description2": "The grid's rows represent the x-axis, the columns the y-axis, and the values the z-axis (altitude), creating a 3D wireframe representation.",
+      "description2": "The rows of the grid represent the x-axis, the columns the y-axis, and the values the z-axis (altitude), creating a 3D wireframe representation.",
       "alt1": "3D wireframe map",
       "alt2": "3D wireframe result"
     },
@@ -80,11 +92,11 @@
     },
     "push-swap": {
       "title": "Push Swap",
-      "description": "Is a project that involves sorting a list of integers using a limited set of operations.",
-      "description1": "The goal of the push_swap project is to sort a stack of integers using two stacks and a specific set of operations. Here's a basic overview of how the project typically works:",
+      "description": "A project that involves sorting a list of integers using a limited set of operations.",
+      "description1": "The goal of the push_swap project is to sort a stack of integers using two stacks and a specific set of operations.",
       "description2": "Stacks: The project involves two stacks, Stack A and Stack B, initially containing a random set of integers.",
       "description3": "Operations: Students are required to implement a set of operations to manipulate the stacks.",
-      "description4": "Sorting Algorithm: The main challenge is to devise an algorithm that uses these operations to sort Stack A in ascending order while following certain constraints or optimization criteria, such as minimizing the number of operations used.",
+      "description4": "Sorting Algorithm: The main challenge is to devise an algorithm that uses these operations to sort Stack A in ascending order.",
       "description5": "Constraints: The project typically imposes constraints on the number of operations allowed, aiming for an efficient and optimized sorting algorithm."
     },
     "minishell": {

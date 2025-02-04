@@ -53,17 +53,17 @@ const Page = () => {
   }
 
   const bioData = [
-    { year: t('sep2003'), text: t('bornInColinas') },
-    { year: t('jul2023'), text: t('startedStudyingEcole42') },
-    { year: t('oct2024ToFeb2025'), text: t('workingIn42Labs') },
-    { year: t('mar2025ToPresent'), text: t('workingInCI&T') }
+    { year: t('timeline.dates.sep2003'), text: t('timeline.events.bornInColinas') },
+    { year: t('timeline.dates.jul2023'), text: t('timeline.events.startedStudyingEcole42') },
+    { year: t('timeline.dates.oct2024ToFeb2025'), text: t('timeline.events.workingIn42Labs') },
+    { year: t('timeline.dates.mar2025ToPresent'), text: t('timeline.events.workingInCI&T') }
   ]
 
   const socialLinks = [
     { href: "https://github.com/Allandantas21", icon: <IoLogoGithub />, label: "@Allandantas21" },
     { href: "https://www.linkedin.com/in/adn21/", icon: <IoLogoLinkedin />, label: "@Allan Dantas" },
     { href: "https://instagram.com/Allan.dants", icon: <IoLogoInstagram />, label: "@Allan.dants" },
-    { href: "https://profile.intra.42.fr/users/aldantas", icon: <Si42 />, label: t('42link') }
+    { href: "https://profile.intra.42.fr/users/aldantas", icon: <Si42 />, label: t('social.fortytwo') }
   ]
 
   return (
@@ -79,14 +79,14 @@ const Page = () => {
           align="center"
           whileHover={{ scale: 1.1 }}
         >
-          {t('hello')}
+          {t('general.greeting')}
         </MotionBox>
         <Box display={{ md: 'flex' }}>
           <Box flexGrow={1}>
             <Heading as="h2" variant="page-title">
-              {t('name')}
+              {t('general.name')}
             </Heading>
-            <p>{t('softwareEngineeringStudent')}</p>
+            <p>{t('general.title')}</p>
           </Box>
           <Box 
             flexShrink={0} 
@@ -102,16 +102,16 @@ const Page = () => {
               display="inline-block" 
               borderRadius="full" 
               src="images/allan.jpeg" 
-              alt={t('name')}
+              alt={t('general.name')}
             />
           </Box>
         </Box>
         <Section delay={0.1}>
           <Heading as="h3" variant="section-title">
-            {t('about')}
+            {t('navigation.about')}
           </Heading>
           <Paragraph>
-            {t('aboutDescription')}
+            {t('description.about')}
           </Paragraph>
           <Box align="center" my={4}>
             <MotionButton
@@ -122,13 +122,13 @@ const Page = () => {
               colorScheme="teal"
               whileHover={{ scale: 1.1 }}
             >
-              {t('myPortfolio')}
+              {t('description.portfolio')}
             </MotionButton>
           </Box>
         </Section>
         <Section delay={0.2}>
           <Heading as="h3" variant='section-title'>
-            {t('bio')}
+            {t('navigation.biography')}
           </Heading>
           {bioData.map((bio) => (
             <BioSection key={bio.year}>
@@ -139,7 +139,7 @@ const Page = () => {
         </Section>
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
-            {t('onTheWeb')}
+            {t('navigation.web')}
           </Heading>
           <List>
             {socialLinks.map((link) => (
@@ -150,13 +150,13 @@ const Page = () => {
         <Box align="center" my={4}>
           <MotionButton
             as={NextLink}
-            href="https://drive.google.com/file/d/1ZhIe-Toqcr0nGjjk7cOF4odok3ELKY6e/view?usp=sharing"
+            href={t('footer.resumeLink')}
             scroll={false}
             rightIcon={<ChevronRightIcon />}
             colorScheme="teal"
             whileHover={{ scale: 1.1 }}
           >
-            {t('seeMyCurriculum')}
+            {t('footer.seeMyCurriculum')}
           </MotionButton>
         </Box>
       </Container>

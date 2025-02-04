@@ -15,10 +15,10 @@ const Projects = () => {
     const { t } = useTranslation('common')
 
     return (
-        <Layout title={t('projectsTitle')}>
+        <Layout title={t('projects.projectsTitle')}>
             <Container>
                 <Heading as="h3" fontSize="2xl" mb={6}>
-                    {t('ecole42Projects')}
+                    {t('projects.ecole42Projects')}
                 </Heading>
                 <SimpleGrid columns={[1, 1, 2]} gap={8}>
                     {PROJECTS.map(project => (

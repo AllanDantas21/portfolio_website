@@ -1,36 +1,55 @@
 {
-  "hello": "Olá! Sou um estudante da Ecole 42!",
-  "name": "Allan Dantas",
-  "softwareEngineeringStudent": "Estudante de Engenharia de Software",
-  "aboutDescription": "Olá, sou um estudante de engenharia de software na 42Rio, apaixonado por tecnologia e comprometido em me desenvolver como programador Full Stack.",
-  "myPortfolio": "Meu portfólio",
-  "about": "Sobre",
-  "bio": "Biografia",
-  "onTheWeb": "Na web",
-  "seeMyCurriculum": "Meu currículo",
-  "skills_title": "Habilidades",
-  "hardSkills": "Hard Skills",
-  "softSkills": "Soft Skills",
-  "languages": "Idiomas",
-  "portuguese": "Português",
-  "english": "Inglês",
-  "availableCommands": "Comandos disponíveis: help, about, skills, projects, clear",
-  "aboutMe": "Oi! sou Allan Dantas, um desenvolvedor de software.",
-  "mySkills": "Minhas habilidades incluem: JavaScript, React, Node.js, etc.",
-  "checkProjects": "Confira meus projetos em github.com/allandantas21",
-  "commandNotFound": "Comando não encontrado: {{cmd}}. Digite 'help' para comandos disponíveis.",
-  "bornInColinas": "Nascido em Colinas, Maranhão.",
-  "movedToRio": "Me mudei para o Rio de Janeiro.",
-  "startedStudyingEcole42": "Comecei a estudar engenharia de software - Ecole 42.",
-  "workingIn42Labs": "Comecei a trabalhar na 42Labs.",
-  "workingInCI&T": "Trabalho na CI&T.", 
-  "sep2003": "Set 2003",
-  "dec2007": "Dez 2007",
-  "dec2022": "Dez 2022",
-  "jul2023": "Jul 2023",
-  "oct2024ToFeb2025": "Out 2024 a Fev 2025",
-  "mar2025ToPresent": "Mar 2025 até o presente",
-  "42link": "@Aldantas (para alunos da 42)",
+  "general": {
+    "greeting": "Olá! Sou um estudante da Ecole 42!",
+    "name": "Allan Dantas",
+    "title": "Estudante de Engenharia de Software",
+    "bio": "Oi! sou Allan Dantas, um desenvolvedor de software."
+  },
+  "description": {
+    "about": "Olá, sou um estudante de engenharia de software na 42Rio, apaixonado por tecnologia e comprometido em me desenvolver como programador Full Stack.",
+    "portfolio": "Meu portfólio"
+  },
+  "navigation": {
+    "about": "Sobre",
+    "biography": "Biografia",
+    "web": "Na web",
+    "resume": "Meu currículo",
+    "commands": "Comandos disponíveis: help, about, skills, projects, clear"
+  },
+  "skills": {
+    "skillsTitle": "Habilidades",
+    "hardSkills": "Hard Skills",
+    "softSkills": "Soft Skills",
+    "techIntro": "Esta seção é sobre minhas habilidades técnicas.",
+    "hardTechnical": "Na 42Rio, eu desenvolvi sólidas habilidades em C/C++, algoritmos eficientes, sistemas operacionais como Unix/Linux, redes, protocolos e desenvolvimento web com frameworks modernos. Essas hard skills me permitem solucionar problemas complexos e colaborar de forma eficaz em equipes de desenvolvimento.",
+    "hardExperience": "Além dos meus estudos na 42Rio, adquiri experiência prática na 42labs. Essa experiência me possibilitou aplicar meus conhecimentos técnicos em projetos reais, refinando minhas habilidades em desenvolvimento de software, debugging e gerenciamento de projetos. Trabalhar num ambiente colaborativo também aprimorou minha comunicação e espírito de equipe, tornando-me um desenvolvedor mais eficaz e versátil.",
+    "soft": "Na 42Rio, desenvolvi habilidades em trabalho em equipe, resolução de problemas, autoaprendizagem, resiliência e adaptabilidade. Essas soft skills são essenciais para uma colaboração eficaz, para superar desafios e para meu crescimento profissional contínuo.",
+    "languages": "Idiomas"
+  },
+  "timeline": {
+    "dates": {
+      "sep2003": "Set 2003",
+      "jul2023": "Jul 2023",
+      "oct2024ToFeb2025": "Out 2024 a Fev 2025",
+      "mar2025ToPresent": "Mar 2025 até o presente"
+    },
+    "events": {
+      "bornInColinas": "Nascido em Colinas, Maranhão.",
+      "startedStudyingEcole42": "Comecei a estudar engenharia de software - Ecole 42.",
+      "workingIn42Labs": "Comecei a trabalhar na 42Labs.",
+      "workingInCI&T": "Trabalho na CI&T."
+    }
+  },
+  "footer": {
+    "resumeLink": "https://drive.google.com/file/d/1ZhIe-Toqcr0nGjjk7cOF4odok3ELKY6e/view?usp=sharing",
+    "seeMyCurriculum": "Meu currículo"
+  },
+  "social": {
+    "github": "@Allandantas21",
+    "linkedin": "@Allan Dantas",
+    "instagram": "@Allan.dants",
+    "fortytwo": "@Aldantas (para alunos da 42)"
+  },
   "notFound": {
     "title": "Não encontrado",
     "description": "A página que você está procurando não foi encontrada.",
@@ -52,15 +71,9 @@
     "projects": "Veja meus projetos em github.com/allandantas21",
     "commandNotFound": "Comando não encontrado: {{cmd}}. Digite 'help' para comandos disponíveis."
   },
-  "skills": {
-    "techIntro": "Esta seção é sobre minhas habilidades técnicas.",
-    "hardTechnical": "Na 42Rio, eu desenvolvi sólidas habilidades em C/C++, algoritmos eficientes, sistemas operacionais como Unix/Linux, redes, protocolos e desenvolvimento web com frameworks modernos. Essas hard skills me permitem solucionar problemas complexos e colaborar de forma eficaz em equipes de desenvolvimento.",
-    "hardExperience": "Além dos meus estudos na 42Rio, adquiri experiência prática na 42labs. Essa experiência me possibilitou aplicar meus conhecimentos técnicos em projetos reais, refinando minhas habilidades em desenvolvimento de software, debugging e gerenciamento de projetos. Trabalhar num ambiente colaborativo também aprimorou minha comunicação e espírito de equipe, tornando-me um desenvolvedor mais eficaz e versátil.",
-    "softText": "Na 42Rio, desenvolvi habilidades em trabalho em equipe, resolução de problemas, autoaprendizagem, resiliência e adaptabilidade. Essas soft skills são essenciais para uma colaboração eficaz, para superar desafios e para meu crescimento profissional contínuo."
-  },
-  "projectsTitle": "Projetos",
-  "ecole42Projects": "Projetos da 42Rio",
   "projects": {
+    "projectsTitle": "Projetos",
+    "ecole42Projects": "Projetos da 42Rio",
     "fdf": {
       "title": "Fdf - Fil de Fer",
       "description": "Este projeto consiste em criar graficamente uma representação esquemática de um terreno em relevo.",
@@ -80,10 +93,10 @@
     "push-swap": {
       "title": "Push Swap",
       "description": "É um projeto que envolve ordenar uma lista de inteiros usando um conjunto limitado de operações.",
-      "description1": "O objetivo do projeto push_swap é ordenar uma pilha de inteiros usando duas pilhas e um conjunto específico de operações. Aqui está uma visão geral básica de como o projeto funciona:",
+      "description1": "O objetivo do projeto push_swap é ordenar uma pilha de inteiros usando duas pilhas e um conjunto específico de operações.",
       "description2": "Pilhas: O projeto envolve duas pilhas, Stack A e Stack B, inicialmente contendo um conjunto aleatório de inteiros.",
       "description3": "Operações: Os alunos são obrigados a implementar um conjunto de operações para manipular as pilhas.",
-      "description4": "Algoritmo de Ordenação: O desafio principal é desenvolver um algoritmo que use essas operações para ordenar Stack A em ordem ascendente enquanto seguindo certas restrições ou critérios de otimização, como minimizar o número de operações usadas.",
+      "description4": "Algoritmo de Ordenação: O desafio principal é desenvolver um algoritmo que use essas operações para ordenar Stack A em ordem ascendente.",
       "description5": "Restrições: O projeto tipicamente impõe restrições no número de operações permitidas, com o objetivo de um algoritmo de ordenação eficiente e otimizado."
     },
     "minishell": {
