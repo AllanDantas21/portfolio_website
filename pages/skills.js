@@ -24,7 +24,7 @@ const Skills = () => {
         <Layout title={t('skills')}>
             <Container>
                 <Heading as="h1" fontSize={20} mb={4}>
-                    {t('skills')}
+                    {t('skills_title')}
                 </Heading>
                 <Heading as="h1" fontSize={20} mb={4}>
                     {t('hardSkills')}
