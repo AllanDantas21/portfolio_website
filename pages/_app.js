@@ -3,8 +3,10 @@ import Layout from '../components/layouts/main'
 import Fonts from '../components/fonts'
 import theme from '../libs/theme'
 import { AnimatePresence } from 'framer-motion'
+import { appWithTranslation } from 'next-i18next'
+import nextI18NextConfig from '../next-i18next.config'
 
-const   Website = ({ Component, pageProps, router }) => {
+const Website = ({ Component, pageProps, router }) => {
     return (
         <ChakraProvider theme={theme}>
             <Fonts />
@@ -17,4 +19,4 @@ const   Website = ({ Component, pageProps, router }) => {
     )
 }
 
-export default Website
+export default appWithTranslation(Website, nextI18NextConfig)

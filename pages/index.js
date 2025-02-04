@@ -16,8 +16,12 @@ import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import { motion } from 'framer-motion'
-import { SOCIAL_LINKS } from '../data/social-links.js'
-import { BIO_DATA } from '../data/bio-data.js'
+import { IoLogoLinkedin, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
+import { Si42 } from "react-icons/si"
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
 
 const MotionBox = motion(Box)
 const MotionButton = motion(Button)
@@ -38,9 +42,35 @@ const SocialLink = ({ href, icon, label }) => (
 )
 
 const Page = () => {
+  const { t, i18n } = useTranslation('common')
+  const router = useRouter()
+  const [currentLang, setCurrentLang] = useState(i18n.language)
+
+  const toggleLanguage = () => {
+    const newLang = currentLang === 'en' ? 'pt' : 'en'
+    setCurrentLang(newLang)
+    router.push(router.pathname, router.asPath, { locale: newLang })
+  }
+
+  const bioData = [
+    { year: t('timeline.dates.sep2003'), text: t('timeline.events.bornInColinas') },
+    { year: t('timeline.dates.jul2023'), text: t('timeline.events.startedStudyingEcole42') },
+    { year: t('timeline.dates.oct2024ToFeb2025'), text: t('timeline.events.workingIn42Labs') },
+    { year: t('timeline.dates.mar2025ToPresent'), text: t('timeline.events.workingInCI&T') }
+  ]
+
+  const socialLinks = [
+    { href: "https://github.com/Allandantas21", icon: <IoLogoGithub />, label: "@Allandantas21" },
+    { href: "https://www.linkedin.com/in/adn21/", icon: <IoLogoLinkedin />, label: "@Allan Dantas" },
+    { href: "https://instagram.com/Allan.dants", icon: <IoLogoInstagram />, label: "@Allan.dants" },
+    { href: "https://profile.intra.42.fr/users/aldantas", icon: <Si42 />, label: t('social.fortytwo') }
+  ]
+
   return (
     <Layout>
       <Container>
+        <Box display="flex" justifyContent="flex-end" mb={4}>
+        </Box>
         <MotionBox 
           borderRadius="lg" 
           bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} 
@@ -49,14 +79,14 @@ const Page = () => {
           align="center"
           whileHover={{ scale: 1.1 }}
         >
-          Hello! I'm an Ecole 42 student!
+          {t('general.greeting')}
         </MotionBox>
         <Box display={{ md: 'flex' }}>
           <Box flexGrow={1}>
             <Heading as="h2" variant="page-title">
-              Allan Dantas
+              {t('general.name')}
             </Heading>
-            <p>Software Engineering Student</p>
+            <p>{t('general.title')}</p>
           </Box>
           <Box 
             flexShrink={0} 
@@ -72,18 +102,16 @@ const Page = () => {
               display="inline-block" 
               borderRadius="full" 
               src="images/allan.jpeg" 
-              alt="Allan Dantas"
+              alt={t('general.name')}
             />
           </Box>
         </Box>
         <Section delay={0.1}>
           <Heading as="h3" variant="section-title">
-            About
+            {t('navigation.about')}
           </Heading>
           <Paragraph>
-            Hello, I'm a software engineering student at 42Rio, 
-            passionate about technology and 
-            committed to developing myself as a Full Stack programmer.
+            {t('description.about')}
           </Paragraph>
           <Box align="center" my={4}>
             <MotionButton
@@ -94,27 +122,27 @@ const Page = () => {
               colorScheme="teal"
               whileHover={{ scale: 1.1 }}
             >
-              My portfolio
+              {t('description.portfolio')}
             </MotionButton>
           </Box>
         </Section>
         <Section delay={0.2}>
           <Heading as="h3" variant='section-title'>
-            Bio
+            {t('navigation.biography')}
           </Heading>
-          {BIO_DATA.map(({ year, text }) => (
-            <BioSection key={year}>
-              <BioYear>{year}</BioYear>
-              {text}
+          {bioData.map((bio) => (
+            <BioSection key={bio.year}>
+              <BioYear>{bio.year}</BioYear>
+              {bio.text}
             </BioSection>
           ))}
         </Section>
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
-            On the web
+            {t('navigation.web')}
           </Heading>
           <List>
-            {SOCIAL_LINKS.map((link) => (
+            {socialLinks.map((link) => (
               <SocialLink key={link.href} {...link} />
             ))}
           </List>
@@ -122,18 +150,24 @@ const Page = () => {
         <Box align="center" my={4}>
           <MotionButton
             as={NextLink}
-            href="https://drive.google.com/file/d/1ZhIe-Toqcr0nGjjk7cOF4odok3ELKY6e/view?usp=sharing"
+            href={t('footer.resumeLink')}
             scroll={false}
             rightIcon={<ChevronRightIcon />}
             colorScheme="teal"
             whileHover={{ scale: 1.1 }}
           >
-            See my curriculum
+            {t('footer.seeMyCurriculum')}
           </MotionButton>
         </Box>
       </Container>
     </Layout>
   )
 }
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common'])),
+  },
+})
 
 export default Page
