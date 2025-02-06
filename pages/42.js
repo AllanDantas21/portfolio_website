@@ -10,8 +10,25 @@ const Game = () => {
     const [timeLeft, setTimeLeft] = useState(42);
     const [gameOver, setGameOver] = useState(false);
     const [gameWon, setGameWon] = useState(false);
+    const [animateClick, setAnimateClick] = useState(false);
+    const [startTimer, setStartTimer] = useState(3);
+    const [gameStarted, setGameStarted] = useState(false);
+    const [ripples, setRipples] = useState([]);
 
     useEffect(() => { setMounted(true); }, []);
+
+    useEffect(() => {
+        if (!gameStarted) {
+            if (startTimer > 0) {
+                const countdownInterval = setInterval(() => {
+                    setStartTimer(prev => prev - 1);
+                }, 1000);
+                return () => clearInterval(countdownInterval);
+            } else {
+                setGameStarted(true);
+            }
+        }
+    }, [startTimer, gameStarted]);
 
     const moveTarget = () => {
         const top = Math.random() * 90 + '%';
@@ -20,6 +37,7 @@ const Game = () => {
     };
 
     const handleClick = () => {
+        if (animateClick) return;
         if (!gameOver) {
             const newScore = score + 1;
             setScore(newScore);
@@ -27,7 +45,11 @@ const Game = () => {
                 setGameOver(true);
                 setGameWon(true);
             } else {
-                moveTarget();
+                setAnimateClick(true);
+                setTimeout(() => {
+                    setAnimateClick(false);
+                    moveTarget();
+                }, 300);
             }
         }
     };
@@ -37,30 +59,49 @@ const Game = () => {
         setTimeLeft(42);
         setGameOver(false);
         setGameWon(false);
+        setAnimateClick(false);
+        setStartTimer(2);
+        setGameStarted(false);
         moveTarget();
     };
 
+    const handleContainerClick = (event) => {
+        const rect = event.currentTarget.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        const ripple = { x, y, id: Date.now() };
+        setRipples(prev => [...prev, ripple]);
+        setTimeout(() => {
+            setRipples(prev => prev.filter(r => r.id !== ripple.id));
+        }, 600);
+    };
+
     useEffect(() => {
-        if (timeLeft > 0 && !gameOver) {
+        if (gameStarted && timeLeft > 0 && !gameOver) {
             const timer = setInterval(() => {
                 setTimeLeft(prevTime => prevTime - 1);
             }, 1000);
             return () => clearInterval(timer);
-        } else if (timeLeft === 0) {
+        } else if (timeLeft === 0 && gameStarted) {
             setGameOver(true);
         }
-    }, [timeLeft, gameOver]);
+    }, [gameStarted, timeLeft, gameOver]);
 
     useEffect(() => {
-        if (!gameOver) {
-            const interval = setInterval(moveTarget, 1000);
+        if (gameStarted && !gameOver) {
+            const interval = setInterval(() => {
+                if (!animateClick) {
+                    moveTarget();
+                }
+            }, 1000);
             return () => clearInterval(interval);
         }
-    }, [gameOver]);
+    }, [gameStarted, gameOver, animateClick]);
 
     return (
         mounted ? (
-            <div style={{ 
+            <>
+            <div onClick={handleContainerClick} style={{ 
                 position: 'relative', 
                 width: '50vw', 
                 height: '50vh', 
@@ -79,9 +120,26 @@ const Game = () => {
                     </h2>
                 )}
                 <button onClick={resetGame} style={{ color: 'black', position: 'absolute', top: '10px', right: '10px', fontWeight: 'bold' }}>{t('game.reset')}</button>
-                {!gameOver && (
+                {!gameStarted && (
+                    <div style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        backgroundColor: 'rgba(255,255,255,0.8)',
+                        zIndex: 2
+                    }}>
+                        <h1 style={{ color: 'black' }}>Começando em: {startTimer}</h1>
+                    </div>
+                )}
+                {gameStarted && !gameOver && (
                     <div
                         onClick={handleClick}
+                        className={animateClick ? 'pop-animation' : ''}
                         style={{
                             position: 'absolute',
                             top: targetPosition.top,
@@ -94,7 +152,37 @@ const Game = () => {
                         }}
                     />
                 )}
+                {ripples.map(ripple => (
+                    <span key={ripple.id} className="ripple" style={{ left: ripple.x, top: ripple.y }} />
+                ))}
             </div>
+            <style jsx>{`
+                @keyframes pop {
+                    0% { transform: scale(1); }
+                    50% { transform: scale(1.5); }
+                    100% { transform: scale(1); }
+                }
+                .pop-animation {
+                    animation: pop 0.3s ease-out;
+                }
+                .ripple {
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    background: rgba(0, 0, 0, 0.3);
+                    border-radius: 50%;
+                    transform: translate(-50%, -50%) scale(0);
+                    pointer-events: none;
+                    animation: ripple-animation 600ms linear;
+                }
+                @keyframes ripple-animation {
+                    to {
+                        transform: translate(-50%, -50%) scale(4);
+                        opacity: 0;
+                    }
+                }
+            `}</style>
+            </>
         ) : null
     );
 };
