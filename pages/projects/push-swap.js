@@ -21,6 +21,7 @@ const Project = () => {
         <Title>
           {t('projects.push-swap.title')} <Badge>{pushSwapData.date}</Badge>
         </Title>
+        <WorkImage src={pushSwapData.img} alt={pushSwapData.title} />
         <P>{t('projects.push-swap.description1')}</P>
         <P>{t('projects.push-swap.description2')}</P>
         <P>{t('projects.push-swap.description3')}</P>
