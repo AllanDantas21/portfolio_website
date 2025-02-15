@@ -2,6 +2,7 @@
 const pushSwapData = {
   title: "Push Swap",
   date: "01/2024",
+  img: "/images/content/Tower_of_hanoi.png",
   description1: "The goal of the push_swap project is to sort a stack of integers using two stacks and a specific set of operations. Here's a basic overview of how the project typically works:",
   description2: "Stacks: The project involves two stacks, Stack A and Stack B, initially containing a random set of integers.",
   description3: "Operations: Students are required to implement a set of operations to manipulate the stacks.",
