@@ -38,6 +38,11 @@
       "startedStudyingEcole42": "Comecei a estudar engenharia de software - 42Rio.",
       "workingIn42Labs": "Comecei a trabalhar na 42Labs.",
       "workingInCI&T": "Trabalho na CI&T."
+    },
+    "details": {
+      "startedStudyingEcole42": "Em setembro de 2023, comecei a estudar engenharia de software na 42Rio, uma escola de programação inovadora e desafiadora, onde aprendi C/C++, algoritmos, sistemas operacionais como Unix/Linux, redes e protocolos, e desenvolvimento web com frameworks modernos.",
+      "workingIn42Labs": "Em outubro de 2024, comecei a trabalhar na 42Labs, em um projeto para a Austral seguradora, onde apliquei meus conhecimentos técnicos em projetos reais, tive a oportunidade de trabalhar com tecnologias como Dagster, Python, Docker, Great expectations, entre outras.",
+      "workingInCI&T": "Em Fevereiro de 2025, comecei a trabalhar na CI&T, uma empresa global de tecnologia e soluções digitais, onde continuo a desenvolver minhas habilidades técnicas e a colaborar em projetos desafiadores."  
     }
   },
   "footer": {
