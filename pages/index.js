@@ -8,9 +8,10 @@ import {
   List,
   ListItem,
   Link,
-  useColorModeValue 
+  useColorModeValue,
+  Tooltip  // added Tooltip
 } from '@chakra-ui/react'
-import { ChevronRightIcon } from '@chakra-ui/icons'
+import { ChevronRightIcon, InfoIcon } from '@chakra-ui/icons' // added InfoIcon
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
@@ -53,10 +54,25 @@ const Page = () => {
   }
 
   const bioData = [
-    { year: t('timeline.dates.sep2003'), text: t('timeline.events.bornInColinas') },
-    { year: t('timeline.dates.jul2023'), text: t('timeline.events.startedStudyingEcole42') },
-    { year: t('timeline.dates.oct2024ToFeb2025'), text: t('timeline.events.workingIn42Labs') },
-    { year: t('timeline.dates.mar2025ToPresent'), text: t('timeline.events.workingInCI&T') }
+    { 
+      year: t('timeline.dates.sep2003'), 
+      text: t('timeline.events.bornInColinas')
+    },
+    { 
+      year: t('timeline.dates.jul2023'), 
+      text: t('timeline.events.startedStudyingEcole42'),
+      detail: t('timeline.details.startedStudyingEcole42')
+    },
+    { 
+      year: t('timeline.dates.oct2024ToFeb2025'), 
+      text: t('timeline.events.workingIn42Labs'),
+      detail: t('timeline.details.workingIn42Labs')
+    },
+    { 
+      year: t('timeline.dates.mar2025ToPresent'), 
+      text: t('timeline.events.workingInCI&T'),
+      detail: t('timeline.details.workingInCI&T')
+    }
   ]
 
   const socialLinks = [
@@ -132,7 +148,13 @@ const Page = () => {
           </Heading>
           {bioData.map((bio) => (
             <BioSection key={bio.year}>
-              <BioYear>{bio.year}</BioYear>
+              <BioYear>
+                {bio.year}
+                {bio.detail ? <Tooltip label={bio.detail} aria-label="Detalhes da experiência" placement="top" hasArrow>
+                  <InfoIcon ml={2} cursor="pointer" />
+                </Tooltip>
+                : null }
+              </BioYear>
               {bio.text}
             </BioSection>
           ))}
