@@ -9,7 +9,7 @@ import {
   ListItem,
   Link,
   useColorModeValue,
-  Tooltip  // added Tooltip
+  Tooltip
 } from '@chakra-ui/react'
 import { ChevronRightIcon, InfoIcon } from '@chakra-ui/icons' // added InfoIcon
 import Layout from '../components/layouts/article'
