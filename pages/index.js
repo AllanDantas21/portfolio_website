@@ -9,7 +9,8 @@ import {
   ListItem,
   Link,
   useColorModeValue,
-  Tooltip
+  Tooltip,
+  useBreakpointValue
 } from '@chakra-ui/react'
 import { ChevronRightIcon, InfoIcon } from '@chakra-ui/icons' // added InfoIcon
 import Layout from '../components/layouts/article'
@@ -69,7 +70,7 @@ const Page = () => {
       detail: t('timeline.details.workingIn42Labs')
     },
     { 
-      year: t('timeline.dates.mar2025ToPresent'), 
+      year: t('timeline.dates.mar2025ToPresent'),
       text: t('timeline.events.workingInCI&T'),
       detail: t('timeline.details.workingInCI&T')
     }
@@ -81,6 +82,8 @@ const Page = () => {
     { href: "https://instagram.com/Allan.dants", icon: <IoLogoInstagram />, label: "@Allan.dants" },
     { href: "https://profile.intra.42.fr/users/aldantas", icon: <Si42 />, label: t('social.fortytwo') }
   ]
+
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
     <Layout>
@@ -150,8 +153,14 @@ const Page = () => {
             <BioSection key={bio.year}>
               <BioYear>
                 {bio.year}
-                {bio.detail ? <Tooltip label={bio.detail} aria-label="Detalhes da experiência" placement="top" hasArrow>
-                  <InfoIcon ml={2} cursor="pointer" />
+                {bio.detail && !isMobile ?
+                <Tooltip pointerEvents={"all"} 
+                         closeDelay={200}
+                         openDelay={100}
+                         label={bio.detail} 
+                         aria-label="Detalhes da experiência" 
+                         placement="top" hasArrow>
+                  <InfoIcon ml={2} cursor="pointer"  />
                 </Tooltip>
                 : null }
               </BioYear>

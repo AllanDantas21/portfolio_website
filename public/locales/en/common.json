@@ -36,8 +36,8 @@
     "events": {
       "bornInColinas": "Born in Colinas, Maranhão.",
       "startedStudyingEcole42": "Software engineering - Ecole 42.",
-      "workingIn42Labs": "42Labs.",
-      "workingInCI&T": "CI&T."
+      "workingIn42Labs": "I worked at 42Labs.",
+      "workingInCI&T": "Work at CI&T."
     },
     "details": {
       "startedStudyingEcole42": "In September 2023, I started studying software engineering at 42Rio, an innovative and challenging programming school, where I learned C/C++, algorithms, operating systems like Unix/Linux, networking and protocols, and web development with modern frameworks.",
