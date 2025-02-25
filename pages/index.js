@@ -24,6 +24,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+import { name } from 'file-loader'
 
 const MotionBox = motion(Box)
 const MotionButton = motion(Button)
@@ -57,22 +58,26 @@ const Page = () => {
   const bioData = [
     { 
       year: t('timeline.dates.sep2003'), 
-      text: t('timeline.events.bornInColinas')
+      text: t('timeline.events.bornInColinas'),
+      mob: "Colinas, Maranhão"
     },
     { 
       year: t('timeline.dates.jul2023'), 
       text: t('timeline.events.startedStudyingEcole42'),
-      detail: t('timeline.details.startedStudyingEcole42')
+      detail: t('timeline.details.startedStudyingEcole42'),
+      mob: "Eng. software - 42Rio"
     },
     { 
       year: t('timeline.dates.oct2024ToFeb2025'), 
       text: t('timeline.events.workingIn42Labs'),
-      detail: t('timeline.details.workingIn42Labs')
+      detail: t('timeline.details.workingIn42Labs'),
+      mob: "42Labs"
     },
     { 
       year: t('timeline.dates.mar2025ToPresent'),
       text: t('timeline.events.workingInCI&T'),
-      detail: t('timeline.details.workingInCI&T')
+      detail: t('timeline.details.workingInCI&T'),
+      mob: "CI&T"
     }
   ]
 
@@ -164,7 +169,9 @@ const Page = () => {
                 </Tooltip>
                 : null }
               </BioYear>
-              {bio.text}
+              {bio.text && !isMobile 
+              ? bio.text 
+              : bio.mob }
             </BioSection>
           ))}
         </Section>
