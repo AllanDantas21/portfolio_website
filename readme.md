@@ -29,27 +29,6 @@ This portfolio website is designed to provide an overview of my work and skills 
 - ChakraUI
 - Framer-motion
 
-## Installation
-
-To run this project locally, follow these steps:
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/allandantas21/portfolio-website.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd portfolio-website
-    ```
-3. Install dependencies:
-    ```bash
-    npm install
-    ```
-4. Start the development server:
-    ```bash
-    npm run dev
-    ```
-
 ## Contributing
 
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
