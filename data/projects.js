@@ -1,11 +1,26 @@
-import imgFdf from '../public/images/content/fdf.png'
-import imgPushswap from '../public/images/content/pushswap.png'
-import imgPhilo from '../public/images/content/philo.png'
-import imgMinishell from '../public/images/content/minishell.png'
-
 export const PROJECTS = [
-    { id: 'fdf', thumbnail: imgFdf },
-    { id: 'philo', thumbnail: imgPhilo },
-    { id: 'push-swap', thumbnail: imgPushswap },
-    { id: 'minishell', thumbnail: imgMinishell }
+    { 
+        id: 'fdf', 
+        badgeLabel: 'FDF',
+        badgeColor: 'purple',
+        difficulty: 'Rank 02'
+    },
+    { 
+        id: 'philo', 
+        badgeLabel: 'Philosophers',
+        badgeColor: 'blue',
+        difficulty: 'Rank 03'
+    },
+    { 
+        id: 'push-swap', 
+        badgeLabel: 'Push Swap',
+        badgeColor: 'green',
+        difficulty: 'Rank 02'
+    },
+    { 
+        id: 'minishell', 
+        badgeLabel: 'Minishell',
+        badgeColor: 'red',
+        difficulty: 'Rank 03'
+    }
 ]
