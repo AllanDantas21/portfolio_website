@@ -50,18 +50,20 @@ export const WorkGridItem = ({
       }}
     >
       <VStack spacing={4} align="center" mb={4}>
-        <Badge 
-          fontSize="2xl" 
-          p={4} 
-          borderRadius="lg" 
-          colorScheme={badgeColor} 
-          variant="solid"
-          width="100%"
-          textAlign="center"
-          boxShadow="md"
-        >
-          {badgeLabel || title}
-        </Badge>
+        <Box className="badge-42">
+          <Image
+            src={`/badges/${id}m.png`}
+            alt={title}
+            width={200}
+            height={200}
+            style={{ 
+              maxWidth: '100%',
+              height: 'auto',
+              objectFit: 'contain',
+              filter: 'drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.2))'
+            }}
+          />
+        </Box>
         
         {difficulty && (
           <Badge colorScheme="gray" fontSize="md">
@@ -96,6 +98,22 @@ export const GridItemStyle = () => (
       }
       .grid-item-thumbnail:hover {
         transform: scale(1.03);
+      }
+      
+      @keyframes badgePulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      
+      .badge-42:hover {
+        animation: badgePulse 1.5s infinite;
       }
     `}
   />

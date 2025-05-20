@@ -12,7 +12,7 @@ export const PROJECTS = [
         difficulty: 'Rank 03'
     },
     { 
-        id: 'push-swap', 
+        id: 'push_swap', 
         badgeLabel: 'Push Swap',
         badgeColor: 'green',
         difficulty: 'Rank 02'
