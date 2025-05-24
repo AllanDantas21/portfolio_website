@@ -95,7 +95,7 @@
       "description2": "Este projeto ajuda a entender os conceitos básicos de funções em C. Ótimo para aprimorar conhecimentos em alocação de memória e lógica de programação.",
       "alt2": "Filósofos comendo"
     },
-    "push-swap": {
+    "push_swap": {
       "title": "Push Swap",
       "description": "É um projeto que envolve ordenar uma lista de inteiros usando um conjunto limitado de operações.",
       "description1": "O objetivo do projeto push_swap é ordenar uma pilha de inteiros usando duas pilhas e um conjunto específico de operações.",

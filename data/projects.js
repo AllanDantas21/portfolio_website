@@ -3,13 +3,13 @@ export const PROJECTS = [
         id: 'fdf', 
         badgeLabel: 'FDF',
         badgeColor: 'purple',
-        difficulty: 'Rank 02'
+        difficulty: 'RANK 02'
     },
     { 
         id: 'philo', 
         badgeLabel: 'Philosophers',
         badgeColor: 'blue',
-        difficulty: 'Rank 03'
+        difficulty: 'RANK 03'
     },
     { 
         id: 'push_swap', 

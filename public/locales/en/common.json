@@ -95,7 +95,7 @@
       "description2": "This project helps to understand the basics of functions in C. Great for improving knowledge in memory allocation and programming logic.",
       "alt2": "Philosophers eating"
     },
-    "push-swap": {
+    "push_swap": {
       "title": "Push Swap",
       "description": "A project that involves sorting a list of integers using a limited set of operations.",
       "description1": "The goal of the push_swap project is to sort a stack of integers using two stacks and a specific set of operations.",

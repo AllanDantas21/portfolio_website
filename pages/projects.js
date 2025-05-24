@@ -1,4 +1,4 @@
-import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid, Box, Image } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 import { memo } from 'react'
 import { useTranslation } from 'next-i18next'
