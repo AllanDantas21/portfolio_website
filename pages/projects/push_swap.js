@@ -16,17 +16,17 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 const Project = () => {
   const { t } = useTranslation('common');
   return (
-    <Layout title={t('projects.push-swap.title')}>
+    <Layout title={t('projects.push_swap.title')}>
       <Container>
         <Title>
-          {t('projects.push-swap.title')} <Badge>{pushSwapData.date}</Badge>
+          {t('projects.push_swap.title')} <Badge>{pushSwapData.date}</Badge>
         </Title>
         <WorkImage src={pushSwapData.img} alt={pushSwapData.title} />
-        <P>{t('projects.push-swap.description1')}</P>
-        <P>{t('projects.push-swap.description2')}</P>
-        <P>{t('projects.push-swap.description3')}</P>
-        <P>{t('projects.push-swap.description4')}</P>
-        <P>{t('projects.push-swap.description5')}</P>
+        <P>{t('projects.push_swap.description1')}</P>
+        <P>{t('projects.push_swap.description2')}</P>
+        <P>{t('projects.push_swap.description3')}</P>
+        <P>{t('projects.push_swap.description4')}</P>
+        <P>{t('projects.push_swap.description5')}</P>
         <List ml={4} my={4}>
           <ListItem>
             <Meta>Repository</Meta>
