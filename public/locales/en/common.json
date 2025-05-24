@@ -76,6 +76,17 @@
     "projects": "Check out my projects at github.com/allandantas21",
     "commandNotFound": "Command not found: {{cmd}}. Type 'help' for available commands."
   },
+  "awards": {
+    "awardsTitle": "Hackathon Awards",
+    "hackathon1": {
+      "title": "Vale | 42Rio Hackathon",
+      "description": "Developed a solution to improve mandatory onboarding training with the help of AI. The project involved creating an interactive platform that personalized training content based on user profiles and learning styles."
+    },
+    "hackathon2": {
+      "title": "Modular Carnival Hackathon",
+      "description": "lore ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    }
+  },
   "projects": {
     "projectsTitle": "Projects",
     "ecole42Projects": "Ecole 42 Projects",

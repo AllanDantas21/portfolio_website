@@ -76,6 +76,17 @@
     "projects": "Veja meus projetos em github.com/allandantas21",
     "commandNotFound": "Comando não encontrado: {{cmd}}. Digite 'help' para comandos disponíveis."
   },
+  "awards": {
+    "awardsTitle": "Prêmios de Hackathons",
+    "hackathon1": {
+      "title": "Vale | 42Rio Hackathon",
+      "description": "Desenvolvemos uma solução para melhorar os treinamentos obrigatórios de onboarding com ajuda de IA. O projeto foi uma plataforma de gamificação que utilizou IA para personalizar o aprendizado, tornando-o mais envolvente e eficaz. A solução foi bem recebida pela Vale e pela 42Rio, destacando-se pela inovação e impacto positivo na experiência de onboarding."
+    },
+    "hackathon2": {
+      "title": "Hackathon de Carnaval Modular",
+      "description": "lore ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    }
+  },
   "projects": {
     "projectsTitle": "Projetos",
     "ecole42Projects": "Projetos da 42Rio",
