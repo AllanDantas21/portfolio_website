@@ -80,11 +80,11 @@
     "awardsTitle": "Prêmios de Hackathons",
     "hackathon1": {
       "title": "Vale | 42Rio Hackathon",
-      "description": "Desenvolvemos uma solução para melhorar os treinamentos obrigatórios de onboarding com ajuda de IA. O projeto foi uma plataforma de gamificação que utilizou IA para personalizar o aprendizado, tornando-o mais envolvente e eficaz. A solução foi bem recebida pela Vale e pela 42Rio, destacando-se pela inovação e impacto positivo na experiência de onboarding."
+      "description": "Desenvolvemos uma solução para melhorar o treinamento obrigatório de integração da Vale com a ajuda da IA. O projeto envolveu a criação de uma plataforma interativa que personalizou o conteúdo de treinamento com base em perfis de usuários e estilos de aprendizagem."
     },
     "hackathon2": {
       "title": "Hackathon de Carnaval Modular",
-      "description": "lore ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "description": "Criamos o P.A.G.A., uma plataforma que usa Web3 para ajudar na fiscalização de promessas eleitorais. Foi um desafio intenso, desde as primeiras ideias até a implementação de contratos inteligentes, autenticação via carteiras Web3 e armazenamento descentralizado. Entre muita troca de ideias, código e café, conseguimos transformar o conceito em algo funcional e inovador."
     }
   },
   "projects": {

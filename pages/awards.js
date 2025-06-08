@@ -14,8 +14,8 @@ const Layout = dynamic(() => import('../components/layouts/article'), {
 const AwardGridItem = ({ id, title, year, placement, badgeColor, imageUrl, children }) => (
   <Box 
     w="100%" 
-    textAlign="center" 
-    height="100%" 
+    textAlign="center"
+    height={["auto", "auto", "450px"]}
     borderWidth="1px"
     borderRadius="lg"
     overflow="hidden"
@@ -26,20 +26,27 @@ const AwardGridItem = ({ id, title, year, placement, badgeColor, imageUrl, child
       boxShadow: 'lg'
     }}
   >
-    <Flex direction={["column", "column", "row"]} alignItems="center" gap={8}>
+    <Flex 
+      direction={["column", "column", "row"]} 
+      alignItems="center" 
+      gap={8} 
+      height="100%"
+    >
       <Box 
         className="award-image" 
         flex={["1", "1", "0.4"]}
         mb={[4, 4, 0]}
+        height={["auto", "auto", "300px"]}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
       >
         <Image
           src={imageUrl}
           alt={title}
-          width={300}
-          height={300}
           style={{ 
             maxWidth: '100%',
-            height: 'auto',
+            maxHeight: '300px',
             objectFit: 'contain',
             borderRadius: '8px',
             filter: 'drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.2))'
@@ -47,7 +54,13 @@ const AwardGridItem = ({ id, title, year, placement, badgeColor, imageUrl, child
         />
       </Box>
       
-      <Box flex={["1", "1", "0.6"]} textAlign={["center", "center", "left"]}>
+      <Box 
+        flex={["1", "1", "0.6"]} 
+        textAlign={["center", "center", "left"]} 
+        display="flex" 
+        flexDirection="column"
+        height={["auto", "auto", "300px"]}
+      >
         <Badge colorScheme={badgeColor} fontSize="md" mb={2}>
           {placement}
         </Badge>
@@ -57,9 +70,15 @@ const AwardGridItem = ({ id, title, year, placement, badgeColor, imageUrl, child
         <Text fontSize="sm" color="gray.500" mb={4}>
           {year}
         </Text>
-        <Text fontSize={16}>
-          {children}
-        </Text>
+        <Box 
+          height={["auto", "auto", "180px"]} 
+          overflowY={["visible", "visible", "auto"]}
+          pr={2}
+        >
+          <Text fontSize={16}>
+            {children}
+          </Text>
+        </Box>
       </Box>
     </Flex>
   </Box>

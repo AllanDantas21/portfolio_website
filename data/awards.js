@@ -5,7 +5,7 @@ export const AWARDS = [
         year: '2024',
         placement: '1st Place',
         badgeColor: 'gold',
-        imageUrl: '/images/hackathon1.jpg',
+        imageUrl: '/awards/vale.jpeg',
     },
     {
         id: 'hackathon2',
@@ -13,6 +13,6 @@ export const AWARDS = [
         year: '2025',
         placement: '2nd Place',
         badgeColor: 'silver',
-        imageUrl: '/images/hackathon2.jpg',
+        imageUrl: '/awards/paga.jpeg'
     }
 ]
