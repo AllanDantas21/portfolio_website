@@ -76,6 +76,17 @@
     "projects": "Veja meus projetos em github.com/allandantas21",
     "commandNotFound": "Comando não encontrado: {{cmd}}. Digite 'help' para comandos disponíveis."
   },
+  "awards": {
+    "awardsTitle": "Prêmios de Hackathons",
+    "hackathon1": {
+      "title": "Vale | 42Rio Hackathon",
+      "description": "Desenvolvemos uma solução para melhorar o treinamento obrigatório de integração da Vale com a ajuda da IA. O projeto envolveu a criação de uma plataforma interativa que personalizou o conteúdo de treinamento com base em perfis de usuários e estilos de aprendizagem."
+    },
+    "hackathon2": {
+      "title": "Hackathon de Carnaval Modular",
+      "description": "Criamos o P.A.G.A., uma plataforma que usa Web3 para ajudar na fiscalização de promessas eleitorais. Foi um desafio intenso, desde as primeiras ideias até a implementação de contratos inteligentes, autenticação via carteiras Web3 e armazenamento descentralizado. Entre muita troca de ideias, código e café, conseguimos transformar o conceito em algo funcional e inovador."
+    }
+  },
   "projects": {
     "projectsTitle": "Projetos",
     "ecole42Projects": "Projetos da 42Rio",

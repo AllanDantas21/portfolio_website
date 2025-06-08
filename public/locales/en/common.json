@@ -76,6 +76,17 @@
     "projects": "Check out my projects at github.com/allandantas21",
     "commandNotFound": "Command not found: {{cmd}}. Type 'help' for available commands."
   },
+  "awards": {
+    "awardsTitle": "Hackathon Awards",
+    "hackathon1": {
+      "title": "Vale | 42Rio Hackathon",
+      "description": "We developed a solution to improve the mandatory onboarding training with the help of AI. The project involved creating an interactive platform that personalized training content based on user profiles and learning styles."
+    },
+    "hackathon2": {
+      "title": "Modular Carnival Hackathon",
+      "description": "We created P.A.G.A., a platform that uses Web3 to help with electoral promises monitoring. It was a challenging project, from the initial ideas to the implementation of smart contracts, Web3 wallet authentication, and decentralized storage. Through lots of ideas, code, and coffee, we transformed the concept into something functional and innovative."
+    }
+  },
   "projects": {
     "projectsTitle": "Projects",
     "ecole42Projects": "Ecole 42 Projects",
