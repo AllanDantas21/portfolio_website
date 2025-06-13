@@ -4,7 +4,7 @@ import Fonts from '../components/fonts'
 import theme from '../libs/theme'
 import { AnimatePresence } from 'framer-motion'
 import { appWithTranslation } from 'next-i18next'
-import nextI18NextConfig from '../next-i18next.config'
+import nextI18NextConfig from '../../next-i18next.config'
 
 const Website = ({ Component, pageProps, router }) => {
     return (

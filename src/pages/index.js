@@ -24,7 +24,6 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-import { name } from 'file-loader'
 
 const MotionBox = motion(Box)
 const MotionButton = motion(Button)
