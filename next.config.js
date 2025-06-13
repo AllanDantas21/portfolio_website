@@ -1,7 +1,9 @@
-const { i18n } = require('./next-i18next.config')
+const nextI18nConfig = require('./next-i18next.config')
 
-module.exports = {
-	reactStrictMode: true,
-	swcMinify: true,
-	i18n
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  i18n: nextI18nConfig.i18n,
 }
+
+module.exports = nextConfig
