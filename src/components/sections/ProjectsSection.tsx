@@ -1,22 +1,14 @@
-import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
-import dynamic from 'next/dynamic'
 import { memo } from 'react'
+import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import { useTranslation } from 'next-i18next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { Section, WorkGridItem, GridItemStyle } from '../components'
-import { PROJECTS } from '../data'
-import { GetStaticProps } from 'next'
+import { Section, WorkGridItem } from '../ui'
+import { PROJECTS } from '../../data'
 
-const Layout = dynamic(() => import('../components').then(mod => ({ default: mod.ArticleLayout })), {
-    ssr: true
-})
-
-const Projects = (): JSX.Element => {
+const ProjectsSection = () => {
     const { t } = useTranslation('common')
 
     return (
-        <Layout title={t('projects.projectsTitle')}>
-            <GridItemStyle />
+        <Section delay={0.1}>
             <Container>
                 <Heading as="h3" fontSize="2xl" mb={6}>
                     {t('projects.ecole42Projects')}
@@ -37,16 +29,8 @@ const Projects = (): JSX.Element => {
                     ))}
                 </SimpleGrid>
             </Container>
-        </Layout>
+        </Section>
     )
 }
 
-export default memo(Projects)
-
-export const getStaticProps: GetStaticProps = async ({ locale = 'pt' }) => {
-    return {
-        props: {
-            ...(await serverSideTranslations(locale, ['common']))
-        }
-    }
-}
+export default memo(ProjectsSection)

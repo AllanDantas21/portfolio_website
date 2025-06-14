@@ -1,27 +1,25 @@
-import { 
+import {
     Container,
     Heading,
     Progress,
-    Code 
+    Code
 } from '@chakra-ui/react';
 import {
     SiMicrosoftsqlserver,
     SiDotnet,
     SiPython,
     SiLinux,
-    SiZsh, 
+    SiZsh,
     SiNodedotjs
 } from "react-icons/si";
-import Section from '../components/section';
-import Layout from '../components/layouts/article';
-import Paragraph from '../components/paragraph';
+import { Section, ArticleLayout, Paragraph } from '../components';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const Skills = () => {
     const { t } = useTranslation('common');
     return (
-        <Layout title={t('skills.skillsTitle')}>
+        <ArticleLayout title={t('skills.skillsTitle')}>
             <Container>
                 <Heading as="h1" fontSize={20} mb={4}>
                     {t('skills.skillsTitle')}
@@ -68,7 +66,7 @@ const Skills = () => {
                     <Progress value={80} />
                 </Section>
             </Container>
-        </Layout>
+        </ArticleLayout>
     );
 };
 

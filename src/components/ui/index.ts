@@ -1,0 +1,9 @@
+// Barrel exports for UI components
+export { default as Paragraph } from './paragraph'
+export { default as Section } from './section'
+export { BioSection, BioYear } from './bio'
+export { GridItem, WorkGridItem, GridItemStyle } from './grid-item'
+export { default as ThemeToggleButton } from './theme-toggle-button'
+export { Title, WorkImage, Meta } from './projects'
+export { default as Logo } from './logo'
+export { default as Fonts } from './fonts'

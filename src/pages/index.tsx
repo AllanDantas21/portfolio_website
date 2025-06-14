@@ -1,5 +1,5 @@
 import NextLink from 'next/link'
-import { 
+import {
   Container,
   Box,
   Heading,
@@ -13,10 +13,7 @@ import {
   useBreakpointValue
 } from '@chakra-ui/react'
 import { ChevronRightIcon, InfoIcon } from '@chakra-ui/icons'
-import Layout from '../components/layouts/article'
-import Section from '../components/section'
-import Paragraph from '../components/paragraph'
-import { BioSection, BioYear } from '../components/bio'
+import { ArticleLayout, Section, Paragraph, BioSection, BioYear } from '../components'
 import { motion } from 'framer-motion'
 import { IoLogoLinkedin, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
 import { Si42 } from "react-icons/si"
@@ -70,24 +67,24 @@ const Page = (): JSX.Element => {
   }
 
   const bioData: BioDataItem[] = [
-    { 
-      year: t('timeline.dates.sep2003'), 
+    {
+      year: t('timeline.dates.sep2003'),
       text: t('timeline.events.bornInColinas'),
       mob: "Colinas, Maranhão"
     },
-    { 
-      year: t('timeline.dates.jul2023'), 
+    {
+      year: t('timeline.dates.jul2023'),
       text: t('timeline.events.startedStudyingEcole42'),
       detail: t('timeline.details.startedStudyingEcole42'),
       mob: "Eng. software - 42Rio"
     },
-    { 
-      year: t('timeline.dates.oct2024ToFeb2025'), 
+    {
+      year: t('timeline.dates.oct2024ToFeb2025'),
       text: t('timeline.events.workingIn42Labs'),
       detail: t('timeline.details.workingIn42Labs'),
       mob: "42Labs"
     },
-    { 
+    {
       year: t('timeline.dates.mar2025ToPresent'),
       text: t('timeline.events.workingInCI&T'),
       detail: t('timeline.details.workingInCI&T'),
@@ -105,15 +102,15 @@ const Page = (): JSX.Element => {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
-    <Layout>
+    <ArticleLayout>
       <Container>
         <Box display="flex" justifyContent="flex-end" mb={4}>
         </Box>
-        <MotionBox 
-          borderRadius="lg" 
-          bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} 
-          p={3} 
-          mb={6} 
+        <MotionBox
+          borderRadius="lg"
+          bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+          p={3}
+          mb={6}
           textAlign="center"
           whileHover={{ scale: 1.1 }}
         >
@@ -126,20 +123,20 @@ const Page = (): JSX.Element => {
             </Heading>
             <p>{t('general.title')}</p>
           </Box>
-          <Box 
-            flexShrink={0} 
-            mt={{ base: 4, md: 0 }} 
-            ml={{ md: 6 }} 
+          <Box
+            flexShrink={0}
+            mt={{ base: 4, md: 0 }}
+            ml={{ md: 6 }}
             textAlign="center"
           >
-            <Image 
-              borderColor="whiteAlpha.800" 
-              borderWidth={2} 
-              borderStyle="solid" 
-              maxWidth="100px" 
-              display="inline-block" 
-              borderRadius="full" 
-              src="images/allan.jpeg" 
+            <Image
+              borderColor="whiteAlpha.800"
+              borderWidth={2}
+              borderStyle="solid"
+              maxWidth="100px"
+              display="inline-block"
+              borderRadius="full"
+              src="images/allan.jpeg"
               alt={t('general.name')}
             />
           </Box>
@@ -173,19 +170,19 @@ const Page = (): JSX.Element => {
               <BioYear>
                 {bio.year}
                 {bio.detail && !isMobile ?
-                <Tooltip pointerEvents={"all"} 
-                         closeDelay={200}
-                         openDelay={100}
-                         label={bio.detail} 
-                         aria-label="Detalhes da experiência" 
-                         placement="top" hasArrow>
-                  <InfoIcon ml={2} cursor="pointer"  />
-                </Tooltip>
-                : null }
+                  <Tooltip pointerEvents={"all"}
+                    closeDelay={200}
+                    openDelay={100}
+                    label={bio.detail}
+                    aria-label="Detalhes da experiência"
+                    placement="top" hasArrow>
+                    <InfoIcon ml={2} cursor="pointer" />
+                  </Tooltip>
+                  : null}
               </BioYear>
-              {bio.text && !isMobile 
-              ? bio.text 
-              : bio.mob }
+              {bio.text && !isMobile
+                ? bio.text
+                : bio.mob}
             </BioSection>
           ))}
         </Section>
@@ -212,7 +209,7 @@ const Page = (): JSX.Element => {
           </MotionButton>
         </Box>
       </Container>
-    </Layout>
+    </ArticleLayout>
   )
 }
 

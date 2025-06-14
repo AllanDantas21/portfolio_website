@@ -3,14 +3,13 @@ import dynamic from 'next/dynamic'
 import { memo } from 'react'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import Section from '../components/section'
-import { GridItemStyle } from '../components/grid-item'
-import { AWARDS } from '../data/awards'
+import { Section, GridItemStyle } from '../components'
+import { AWARDS } from '../data'
 import { GetStaticProps } from 'next'
 import { ReactNode } from 'react'
 
-const Layout = dynamic(() => import('../components/layouts/article'), {
-    ssr: true
+const Layout = dynamic(() => import('../components').then(mod => ({ default: mod.ArticleLayout })), {
+  ssr: true
 })
 
 interface AwardGridItemProps {
@@ -24,8 +23,8 @@ interface AwardGridItemProps {
 }
 
 const AwardGridItem = ({ id, title, year, placement, badgeColor, imageUrl, children }: AwardGridItemProps) => (
-  <Box 
-    w="100%" 
+  <Box
+    w="100%"
     textAlign="center"
     height={["auto", "auto", "450px"]}
     borderWidth="1px"
@@ -33,19 +32,19 @@ const AwardGridItem = ({ id, title, year, placement, badgeColor, imageUrl, child
     overflow="hidden"
     p={6}
     transition="transform 0.3s, box-shadow 0.3s"
-    _hover={{ 
-      transform: 'translateY(-5px)', 
+    _hover={{
+      transform: 'translateY(-5px)',
       boxShadow: 'lg'
     }}
   >
-    <Flex 
-      direction={["column", "column", "row"]} 
-      alignItems="center" 
-      gap={8} 
+    <Flex
+      direction={["column", "column", "row"]}
+      alignItems="center"
+      gap={8}
       height="100%"
     >
-      <Box 
-        className="award-image" 
+      <Box
+        className="award-image"
         flex={["1", "1", "0.4"]}
         mb={[4, 4, 0]}
         height={["auto", "auto", "300px"]}
@@ -56,7 +55,7 @@ const AwardGridItem = ({ id, title, year, placement, badgeColor, imageUrl, child
         <Image
           src={imageUrl}
           alt={title}
-          style={{ 
+          style={{
             maxWidth: '100%',
             maxHeight: '300px',
             objectFit: 'contain',
@@ -65,11 +64,11 @@ const AwardGridItem = ({ id, title, year, placement, badgeColor, imageUrl, child
           }}
         />
       </Box>
-      
-      <Box 
-        flex={["1", "1", "0.6"]} 
-        textAlign={["center", "center", "left"]} 
-        display="flex" 
+
+      <Box
+        flex={["1", "1", "0.6"]}
+        textAlign={["center", "center", "left"]}
+        display="flex"
         flexDirection="column"
         height={["auto", "auto", "300px"]}
       >
@@ -82,8 +81,8 @@ const AwardGridItem = ({ id, title, year, placement, badgeColor, imageUrl, child
         <Text fontSize="sm" color="gray.500" mb={4}>
           {year}
         </Text>
-        <Box 
-          height={["auto", "auto", "180px"]} 
+        <Box
+          height={["auto", "auto", "180px"]}
           overflowY={["visible", "visible", "auto"]}
           pr={2}
         >
@@ -97,46 +96,46 @@ const AwardGridItem = ({ id, title, year, placement, badgeColor, imageUrl, child
 )
 
 const Awards = () => {
-    const { t } = useTranslation('common')
+  const { t } = useTranslation('common')
 
-    const getAwardDescription = (id: string) => {
-      return t(`awards.${id}.description`);
-    }
+  const getAwardDescription = (id: string) => {
+    return t(`awards.${id}.description`);
+  }
 
-    return (
-        <Layout title="Awards">
-            <GridItemStyle />
-            <Container maxW="container.md">
-                <Heading as="h3" fontSize={28} mb={8}>
-                    {t('awards.awardsTitle')}
-                </Heading>
-                <SimpleGrid columns={[1]} gap={10}>
-                    {AWARDS.map(award => (
-                        <Section delay={0.1} key={award.id}>
-                            <AwardGridItem
-                                id={award.id}
-                                title={t(`awards.${award.id}.title`)}
-                                year={award.year}
-                                placement={award.placement}
-                                badgeColor={award.badgeColor}
-                                imageUrl={award.imageUrl}
-                            >
-                                {getAwardDescription(award.id)}
-                            </AwardGridItem>
-                        </Section>
-                    ))}
-                </SimpleGrid>
-            </Container>
-        </Layout>
-    )
+  return (
+    <Layout title="Awards">
+      <GridItemStyle />
+      <Container maxW="container.md">
+        <Heading as="h3" fontSize={28} mb={8}>
+          {t('awards.awardsTitle')}
+        </Heading>
+        <SimpleGrid columns={[1]} gap={10}>
+          {AWARDS.map(award => (
+            <Section delay={0.1} key={award.id}>
+              <AwardGridItem
+                id={award.id}
+                title={t(`awards.${award.id}.title`)}
+                year={award.year}
+                placement={award.placement}
+                badgeColor={award.badgeColor}
+                imageUrl={award.imageUrl}
+              >
+                {getAwardDescription(award.id)}
+              </AwardGridItem>
+            </Section>
+          ))}
+        </SimpleGrid>
+      </Container>
+    </Layout>
+  )
 }
 
 export default memo(Awards)
 
 export const getStaticProps: GetStaticProps = async ({ locale = 'pt' }) => {
-    return {
-        props: {
-            ...(await serverSideTranslations(locale, ['common']))
-        }
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common']))
     }
+  }
 }

@@ -6,27 +6,25 @@ import {
   ListItem
 } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { Title, WorkImage, Meta } from '../../components/projects';
-import P from '../../components/paragraph';
-import Layout from '../../components/layouts/article';
+import { Title, WorkImage, Meta, ArticleLayout, Paragraph } from '../../components';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const Project = () => {
   const { t } = useTranslation('common');
   return (
-    <Layout title={t('projects.philo.title')}>
+    <ArticleLayout title={t('projects.philo.title')}>
       <Container>
         <Title>
           {t('projects.philo.title')} <Badge>05/2024</Badge>
         </Title>
-        <P style={{ fontSize: 18, padding: 5 }}>
+        <Paragraph style={{ fontSize: 18, padding: 5 }}>
           {t('projects.philo.description1')}
-        </P>
+        </Paragraph>
         <WorkImage src="/images/content/philo1.png" alt={t('projects.philo.alt', 'Philo image')} />
-        <P>
+        <Paragraph>
           {t('projects.philo.description2')}
-        </P>
+        </Paragraph>
         <List ml={4} my={4}>
           <ListItem>
             <Meta>Repository</Meta>
@@ -36,7 +34,7 @@ const Project = () => {
           </ListItem>
         </List>
       </Container>
-    </Layout>
+    </ArticleLayout>
   );
 };
 

@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import Logo from './logo'
+import Logo from '../ui/logo'
 import NextLink from 'next/link'
 import {
   Container,
@@ -17,8 +17,8 @@ import {
   Button
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
-import ThemeToggleButton from './theme-toggle-button'
-import { menuItems, mobileMenuItems } from '../data/navbar-data'
+import ThemeToggleButton from '../ui/theme-toggle-button'
+import { menuItems, mobileMenuItems } from '../../data/navigation'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { useTranslation } from 'next-i18next'
@@ -114,13 +114,13 @@ const Navbar = ({ path, ...props }: NavbarProps) => {
         <Box flex={1} display="flex" alignItems="center" justifyContent="flex-end">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div key={currentLang} style={{ display: 'inline-block' }}
-                        initial={{ y: -20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: 20, opacity: 0 }}
-                        transition={{ duration: 0.2 }}>
-              <Button 
-                onClick={toggleLanguage} 
-                colorScheme="teal" 
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 20, opacity: 0 }}
+              transition={{ duration: 0.2 }}>
+              <Button
+                onClick={toggleLanguage}
+                colorScheme="teal"
                 mr={2}
                 minW="100px"
                 transition="transform 0.2s ease-in-out"

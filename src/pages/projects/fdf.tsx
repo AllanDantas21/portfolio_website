@@ -6,10 +6,8 @@ import {
   ListItem
 } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { Title, WorkImage, Meta } from '../../components/projects';
-import P from '../../components/paragraph';
-import Layout from '../../components/layouts/article';
-import fdfData from '../../data/projects-data/fdf';
+import { Title, WorkImage, Meta, ArticleLayout, Paragraph } from '../../components';
+import { fdfData } from '../../data';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
@@ -17,14 +15,14 @@ import { GetStaticProps } from 'next';
 const Project = () => {
   const { t } = useTranslation('common');
   return (
-    <Layout title={t('projects.fdf.title')}>
+    <ArticleLayout title={t('projects.fdf.title')}>
       <Container>
         <Title>
           {t('projects.fdf.title')} <Badge>{fdfData.date}</Badge>
         </Title>
-        <P>{t('projects.fdf.description1')}</P>
+        <Paragraph>{t('projects.fdf.description1')}</Paragraph>
         {fdfData.image1 && <WorkImage src={fdfData.image1} alt={t('projects.fdf.alt1')} />}
-        <P>{t('projects.fdf.description2')}</P>
+        <Paragraph>{t('projects.fdf.description2')}</Paragraph>
         {fdfData.image2 && <WorkImage src={fdfData.image2} alt={t('projects.fdf.alt2')} />}
         <List ml={4} my={4}>
           <ListItem>
@@ -35,7 +33,7 @@ const Project = () => {
           </ListItem>
         </List>
       </Container>
-    </Layout>
+    </ArticleLayout>
   );
 };
 
