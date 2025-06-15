@@ -1,0 +1,1 @@
+export { AWARDS } from './awards'

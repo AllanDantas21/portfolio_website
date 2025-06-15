@@ -1,7 +1,8 @@
-// next-i18next.config.js
-module.exports = {
-    i18n: {
-      defaultLocale: 'pt',
-      locales: ['en', 'pt'],
-    },
-  };
+const config = {
+  i18n: {
+    defaultLocale: 'pt',
+    locales: ['en', 'pt'],
+  },
+}
+
+module.exports = config
