@@ -85,6 +85,13 @@ const AwardGridItem = ({ id, title, year, placement, badgeColor, imageUrl, child
           height={["auto", "auto", "180px"]}
           overflowY={["visible", "visible", "auto"]}
           pr={2}
+          sx={{
+            '&::-webkit-scrollbar': {
+              display: 'none'
+            },
+            '-ms-overflow-style': 'none',
+            'scrollbar-width': 'none'
+          }}
         >
           <Text fontSize={16}>
             {children}
