@@ -20,11 +20,28 @@
     "skillsTitle": "Habilidades",
     "hardSkills": "Hard Skills",
     "softSkills": "Soft Skills",
-    "techIntro": "Esta seção é sobre minhas habilidades técnicas.",
+    "techIntro": "Minhas habilidades técnicas desenvolvidas através da École 42 e experiência profissional",
+    "programmingLanguages": "Linguagens de Programação",
+    "webDevelopment": "Desenvolvimento Web",
+    "toolsTechnologies": "Ferramentas & Tecnologias",
     "hardTechnical": "Na 42Rio, eu desenvolvi sólidas habilidades em C/C++, algoritmos eficientes, sistemas operacionais como Unix/Linux, redes, protocolos e desenvolvimento web com frameworks modernos. Essas hard skills me permitem solucionar problemas complexos e colaborar de forma eficaz em equipes de desenvolvimento.",
     "hardExperience": "Além dos meus estudos na 42Rio, adquiri experiência prática na 42labs. Essa experiência me possibilitou aplicar meus conhecimentos técnicos em projetos reais, refinando minhas habilidades em desenvolvimento de software, debugging e gerenciamento de projetos. Trabalhar num ambiente colaborativo também aprimorou minha comunicação e espírito de equipe, tornando-me um desenvolvedor mais eficaz e versátil.",
-    "soft": "Na 42Rio, desenvolvi habilidades em trabalho em equipe, resolução de problemas, autoaprendizagem, resiliência e adaptabilidade. Essas soft skills são essenciais para uma colaboração eficaz, para superar desafios e para meu crescimento profissional contínuo.",
-    "languages": "Idiomas"
+    "soft": "Desenvolvidas através da metodologia peer-to-peer da École 42 e experiência profissional na 42Labs",
+    "languages": "Idiomas",
+    "softSkillsList": {
+      "teamwork": "Trabalho em Equipe",
+      "problemSolving": "Resolução de Problemas",
+      "selfLearning": "Aprendizado Autônomo",
+      "adaptability": "Adaptabilidade",
+      "resilience": "Resiliência",
+      "communication": "Comunicação"
+    },
+    "languageSkills": {
+      "portuguese": "Português",
+      "english": "Inglês",
+      "nativeDescription": "Nativo",
+      "englishDescription": "B2 - Intermediário-Avançado"
+    }
   },
   "timeline": {
     "dates": {

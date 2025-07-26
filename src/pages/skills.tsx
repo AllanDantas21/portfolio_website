@@ -177,7 +177,7 @@ const Skills = () => {
                         color="gray.500"
                         maxW="2xl"
                     >
-                        {t('skills.techIntro', "Minhas habilidades técnicas desenvolvidas através da École 42 e experiência profissional")}
+                        {t('skills.techIntro')}
                     </Text>
                 </VStack>
 
@@ -185,7 +185,7 @@ const Skills = () => {
                 <Section delay={0.1}>
                     <VStack spacing={6} align="stretch" mb={12}>
                         <Heading as="h2" size="xl" color="teal.400">
-                            Linguagens de Programação
+                            {t('skills.programmingLanguages')}
                         </Heading>
                         <SimpleGrid columns={[1, 2, 3]} spacing={6}>
                             {programmingSkills.map((skill, index) => (
@@ -201,7 +201,7 @@ const Skills = () => {
                 <Section delay={0.2}>
                     <VStack spacing={6} align="stretch" mb={12}>
                         <Heading as="h2" size="xl" color="teal.400">
-                            Desenvolvimento Web
+                            {t('skills.webDevelopment')}
                         </Heading>
                         <SimpleGrid columns={[1, 2, 3]} spacing={6}>
                             {webSkills.map((skill, index) => (
@@ -217,7 +217,7 @@ const Skills = () => {
                 <Section delay={0.3}>
                     <VStack spacing={6} align="stretch" mb={12}>
                         <Heading as="h2" size="xl" color="teal.400">
-                            Ferramentas & Tecnologias
+                            {t('skills.toolsTechnologies')}
                         </Heading>
                         <SimpleGrid columns={[1, 2, 3]} spacing={6}>
                             {toolsSkills.map((skill, index) => (
@@ -233,18 +233,18 @@ const Skills = () => {
                 <Section delay={0.4}>
                     <VStack spacing={6} align="stretch" mb={12}>
                         <Heading as="h2" size="xl" color="teal.400">
-                            {t('skills.languages', 'Idiomas')}
+                            {t('skills.languages')}
                         </Heading>
                         <SimpleGrid columns={[1, 2]} spacing={6}>
                             <LanguageSkill
-                                language={t('portuguese', 'Português')}
+                                language={t('skills.languageSkills.portuguese')}
                                 level={100}
-                                description="Nativo"
+                                description={t('skills.languageSkills.nativeDescription')}
                             />
                             <LanguageSkill
-                                language={t('english', 'Inglês')}
+                                language={t('skills.languageSkills.english')}
                                 level={70}
-                                description="B2 - Intermediário-Avançado"
+                                description={t('skills.languageSkills.englishDescription')}
                             />
                         </SimpleGrid>
                     </VStack>
@@ -256,7 +256,7 @@ const Skills = () => {
                 <Section delay={0.5}>
                     <VStack spacing={6} align="stretch">
                         <Heading as="h2" size="xl" color="teal.400">
-                            {t('skills.softSkills', 'Habilidades Interpessoais')}
+                            {t('skills.softSkills')}
                         </Heading>
                         <Box
                             p={8}
@@ -268,30 +268,30 @@ const Skills = () => {
                             <SimpleGrid columns={[1, 2]} spacing={8}>
                                 <VStack align="start" spacing={4}>
                                     <Badge colorScheme="teal" size="lg" p={2}>
-                                        Trabalho em Equipe
+                                        {t('skills.softSkillsList.teamwork')}
                                     </Badge>
                                     <Badge colorScheme="cyan" size="lg" p={2}>
-                                        Resolução de Problemas
+                                        {t('skills.softSkillsList.problemSolving')}
                                     </Badge>
                                     <Badge colorScheme="purple" size="lg" p={2}>
-                                        Aprendizado Autônomo
+                                        {t('skills.softSkillsList.selfLearning')}
                                     </Badge>
                                 </VStack>
                                 <VStack align="start" spacing={4}>
                                     <Badge colorScheme="green" size="lg" p={2}>
-                                        Adaptabilidade
+                                        {t('skills.softSkillsList.adaptability')}
                                     </Badge>
                                     <Badge colorScheme="orange" size="lg" p={2}>
-                                        Resiliência
+                                        {t('skills.softSkillsList.resilience')}
                                     </Badge>
                                     <Badge colorScheme="pink" size="lg" p={2}>
-                                        Comunicação
+                                        {t('skills.softSkillsList.communication')}
                                     </Badge>
                                 </VStack>
                             </SimpleGrid>
                             <Box mt={6}>
                                 <Text fontSize="md" color={useColorModeValue('gray.700', 'gray.300')}>
-                                    {t('skills.soft', "Desenvolvidas através da metodologia peer-to-peer da École 42 e experiência profissional na 42Labs")}
+                                    {t('skills.soft')}
                                 </Text>
                             </Box>
                         </Box>
