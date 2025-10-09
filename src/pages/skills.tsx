@@ -22,18 +22,17 @@ const Skills = () => {
         <ArticleLayout title={t('skills.skillsTitle', 'Skills')}>
             <Container maxW="container.xl" py={8}>
                 {/* Header */}
-                <VStack spacing={8} align="center" mb={12}>
+                <VStack spacing={4} align="center" mb={12}>
                     <Heading
-                        as="h1"
-                        size="2xl"
+                        as="h3"
+                        fontSize="2xl"
                         textAlign="center"
-                        bgGradient="linear(to-r, teal.400, teal.500)"
-                        bgClip="text"
+                        color="teal.400"
                     >
                         {t('skills.skillsTitle', 'Minhas Habilidades')}
                     </Heading>
                     <Text
-                        fontSize="xl"
+                        fontSize="md"
                         textAlign="center"
                         color={useColorModeValue('gray.600', 'gray.400')}
                         maxW="2xl"

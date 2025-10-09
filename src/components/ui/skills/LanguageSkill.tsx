@@ -7,15 +7,23 @@ interface LanguageSkillProps {
 }
 
 const LanguageSkill = ({ language, level, description }: LanguageSkillProps) => {
-    const bgColor = useColorModeValue('gray.50', 'gray.700');
+    const bgColor = useColorModeValue('white', 'gray.800');
+    const borderColor = useColorModeValue('gray.200', 'gray.600');
 
     return (
         <Box
             p={6}
             bg={bgColor}
-            borderRadius="xl"
-            border="1px"
-            borderColor={useColorModeValue('gray.200', 'gray.600')}
+            borderWidth="1px"
+            borderColor={borderColor}
+            borderRadius="lg"
+            shadow="sm"
+            transition="transform 0.3s, box-shadow 0.3s"
+            _hover={{
+                transform: 'translateY(-5px)',
+                boxShadow: 'lg',
+                borderColor: 'teal.400'
+            }}
         >
             <HStack justify="space-between" align="center">
                 <VStack align="start" flex={1}>

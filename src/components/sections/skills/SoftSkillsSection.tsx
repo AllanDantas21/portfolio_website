@@ -23,10 +23,16 @@ const SoftSkillsSection = () => {
                 </Heading>
                 <Box
                     p={8}
-                    bg={useColorModeValue('gray.50', 'gray.800')}
-                    borderRadius="xl"
-                    border="1px"
+                    bg={useColorModeValue('white', 'gray.800')}
+                    borderWidth="1px"
                     borderColor={useColorModeValue('gray.200', 'gray.600')}
+                    borderRadius="lg"
+                    shadow="sm"
+                    transition="transform 0.3s, box-shadow 0.3s"
+                    _hover={{
+                        transform: 'translateY(-5px)',
+                        boxShadow: 'lg'
+                    }}
                 >
                     <SimpleGrid columns={[1, 2]} spacing={8}>
                         <VStack align="start" spacing={4}>
