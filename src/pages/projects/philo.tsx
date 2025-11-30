@@ -21,7 +21,7 @@ const Project = () => {
         <Paragraph style={{ fontSize: 18, padding: 5 }}>
           {t('projects.philo.description1')}
         </Paragraph>
-        <WorkImage src="/images/content/philo1.png" alt={t('projects.philo.alt', 'Philo image')} />
+        <WorkImage src="/images/content/philo1.webp" alt={t('projects.philo.alt', 'Philo image')} />
         <Paragraph>
           {t('projects.philo.description2')}
         </Paragraph>

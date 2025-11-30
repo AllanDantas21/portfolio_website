@@ -70,7 +70,7 @@ export const WorkGridItem = ({
       <VStack spacing={4} align="center" mb={4}>
         <Box className="badge-42">
           <Image
-            src={`/badges/${id === 'philo' ? 'philosophers' : id}m.png`}
+            src={`/badges/${id === 'philo' ? 'philosophers' : id}m.webp`}
             alt={title}
             width={200}
             height={200}

@@ -18,7 +18,7 @@ const Project = () => {
         <Title>
           {t('projects.minishell.title')} <Badge>26/05/2024</Badge>
         </Title>
-        <WorkImage src="/images/content/bash-img.png" alt="Minishell" />
+        <WorkImage src="/images/content/bash-img.webp" alt="Minishell" />
         <Paragraph>{t('projects.minishell.description1')}</Paragraph>
         <Paragraph>{t('projects.minishell.description2')}</Paragraph>
         <List ml={4} my={4}>
