@@ -8,12 +8,10 @@ import {
   List,
   ListItem,
   Link,
-  useColorModeValue,
-  Tooltip,
-  useBreakpointValue
+  useColorModeValue
 } from '@chakra-ui/react'
-import { ChevronRightIcon, InfoIcon } from '@chakra-ui/icons'
-import { ArticleLayout, Section, Paragraph, BioSection, BioYear } from '../components'
+import { ChevronRightIcon } from '@chakra-ui/icons'
+import { ArticleLayout, Section, Paragraph } from '../components'
 import { motion } from 'framer-motion'
 import { IoLogoLinkedin, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
 import { Si42 } from "react-icons/si"
@@ -33,13 +31,6 @@ interface SocialLinkProps {
   label: string
 }
 
-interface BioDataItem {
-  year: string
-  text: string
-  detail?: string
-  mob: string
-}
-
 const SocialLink = ({ href, icon, label }: SocialLinkProps) => (
   <ListItem>
     <Link href={href} target="_blank">
@@ -48,6 +39,8 @@ const SocialLink = ({ href, icon, label }: SocialLinkProps) => (
         colorScheme="teal"
         leftIcon={icon}
         whileHover={{ scale: 1.1 }}
+        whiteSpace="nowrap"
+        wordBreak="keep-all"
       >
         {label}
       </MotionButton>
@@ -66,40 +59,12 @@ const Page = (): JSX.Element => {
     router.push(router.pathname, router.asPath, { locale: newLang })
   }
 
-  const bioData: BioDataItem[] = [
-    {
-      year: t('timeline.dates.sep2003'),
-      text: t('timeline.events.bornInColinas'),
-      mob: "Colinas, Maranhão"
-    },
-    {
-      year: t('timeline.dates.jul2023'),
-      text: t('timeline.events.startedStudyingEcole42'),
-      detail: t('timeline.details.startedStudyingEcole42'),
-      mob: "Eng. software - 42Rio"
-    },
-    {
-      year: t('timeline.dates.oct2024ToFeb2025'),
-      text: t('timeline.events.workingIn42Labs'),
-      detail: t('timeline.details.workingIn42Labs'),
-      mob: "42Labs"
-    },
-    {
-      year: t('timeline.dates.mar2025ToPresent'),
-      text: t('timeline.events.workingInCI&T'),
-      detail: t('timeline.details.workingInCI&T'),
-      mob: "CI&T"
-    }
-  ]
-
   const socialLinks = [
     { href: "https://github.com/Allandantas21", icon: <IoLogoGithub />, label: "@Allandantas21" },
     { href: "https://www.linkedin.com/in/adn21/", icon: <IoLogoLinkedin />, label: "@Allan Dantas" },
     { href: "https://instagram.com/Allan.dants", icon: <IoLogoInstagram />, label: "@Allan.dants" },
     { href: "https://profile.intra.42.fr/users/aldantas", icon: <Si42 />, label: t('social.fortytwo') }
   ]
-
-  const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
     <ArticleLayout>
@@ -113,15 +78,17 @@ const Page = (): JSX.Element => {
           mb={6}
           textAlign="center"
           whileHover={{ scale: 1.1 }}
+          wordBreak="keep-all"
+          overflowWrap="break-word"
         >
           {t('general.greeting')}
         </MotionBox>
         <Box display={{ md: 'flex' }}>
           <Box flexGrow={1}>
-            <Heading as="h2" variant="page-title">
+            <Heading as="h2" variant="page-title" wordBreak="keep-all" overflowWrap="break-word">
               {t('general.name')}
             </Heading>
-            <p>{t('general.title')}</p>
+            <p style={{ wordBreak: 'keep-all', overflowWrap: 'break-word' }}>{t('general.title')}</p>
           </Box>
           <Box
             flexShrink={0}
@@ -142,10 +109,10 @@ const Page = (): JSX.Element => {
           </Box>
         </Box>
         <Section delay={0.1}>
-          <Heading as="h3" variant="section-title">
+          <Heading as="h3" variant="section-title" wordBreak="keep-all" overflowWrap="break-word">
             {t('navigation.about')}
           </Heading>
-          <Paragraph>
+          <Paragraph style={{ wordBreak: 'keep-all', overflowWrap: 'break-word' }}>
             {t('description.about')}
           </Paragraph>
           <Box textAlign="center" my={4}>
@@ -156,38 +123,14 @@ const Page = (): JSX.Element => {
               rightIcon={<ChevronRightIcon />}
               colorScheme="teal"
               whileHover={{ scale: 1.1 }}
+              whiteSpace="nowrap"
             >
               {t('description.portfolio')}
             </MotionButton>
           </Box>
         </Section>
         <Section delay={0.2}>
-          <Heading as="h3" variant='section-title'>
-            {t('navigation.biography')}
-          </Heading>
-          {bioData.map((bio) => (
-            <BioSection key={bio.year}>
-              <BioYear>
-                {bio.year}
-                {bio.detail && !isMobile ?
-                  <Tooltip pointerEvents={"all"}
-                    closeDelay={200}
-                    openDelay={100}
-                    label={bio.detail}
-                    aria-label="Detalhes da experiência"
-                    placement="top" hasArrow>
-                    <InfoIcon ml={2} cursor="pointer" />
-                  </Tooltip>
-                  : null}
-              </BioYear>
-              {bio.text && !isMobile
-                ? bio.text
-                : bio.mob}
-            </BioSection>
-          ))}
-        </Section>
-        <Section delay={0.3}>
-          <Heading as="h3" variant="section-title">
+          <Heading as="h3" variant="section-title" wordBreak="keep-all" overflowWrap="break-word">
             {t('navigation.web')}
           </Heading>
           <List>
@@ -204,6 +147,7 @@ const Page = (): JSX.Element => {
             rightIcon={<ChevronRightIcon />}
             colorScheme="teal"
             whileHover={{ scale: 1.1 }}
+            whiteSpace="nowrap"
           >
             {t('footer.seeMyCurriculum')}
           </MotionButton>

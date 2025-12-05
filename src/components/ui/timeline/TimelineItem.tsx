@@ -28,8 +28,8 @@ const TimelineItem = ({
     type
 }: TimelineItemProps) => {
     const bgColor = useColorModeValue('white', 'gray.800');
-    const borderColor = useColorModeValue('gray.200', 'gray.700');
-    const textColor = useColorModeValue('gray.700', 'gray.300');
+    const borderColor = useColorModeValue('gray.300', 'gray.700');
+    const textColor = useColorModeValue('gray.800', 'gray.300');
     const hoverBg = useColorModeValue('gray.50', 'gray.700');
 
     return (
@@ -43,9 +43,9 @@ const TimelineItem = ({
                 borderWidth="1px"
                 borderColor={borderColor}
                 borderRadius="xl"
-                shadow="md"
+                shadow={useColorModeValue('lg', 'md')}
                 _hover={{
-                    boxShadow: 'xl',
+                    boxShadow: useColorModeValue('xl', 'xl'),
                     borderColor: color
                 }}
                 position={['relative', 'relative', 'absolute']}
@@ -98,7 +98,7 @@ const TimelineItem = ({
 
                     {/* Technologies */}
                     <VStack align="start" spacing={2} w="100%">
-                        <Text fontSize="xs" fontWeight="semibold" color={useColorModeValue('gray.600', 'gray.400')}>
+                        <Text fontSize="xs" fontWeight="semibold" color={useColorModeValue('gray.700', 'gray.400')}>
                             Tecnologias:
                         </Text>
                         <HStack flexWrap="wrap" spacing={2}>
