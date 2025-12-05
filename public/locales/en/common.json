@@ -41,6 +41,30 @@
       "english": "English",
       "nativeDescription": "Native",
       "englishDescription": "B2 - Upper Intermediate"
+    },
+    "experienceTitle": "Professional Experience",
+    "experienceIntro": "My professional journey and the technologies I used in each experience",
+    "experiences": {
+      "ciandt-analyst": {
+        "year": "Nov 2025 - Present",
+        "title": "Junior Systems Analyst",
+        "description": "Current work as Junior Systems Analyst at CI&T, developing solutions with modern technologies."
+      },
+      "ciandt-intern": {
+        "year": "Mar 2025 - Nov 2025",
+        "title": "Software Engineering Intern",
+        "description": "Developed and maintained scalable microservices using Java and Spring Boot, applying TDD and DDD practices. Worked on the conception, development and deployment of Artificial Intelligence agents with Python and Prompt Flow. Performed Agile Metrics analysis with Looker Studio and orchestrated automated data extraction with Google Apps Script."
+      },
+      "fortytwo-rio": {
+        "year": "Oct 2024 - Mar 2025",
+        "title": "Software Developer",
+        "description": "Worked on the development and automation of processes for data ingestion, transformation and validation, optimizing the claims data area of Austral insurance company."
+      },
+      "ruminante": {
+        "year": "Jun 2024 - Sep 2024",
+        "title": "Software Developer",
+        "description": "Developed and implemented web applications using a modern stack with React, Next.js, Tailwind CSS and Golang. This experience was fundamental to deepen my skills in software architecture, distributed systems design and creating responsive interfaces."
+      }
     }
   },
   "timeline": {

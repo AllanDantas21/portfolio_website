@@ -18,7 +18,7 @@ const SoftSkillsSection = () => {
     return (
         <Section delay={0.5}>
             <VStack spacing={6} align="stretch">
-                <Heading as="h2" size="xl" color="teal.400">
+                <Heading as="h2" size="xl" color={useColorModeValue('gray.800', 'whiteAlpha.900')}>
                     {t('skills.softSkills', 'Habilidades Interpessoais')}
                 </Heading>
                 <Box

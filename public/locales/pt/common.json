@@ -41,6 +41,30 @@
       "english": "Inglês",
       "nativeDescription": "Nativo",
       "englishDescription": "B2 - Intermediário-Avançado"
+    },
+    "experienceTitle": "Experiência Profissional",
+    "experienceIntro": "Minha jornada profissional e as tecnologias que utilizei em cada experiência",
+    "experiences": {
+      "ciandt-analyst": {
+        "year": "nov 2025 - presente",
+        "title": "Analista de Sistemas Jr",
+        "description": "Trabalho atual como Analista de Sistemas Jr na CI&T, desenvolvendo soluções com tecnologias modernas."
+      },
+      "ciandt-intern": {
+        "year": "mar 2025 - nov 2025",
+        "title": "Estagiário em Engenharia de Software",
+        "description": "Desenvolvi e mantive microsserviços escaláveis utilizando Java e Spring Boot, aplicando práticas de TDD e DDD. Atuei na concepção, desenvolvimento e deploy de agentes de Inteligência Artificial com Python e Prompt Flow. Realizei análise de Métricas Ágeis com Looker Studio e orquestrei extração de dados automatizada com Google Apps Script."
+      },
+      "fortytwo-rio": {
+        "year": "out 2024 - mar 2025",
+        "title": "Desenvolvedor de software",
+        "description": "Atuei no desenvolvimento e na automação de processos para ingestão, transformação e validação de dados, otimizando a área de dados de sinistros da Austral seguradora."
+      },
+      "ruminante": {
+        "year": "jun 2024 - set 2024",
+        "title": "Desenvolvedor de software",
+        "description": "Desenvolvi e implementei aplicações web utilizando uma stack moderna com React, Next.js, Tailwind CSS e Golang. Esta experiência foi fundamental para aprofundar minhas competências em arquitetura de software, design de sistemas distribuídos e na criação de interfaces responsivas."
+      }
     }
   },
   "timeline": {

@@ -7,9 +7,7 @@ import {
     useColorModeValue
 } from '@chakra-ui/react';
 import { Section, ArticleLayout } from '../components';
-import ProgrammingLanguagesSection from '../components/sections/skills/ProgrammingLanguagesSection';
-import WebDevelopmentSection from '../components/sections/skills/WebDevelopmentSection';
-import ToolsTechnologiesSection from '../components/sections/skills/ToolsTechnologiesSection';
+import ExperienceTimelineSection from '../components/sections/skills/ExperienceTimelineSection';
 import LanguageSkillsSection from '../components/sections/skills/LanguageSkillsSection';
 import SoftSkillsSection from '../components/sections/skills/SoftSkillsSection';
 import { useTranslation } from 'next-i18next';
@@ -20,14 +18,14 @@ const Skills = () => {
 
     return (
         <ArticleLayout title={t('skills.skillsTitle', 'Skills')}>
-            <Container maxW="container.xl" py={8}>
+            <Container maxW="container.xl">
                 {/* Header */}
-                <VStack spacing={4} align="center" mb={12}>
+                <VStack spacing={6} align="center" mb={12}>
                     <Heading
                         as="h3"
                         fontSize="2xl"
                         textAlign="center"
-                        color="teal.400"
+                        color={useColorModeValue('gray.800', 'whiteAlpha.900')}
                     >
                         {t('skills.skillsTitle', 'Minhas Habilidades')}
                     </Heading>
@@ -37,28 +35,29 @@ const Skills = () => {
                         color={useColorModeValue('gray.600', 'gray.400')}
                         maxW="2xl"
                     >
-                        {t('skills.techIntro', 'Tecnologias e habilidades que domino ao longo da minha jornada como desenvolvedor')}
+                        {t('skills.techIntro', 'Tecnologias e habilidades desenvolvidas através da minha jornada profissional e acadêmica')}
                     </Text>
                 </VStack>
 
-                {/* Programming Languages */}
-                <ProgrammingLanguagesSection />
-                <Divider my={12} />
+                {/* Main Content */}
+                <VStack spacing={12} align="stretch">
+                    {/* Experience Timeline */}
+                    <ExperienceTimelineSection />
 
-                {/* Web Development */}
-                <WebDevelopmentSection />
-                <Divider my={12} />
+                    <Divider borderColor={useColorModeValue('gray.200', 'gray.700')} />
 
-                {/* Tools & Technologies */}
-                <ToolsTechnologiesSection />
-                <Divider my={12} />
+                    {/* Language Skills */}
+                    <Section delay={0.2}>
+                        <LanguageSkillsSection />
+                    </Section>
 
-                {/* Language Skills */}
-                <LanguageSkillsSection />
-                <Divider my={12} />
+                    <Divider borderColor={useColorModeValue('gray.200', 'gray.700')} />
 
-                {/* Soft Skills */}
-                <SoftSkillsSection />
+                    {/* Soft Skills */}
+                    <Section delay={0.3}>
+                        <SoftSkillsSection />
+                    </Section>
+                </VStack>
             </Container>
         </ArticleLayout>
     );
