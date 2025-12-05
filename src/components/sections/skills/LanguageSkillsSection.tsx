@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { VStack, Heading, SimpleGrid } from '@chakra-ui/react';
+import { VStack, Heading, SimpleGrid, useColorModeValue } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
 import { Section } from '../../ui';
 import { LanguageSkill } from '../../ui/skills';
@@ -10,7 +10,7 @@ const LanguageSkillsSection = () => {
     return (
         <Section delay={0.4}>
             <VStack spacing={6} align="stretch" mb={12}>
-                <Heading as="h2" size="xl" color="teal.400">
+                <Heading as="h2" size="xl" color={useColorModeValue('gray.800', 'whiteAlpha.900')}>
                     {t('skills.languages', 'Idiomas')}
                 </Heading>
                 <SimpleGrid columns={[1, 2]} spacing={6}>
