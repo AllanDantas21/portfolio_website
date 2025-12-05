@@ -23,7 +23,7 @@ export const workExperiences: ExperienceItem[] = [
         description: 'Trabalho atual como Analista de Sistemas Jr na CI&T, desenvolvendo soluções com tecnologias modernas.',
         technologies: ['C#', 'AngularJS'],
         icon: FaBriefcase,
-        color: '#319795', // teal
+        color: '#2D3748', // gray.800
         location: 'Rio de Janeiro, Brasil',
         type: 'Tempo integral'
     },
@@ -35,7 +35,7 @@ export const workExperiences: ExperienceItem[] = [
         description: 'Desenvolvi e mantive microsserviços escaláveis utilizando Java e Spring Boot, aplicando práticas de TDD e DDD. Atuei na concepção, desenvolvimento e deploy de agentes de Inteligência Artificial com Python e Prompt Flow. Realizei análise de Métricas Ágeis com Looker Studio e orquestrei extração de dados automatizada com Google Apps Script.',
         technologies: ['Java', 'Spring Boot', 'Python', 'Prompt Flow', 'Looker Studio', 'Google Apps Script', 'TDD', 'DDD'],
         icon: FaLaptopCode,
-        color: '#00B5D8', // cyan
+        color: '#1A202C', // gray.900
         location: 'Rio de Janeiro, Brasil · Remota',
         type: 'Meio período'
     },
@@ -47,7 +47,7 @@ export const workExperiences: ExperienceItem[] = [
         description: 'Atuei no desenvolvimento e na automação de processos para ingestão, transformação e validação de dados, otimizando a área de dados de sinistros da Austral seguradora.',
         technologies: ['Python', 'Microsoft SQL Server', 'Dagster', 'Docker', 'Great Expectations', 'Linux', 'Git'],
         icon: FaBuilding,
-        color: '#805AD5', // purple
+        color: '#553C9A', // purple mais escuro
         location: 'Rio de Janeiro, Brasil',
         type: 'Estágio'
     },
@@ -59,7 +59,7 @@ export const workExperiences: ExperienceItem[] = [
         description: 'Desenvolvi e implementei aplicações web utilizando uma stack moderna com React, Next.js, Tailwind CSS e Golang. Esta experiência foi fundamental para aprofundar minhas competências em arquitetura de software, design de sistemas distribuídos e na criação de interfaces responsivas.',
         technologies: ['React', 'Next.js', 'Tailwind CSS', 'Golang', 'TypeScript'],
         icon: FaCode,
-        color: '#DD6B20', // orange
+        color: '#C05621', // orange mais escuro
         location: 'Rio de Janeiro, Brasil · Remota',
         type: 'Freelance'
     }

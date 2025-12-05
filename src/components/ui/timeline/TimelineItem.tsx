@@ -61,13 +61,19 @@ const TimelineItem = ({
                             <Text
                                 fontSize="sm"
                                 fontWeight="bold"
-                                color={color}
+                                color={useColorModeValue('gray.700', 'gray.300')}
                                 textTransform="uppercase"
                                 letterSpacing="wide"
                             >
                                 {year}
                             </Text>
-                            <Badge colorScheme="teal" variant="subtle" fontSize="xs">
+                            <Badge 
+                                colorScheme="gray" 
+                                variant="solid" 
+                                fontSize="xs"
+                                bg={useColorModeValue('gray.700', 'gray.600')}
+                                color="white"
+                            >
                                 {company}
                             </Badge>
                         </HStack>
@@ -105,12 +111,14 @@ const TimelineItem = ({
                             {technologies.map((tech, index) => (
                                 <Badge
                                     key={index}
-                                    colorScheme="teal"
+                                    colorScheme="gray"
                                     variant="outline"
                                     fontSize="xs"
                                     px={2}
                                     py={1}
                                     borderRadius="md"
+                                    borderColor={useColorModeValue('gray.600', 'gray.500')}
+                                    color={useColorModeValue('gray.700', 'gray.300')}
                                 >
                                     {tech}
                                 </Badge>
