@@ -1,4 +1,5 @@
-import { Box, VStack, HStack, Text, Badge, Icon, useColorModeValue, IconType } from '@chakra-ui/react';
+import { Box, VStack, HStack, Text, Badge, Icon, useColorModeValue } from '@chakra-ui/react';
+import { IconType } from 'react-icons';
 
 export interface TimelineItemProps {
     year: string;
