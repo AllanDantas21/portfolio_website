@@ -2,7 +2,7 @@
   "general": {
     "greeting": "Olá! Sou um estudante da Ecole 42!",
     "name": "Allan Dantas",
-    "title": "Estudante de Engenharia de Software",
+    "title": "Engenheiro de Software",
     "bio": "Oi! sou Allan Dantas, um desenvolvedor de software."
   },
   "description": {
@@ -48,11 +48,11 @@
       "ciandt-analyst": {
         "year": "nov 2025 - presente",
         "title": "Analista de Sistemas Jr",
-        "description": "Trabalho atual como Analista de Sistemas Jr na CI&T, desenvolvendo soluções com tecnologias modernas."
+        "description": "Trabalho atualmente como Analista de Sistemas Jr na CI&T, desenvolvendo soluções com tecnologias modernas."
       },
       "ciandt-intern": {
         "year": "mar 2025 - nov 2025",
-        "title": "Estagiário em Engenharia de Software",
+        "title": "Analista de Sistemas",
         "description": "Desenvolvi e mantive microsserviços escaláveis utilizando Java e Spring Boot, aplicando práticas de TDD e DDD. Atuei na concepção, desenvolvimento e deploy de agentes de Inteligência Artificial com Python e Prompt Flow. Realizei análise de Métricas Ágeis com Looker Studio e orquestrei extração de dados automatizada com Google Apps Script."
       },
       "fortytwo-rio": {
@@ -61,7 +61,7 @@
         "description": "Atuei no desenvolvimento e na automação de processos para ingestão, transformação e validação de dados, otimizando a área de dados de sinistros da Austral seguradora."
       },
       "ruminante": {
-        "year": "jun 2024 - set 2024",
+        "year": "Feb 2024 - set 2024",
         "title": "Desenvolvedor de software",
         "description": "Desenvolvi e implementei aplicações web utilizando uma stack moderna com React, Next.js, Tailwind CSS e Golang. Esta experiência foi fundamental para aprofundar minhas competências em arquitetura de software, design de sistemas distribuídos e na criação de interfaces responsivas."
       }
@@ -130,7 +130,7 @@
   },
   "projects": {
     "projectsTitle": "Projetos",
-    "ecole42Projects": "Projetos da 42Rio",
+    "ecole42Projects": "Meus projetos",
     "fdf": {
       "title": "Fdf - Fil de Fer",
       "description": "Este projeto consiste em criar graficamente uma representação esquemática de um terreno em relevo.",

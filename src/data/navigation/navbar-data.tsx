@@ -13,7 +13,7 @@ interface MenuItem {
 }
 
 export const menuItems: MenuItem[] = [
-  { href: "/projects", label: "42 Projects" },
+  { href: "/projects", label: "Projects" },
   { href: "/awards", label: "Awards" },
   { href: "/skills", label: "Skills" },
   { href: "/terminal", label: "Terminal" },
@@ -31,7 +31,7 @@ export const menuItems: MenuItem[] = [
 
 export const mobileMenuItems: MenuItem[] = [
   { href: "/", label: "About" },
-  { href: "/projects", label: "42 Projects" },
+  { href: "/projects", label: "Projects" },
   { href: "/awards", label: "Awards" },
   { href: "/skills", label: "Skills" },
   { href: "https://github.com/AllanDantas21", label: "View Github" }

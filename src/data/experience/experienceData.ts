@@ -20,7 +20,7 @@ export const workExperiences: ExperienceItem[] = [
         year: 'nov 2025 - presente',
         title: 'Analista de Sistemas Jr',
         company: 'CI&T',
-        description: 'Trabalho atual como Analista de Sistemas Jr na CI&T, desenvolvendo soluções com tecnologias modernas.',
+        description: 'Trabalho atualmente como Analista de Sistemas Jr na CI&T, desenvolvendo soluções com tecnologias modernas.',
         technologies: ['C#', 'AngularJS'],
         icon: FaBriefcase,
         color: '#2D3748', // gray.800
@@ -47,19 +47,19 @@ export const workExperiences: ExperienceItem[] = [
         description: 'Atuei no desenvolvimento e na automação de processos para ingestão, transformação e validação de dados, otimizando a área de dados de sinistros da Austral seguradora.',
         technologies: ['Python', 'Microsoft SQL Server', 'Dagster', 'Docker', 'Great Expectations', 'Linux', 'Git'],
         icon: FaBuilding,
-        color: '#553C9A', // purple mais escuro
+        color: '#553C9A',
         location: 'Rio de Janeiro, Brasil',
         type: 'Estágio'
     },
     {
         id: 'ruminante',
-        year: 'jun 2024 - set 2024',
+        year: 'Feb 2024 - set 2024',
         title: 'Desenvolvedor de software',
         company: 'Ruminante',
         description: 'Desenvolvi e implementei aplicações web utilizando uma stack moderna com React, Next.js, Tailwind CSS e Golang. Esta experiência foi fundamental para aprofundar minhas competências em arquitetura de software, design de sistemas distribuídos e na criação de interfaces responsivas.',
         technologies: ['React', 'Next.js', 'Tailwind CSS', 'Golang', 'TypeScript'],
         icon: FaCode,
-        color: '#C05621', // orange mais escuro
+        color: '#C05621',
         location: 'Rio de Janeiro, Brasil · Remota',
         type: 'Freelance'
     }
