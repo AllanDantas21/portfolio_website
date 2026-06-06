@@ -1,0 +1,47 @@
+{
+    "general": {
+        "name": "Allan Dantas",
+        "title": "Full Stack Developer",
+        "greeting": "👋 Welcome to my portfolio",
+        "description": "Building scalable web applications with modern technologies"
+    },
+    "nav": {
+        "home": "Home",
+        "projects": "Projects",
+        "skills": "Skills",
+        "awards": "Awards"
+    },
+    "social": {
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "instagram": "Instagram",
+        "fortytwo": "42 Profile"
+    },
+    "buttons": {
+        "viewProfile": "View Profile",
+        "viewProjects": "View My Projects",
+        "learnMore": "Learn More",
+        "back": "Back"
+    },
+    "home": {
+        "bio": "Full Stack Developer passionate about creating elegant solutions to complex problems",
+        "cta": "Check out my projects and skills below"
+    },
+    "projects": {
+        "title": "My Projects",
+        "viewCode": "View Code",
+        "viewDemo": "View Demo",
+        "technologies": "Technologies"
+    },
+    "skills": {
+        "title": "Skills & Experience",
+        "programming": "Programming Languages",
+        "webDevelopment": "Web Development",
+        "tools": "Tools & Technologies",
+        "softSkills": "Soft Skills",
+        "experience": "Experience"
+    },
+    "awards": {
+        "title": "Awards & Achievements"
+    }
+}

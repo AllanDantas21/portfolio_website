@@ -1,0 +1,47 @@
+{
+    "general": {
+        "name": "Allan Dantas",
+        "title": "Desenvolvedor Full Stack",
+        "greeting": "👋 Bem-vindo ao meu portfólio",
+        "description": "Construindo aplicações web escaláveis com tecnologias modernas"
+    },
+    "nav": {
+        "home": "Início",
+        "projects": "Projetos",
+        "skills": "Habilidades",
+        "awards": "Prêmios"
+    },
+    "social": {
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "instagram": "Instagram",
+        "fortytwo": "Perfil 42"
+    },
+    "buttons": {
+        "viewProfile": "Ver Perfil",
+        "viewProjects": "Ver Meus Projetos",
+        "learnMore": "Saiba Mais",
+        "back": "Voltar"
+    },
+    "home": {
+        "bio": "Desenvolvedor Full Stack apaixonado por criar soluções elegantes para problemas complexos",
+        "cta": "Confira meus projetos e habilidades abaixo"
+    },
+    "projects": {
+        "title": "Meus Projetos",
+        "viewCode": "Ver Código",
+        "viewDemo": "Ver Demo",
+        "technologies": "Tecnologias"
+    },
+    "skills": {
+        "title": "Habilidades & Experiência",
+        "programming": "Linguagens de Programação",
+        "webDevelopment": "Desenvolvimento Web",
+        "tools": "Ferramentas & Tecnologias",
+        "softSkills": "Habilidades Sociais",
+        "experience": "Experiência"
+    },
+    "awards": {
+        "title": "Prêmios & Realizações"
+    }
+}
