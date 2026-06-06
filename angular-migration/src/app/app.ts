@@ -1,12 +1,17 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AppLayoutComponent } from './layout/app-layout.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
+  standalone: true,
+  imports: [RouterOutlet, AppLayoutComponent],
+  template: `
+    <app-layout>
+      <router-outlet></router-outlet>
+    </app-layout>
+  `,
   styleUrl: './app.scss'
 })
-export class App {
-  protected readonly title = signal('angular-migration');
-}
+export class App {}
+

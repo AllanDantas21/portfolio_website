@@ -1,14 +1,13 @@
-/* Tailwind CSS directives */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Global styles */
 :root {
     --color-primary: #10b981;
     /* teal-500 */
     --color-secondary: #1f2937;
     /* gray-800 */
+    --color-bg-light: #ffffff;
+    --color-bg-dark: #111827;
+    --color-text-light: #1f2937;
+    --color-text-dark: #f3f4f6;
 }
 
 html {
@@ -16,7 +15,15 @@ html {
 }
 
 body {
-    @apply bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 transition-colors duration-200;
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+body.dark {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
 }
 
 /* Custom animations */
@@ -47,6 +54,20 @@ body {
 /* Utility classes */
 .fade-in-up {
     animation: fadeInUp 0.6s ease-out;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.dark-mode {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+}
+
+.light-mode {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
 }
 
 .slide-in-left {

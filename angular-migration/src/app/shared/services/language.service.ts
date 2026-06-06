@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID, inject } from '@angular/core';
 
 export type Language = 'en' | 'pt';
 
@@ -10,7 +12,8 @@ export type Language = 'en' | 'pt';
 export class LanguageService {
   private readonly LANGUAGE_KEY = 'app-language';
   private readonly AVAILABLE_LANGUAGES: Language[] = ['en', 'pt'];
-  private currentLanguageSubject = new BehaviorSubject<Language>(this.getInitialLanguage());
+  private platformId = inject(PLATFORM_ID);
+  private currentLanguageSubject = new BehaviorSubject<Language>('en');
 
   currentLanguage$: Observable<Language> = this.currentLanguageSubject.asObservable();
 
@@ -19,8 +22,11 @@ export class LanguageService {
   }
 
   private initializeLanguage(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      const language = this.getInitialLanguage();
+      this.currentLanguageSubject.next(language);
+    }
     const language = this.currentLanguageSubject.value;
-    this.translateService.setDefaultLanguage('en');
     this.translateService.use(language);
   }
 
@@ -40,7 +46,9 @@ export class LanguageService {
 
     this.currentLanguageSubject.next(language);
     this.translateService.use(language);
-    localStorage.setItem(this.LANGUAGE_KEY, language);
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem(this.LANGUAGE_KEY, language);
+    }
   }
 
   toggleLanguage(): void {
@@ -57,6 +65,10 @@ export class LanguageService {
   }
 
   private getInitialLanguage(): Language {
+    if (!isPlatformBrowser(this.platformId)) {
+      return 'en';
+    }
+
     const savedLanguage = localStorage.getItem(this.LANGUAGE_KEY) as Language;
     if (savedLanguage === 'en' || savedLanguage === 'pt') {
       return savedLanguage;
