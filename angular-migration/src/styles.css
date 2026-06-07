@@ -71,7 +71,3 @@ body.dark {
     background-color: var(--color-bg-light);
     color: var(--color-text-light);
 }
-
-.slide-in-left {
-    animation: slideInLeft 0.6s ease-out;
-}

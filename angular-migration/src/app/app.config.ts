@@ -1,8 +1,8 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter, TitleStrategy } from '@angular/router';
-import { provideHttpClient, withInterceptorsFromDi, HttpClient } from '@angular/common/http';
-import { TranslateModule } from '@ngx-translate/core';
-import { importProvidersFrom } from '@angular/core';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideTranslateService } from '@ngx-translate/core';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 import { routes } from './app.routes';
@@ -16,11 +16,13 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),
     provideHttpClient(withInterceptorsFromDi()),
     provideAnimations(),
-    importProvidersFrom(
-      TranslateModule.forRoot({
-        fallbackLang: 'en'
+    provideTranslateService({
+      defaultLanguage: 'en',
+      loader: provideTranslateHttpLoader({
+        prefix: './i18n/',
+        suffix: '.json'
       })
-    ),
+    }),
     { provide: TitleStrategy, useClass: LocalizedTitleStrategy }
   ]
 };
