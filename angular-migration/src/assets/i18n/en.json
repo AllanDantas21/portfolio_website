@@ -1,47 +1,177 @@
 {
-    "general": {
-        "name": "Allan Dantas",
-        "title": "Full Stack Developer",
-        "greeting": "👋 Welcome to my portfolio",
-        "description": "Building scalable web applications with modern technologies"
+  "general": {
+    "greeting": "Hello! I'm an Ecole 42 student!",
+    "name": "Allan Dantas",
+    "title": "Software Engineer",
+    "bio": "Hi! I'm Allan Dantas, a software developer."
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "skills": "Skills",
+    "awards": "Awards",
+    "terminal": "Terminal",
+    "game": "Click 42",
+    "source": "Source",
+    "viewGithub": "View GitHub"
+  },
+  "description": {
+    "about": "Software developer with solid experience in the complete web application lifecycle. With a full-stack foundation that provided a comprehensive view of system architecture, I now specialize in backend development. My focus is on building distributed and secure systems.",
+    "portfolio": "My Portfolio"
+  },
+  "navigation": {
+    "about": "About",
+    "biography": "Bio",
+    "web": "On the web",
+    "resume": "See my Curriculum",
+    "commands": "Available commands: help, about, skills, projects, clear"
+  },
+  "skills": {
+    "skillsTitle": "Skills",
+    "hardSkills": "Hard Skills",
+    "softSkills": "Soft Skills",
+    "techIntro": "My technical skills developed through École 42 and professional experience",
+    "programmingLanguages": "Programming Languages",
+    "webDevelopment": "Web Development",
+    "toolsTechnologies": "Tools & Technologies",
+    "hardTechnical": "At 42Rio, I developed solid skills in C/C++, efficient algorithms, operating systems like Unix/Linux, networking, protocols and web development with modern frameworks. These hard skills enable me to solve complex problems and collaborate effectively in development teams.",
+    "hardExperience": "In addition to my studies at 42Rio, I gained practical experience at 42labs. This experience enabled me to apply my technical knowledge in real projects, refining my skills in software development, debugging and project management. Working in a collaborative environment also enhanced my communication and teamwork spirit, making me a more effective and versatile developer.",
+    "soft": "Developed through École 42's peer-to-peer methodology and professional experience at 42Labs",
+    "languages": "Languages",
+    "softSkillsList": {
+      "teamwork": "Teamwork",
+      "problemSolving": "Problem Solving",
+      "selfLearning": "Self Learning",
+      "adaptability": "Adaptability",
+      "resilience": "Resilience",
+      "communication": "Communication"
     },
-    "nav": {
-        "home": "Home",
-        "projects": "Projects",
-        "skills": "Skills",
-        "awards": "Awards"
+    "languageSkills": {
+      "portuguese": "Portuguese",
+      "english": "English",
+      "nativeDescription": "Native",
+      "englishDescription": "B2 - Upper-Intermediate"
     },
-    "social": {
-        "github": "GitHub",
-        "linkedin": "LinkedIn",
-        "instagram": "Instagram",
-        "fortytwo": "42 Profile"
-    },
-    "buttons": {
-        "viewProfile": "View Profile",
-        "viewProjects": "View My Projects",
-        "learnMore": "Learn More",
-        "back": "Back"
-    },
-    "home": {
-        "bio": "Full Stack Developer passionate about creating elegant solutions to complex problems",
-        "cta": "Check out my projects and skills below"
-    },
-    "projects": {
-        "title": "My Projects",
-        "viewCode": "View Code",
-        "viewDemo": "View Demo",
-        "technologies": "Technologies"
-    },
-    "skills": {
-        "title": "Skills & Experience",
-        "programming": "Programming Languages",
-        "webDevelopment": "Web Development",
-        "tools": "Tools & Technologies",
-        "softSkills": "Soft Skills",
-        "experience": "Experience"
-    },
-    "awards": {
-        "title": "Awards & Achievements"
+    "experienceTitle": "Professional Experience",
+    "experienceIntro": "My professional journey and the technologies I used in each experience",
+    "experiences": {
+      "ciandt-analyst": {
+        "year": "Nov 2025 - Present",
+        "title": "Junior Systems Analyst",
+        "description": "Current work as Junior Systems Analyst at CI&T, developing solutions with modern technologies."
+      },
+      "ciandt-intern": {
+        "year": "Mar 2025 - Nov 2025",
+        "title": "Systems Analyst",
+        "description": "Developed and maintained scalable microservices using Java and Spring Boot, applying TDD and DDD practices. Worked on the conception, development and deployment of Artificial Intelligence agents with Python and Prompt Flow. Performed Agile Metrics analysis with Looker Studio and orchestrated automated data extraction with Google Apps Script."
+      },
+      "fortytwo-rio": {
+        "year": "Oct 2024 - Mar 2025",
+        "title": "Software Developer",
+        "description": "Worked on the development and automation of processes for data ingestion, transformation and validation, optimizing the claims data area of Austral insurance company."
+      },
+      "ruminante": {
+        "year": "Feb 2024 - Sep 2024",
+        "title": "Software Developer",
+        "description": "Developed and implemented web applications using a modern stack with React, Next.js, Tailwind CSS and Golang. This experience was fundamental to deepen my skills in software architecture, distributed systems design and creating responsive interfaces."
+      }
     }
+  },
+  "timeline": {
+    "dates": {
+      "sep2003": "Sep 2003",
+      "jul2023": "Jul 2023",
+      "oct2024ToFeb2025": "Oct 2024 to Feb 2025",
+      "mar2025ToPresent": "Feb 2025 to present"
+    },
+    "events": {
+      "bornInColinas": "Born in Colinas, Maranhão.",
+      "startedStudyingEcole42": "Software engineering - Ecole 42.",
+      "workingIn42Labs": "I worked at 42Labs.",
+      "workingInCI&T": "Work at CI&T."
+    },
+    "details": {
+      "startedStudyingEcole42": "In September 2023, I started studying software engineering at 42Rio, an innovative and challenging programming school, where I learned C/C++, algorithms, operating systems like Unix/Linux, networking and protocols, and web development with modern frameworks.",
+      "workingIn42Labs": "In October 2024, I started working at 42Labs, on a project for the Austral insurance company, where I applied my technical knowledge to real projects, had the opportunity to work with technologies like Dagster, Python, Docker, Great expectations, among others.",
+      "workingInCI&T": "In February 2025, I started working at CI&T, a global technology and digital solutions company, where I continue to develop my technical skills and collaborate on challenging projects."
+    }
+  },
+  "footer": {
+    "resumeLink": "https://drive.google.com/file/d/1_fNhSpEHU4tcHGbemuUSXMDlZR0TY75V/view?usp=sharing",
+    "seeMyCurriculum": "See my Curriculum"
+  },
+  "social": {
+    "github": "@Allandantas21",
+    "linkedin": "@Allan Dantas",
+    "instagram": "@Allan.dants",
+    "fortytwo": "@Aldantas (for 42 students)"
+  },
+  "notFound": {
+    "title": "Not Found",
+    "description": "The page you're looking for was not found.",
+    "home": "Return to home"
+  },
+  "game": {
+    "reset": "Reset",
+    "timeLeft": "Time Left",
+    "score": "Score",
+    "win": "You Win!",
+    "over": "Game Over!"
+  },
+  "terminal": {
+    "welcome": "Welcome to my terminal portfolio!",
+    "question": "What is the answer to life, the universe, and everything?",
+    "help": "Available commands: help, about, skills, projects, clear",
+    "about": "Hi! I'm Allan Dantas, a software developer.",
+    "skills": "My skills include: C/C++, Python, Node.js, etc.",
+    "projects": "Check out my projects at github.com/allandantas21",
+    "commandNotFound": "Command not found: {{cmd}}. Type 'help' for available commands."
+  },
+  "awards": {
+    "awardsTitle": "Hackathon Awards",
+    "hackathon1": {
+      "title": "Vale | 42Rio Hackathon",
+      "description": "We developed a solution to improve the mandatory onboarding training with the help of AI. The project involved creating an interactive platform that personalized training content based on user profiles and learning styles."
+    },
+    "hackathon2": {
+      "title": "Modular Carnival Hackathon",
+      "description": "We created P.A.G.A., a platform that uses Web3 to help with electoral promises monitoring. It was a challenging project, from the initial ideas to the implementation of smart contracts, Web3 wallet authentication, and decentralized storage. Through lots of ideas, code, and coffee, we transformed the concept into something functional and innovative."
+    }
+  },
+  "projects": {
+    "projectsTitle": "Projects",
+    "ecole42Projects": "My Projects",
+    "fdf": {
+      "title": "Fdf - Fil de Fer",
+      "description": "This project consists of graphically creating a schematic representation of a terrain in relief.",
+      "description1": "FdF is a project in which we convert a file with a grid of values into a 3D wireframe using a simple graphics library called MiniLibX.",
+      "description2": "The rows of the grid represent the x-axis, the columns represent the y-axis, and the values represent the z-axis (altitude), thus creating a 3D wireframe representation.",
+      "alt1": "3D wireframe map",
+      "alt2": "3D wireframe result"
+    },
+    "philo": {
+      "title": "Philosophers",
+      "description": "The famous Dining Philosophers problem, all with the same basic rules.",
+      "description1": "This project is an introduction to multi-threads/multi-process programming with the use of mutex and semaphore. It contains 3 different programs simulating a plot of the famous Dining Philosophers problem, all with the same basic rules.",
+      "alt1": "Philosophers image",
+      "description2": "This project helps to understand the basics of functions in C. Great for improving knowledge in memory allocation and programming logic.",
+      "alt2": "Philosophers eating"
+    },
+    "push_swap": {
+      "title": "Push Swap",
+      "description": "It is a project that involves sorting a list of integers using a limited set of operations.",
+      "description1": "The goal of the push_swap project is to sort a stack of integers using two stacks and a specific set of operations.",
+      "description2": "Stacks: The project involves two stacks, Stack A and Stack B, initially containing a random set of integers.",
+      "description3": "Operations: Students are required to implement a set of operations to manipulate the stacks.",
+      "description4": "Sorting Algorithm: The main challenge is to develop an algorithm that uses these operations to sort Stack A in ascending order.",
+      "description5": "Constraints: The project typically imposes constraints on the number of operations allowed, with the goal of an efficient and optimized sorting algorithm."
+    },
+    "minishell": {
+      "title": "Minishell",
+      "description": "This project is about creating a simple shell. Yes, a little bash.",
+      "description1": "Minishell is a project focused on creating a simple, minimalistic shell interface.",
+      "description2": "It demonstrates basic command-line functionalities and a lightweight environment for user commands.",
+      "alt1": "Screenshot of Minishell"
+    }
+  }
 }

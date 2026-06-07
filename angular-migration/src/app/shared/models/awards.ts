@@ -4,13 +4,9 @@
 export interface Award {
   id: string;
   title: string;
-  description?: string;
-  icon?: string;
-  date?: string;
-  category?: string;
+  year: string;
+  placement: string;
+  badgeColor: string;
+  imageUrl: string;
 }
 
-export interface Badge extends Award {
-  image?: string;
-  url?: string;
-}
