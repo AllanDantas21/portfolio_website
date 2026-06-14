@@ -2,6 +2,9 @@
 
 @import "tailwindcss";
 
+@source "./index.html";
+@source "./app/**/*.{html,ts}";
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
