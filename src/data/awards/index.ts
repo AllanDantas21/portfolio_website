@@ -1,1 +1,0 @@
-export { AWARDS } from './awards'
