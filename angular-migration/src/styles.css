@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700;900&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-heading: "M PLUS Rounded 1c", sans-serif;
+  --color-glass-teal: #88ccca;
+  --color-app-bg-light: #f0e7db;
+  --color-app-bg-dark: #202023;
+  --color-app-text-light: #202023;
+  --color-app-text-dark: #eeeeee;
+}
+
+/* Global styles */
+:root {
+    --color-bg-light: #f0e7db;
+    --color-bg-dark: #202023;
+    --color-text-light: #202023;
+    --color-text-dark: #eeeeee;
+    --color-link-light: #3d7aed;
+    --color-link-dark: #ff63c3;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'M PLUS Rounded 1c', system-ui, -apple-system, sans-serif;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
+    transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+}
+
+/* Chakra UI Heading variants in Tailwind */
+h2, h3, h4, h5, h6 {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+/* Custom section-title styles matching theme.ts */
+.section-title, h3.section-title {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-color: #525252;
+    text-decoration-thickness: 4px;
+    margin-top: 12px;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+/* Link overrides */
+a {
+    transition: color 0.2s ease-in-out;
+}
+a:not([class*="bg-"]):not([class*="text-"]) {
+    color: var(--color-link-light);
+    text-underline-offset: 3px;
+}
+.dark a:not([class*="bg-"]):not([class*="text-"]) {
+    color: var(--color-link-dark);
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
