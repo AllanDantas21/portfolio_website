@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Injectable, inject } from '@angular/core';
+import { Router, NavigationEnd, Params } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
@@ -17,6 +17,7 @@ export interface NavItem {
   providedIn: 'root'
 })
 export class NavigationService {
+  private router = inject(Router);
   private currentRouteSubject = new BehaviorSubject<string>('/');
   currentRoute$: Observable<string> = this.currentRouteSubject.asObservable();
 
@@ -27,7 +28,7 @@ export class NavigationService {
     { label: 'nav.awards', path: '/awards' }
   ];
 
-  constructor(private router: Router) {
+  constructor() {
     this.trackRouteChanges();
   }
 
@@ -35,7 +36,7 @@ export class NavigationService {
     return this.navItems;
   }
 
-  navigate(path: string, queryParams?: any): Promise<boolean> {
+  navigate(path: string, queryParams?: Params): Promise<boolean> {
     if (queryParams) {
       return this.router.navigate([path], { queryParams });
     }
@@ -51,8 +52,8 @@ export class NavigationService {
    */
   private trackRouteChanges(): void {
     this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe((event: any) => {
+      filter((event): event is NavigationEnd => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
       this.currentRouteSubject.next(event.urlAfterRedirects);
     });
   }

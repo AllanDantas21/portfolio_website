@@ -13,11 +13,12 @@ export class LanguageService {
   private readonly LANGUAGE_KEY = 'app-language';
   private readonly AVAILABLE_LANGUAGES: Language[] = ['en', 'pt'];
   private platformId = inject(PLATFORM_ID);
+  private translateService = inject(TranslateService);
   private currentLanguageSubject = new BehaviorSubject<Language>('en');
 
   currentLanguage$: Observable<Language> = this.currentLanguageSubject.asObservable();
 
-  constructor(private translateService: TranslateService) {
+  constructor() {
     this.initializeLanguage();
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
@@ -51,6 +51,4 @@ import { fadeInUp } from '../../shared/animations';
   styles: [],
   animations: [fadeInUp]
 })
-export class NotFoundComponent implements OnInit {
-  ngOnInit() {}
-}
+export class NotFoundComponent {}

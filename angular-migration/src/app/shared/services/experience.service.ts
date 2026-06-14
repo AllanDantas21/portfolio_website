@@ -60,8 +60,6 @@ export class ExperienceService {
   private experiencesSubject = new BehaviorSubject<ExperienceItem[]>(this.experiences);
   experiences$ = this.experiencesSubject.asObservable();
 
-  constructor() {}
-
   /**
    * Get all experiences
    */

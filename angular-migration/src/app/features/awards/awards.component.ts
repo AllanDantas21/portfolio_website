@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { ContainerComponent } from '../../shared/components';
@@ -21,10 +21,8 @@ import { fadeInUp } from '../../shared/animations';
 
       <!-- Awards List Stack -->
       <div [@fadeInUp] class="space-y-10">
-        <div
-          *ngFor="let award of awards"
-          class="bg-white dark:bg-[#1a2234] border border-gray-200/60 dark:border-gray-800/60 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-        >
+        @for (award of awards; track award.id) {
+          <div class="bg-white dark:bg-[#1a2234] border border-gray-200/60 dark:border-gray-800/60 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
           <div class="flex flex-col md:flex-row items-center gap-8">
             <!-- Image Column -->
             <div class="w-full md:w-[40%] flex items-center justify-center flex-shrink-0 select-none">
@@ -66,6 +64,7 @@ import { fadeInUp } from '../../shared/animations';
             </div>
           </div>
         </div>
+        }
       </div>
     </app-container>
   `,
@@ -81,9 +80,8 @@ import { fadeInUp } from '../../shared/animations';
   animations: [fadeInUp]
 })
 export class AwardsComponent implements OnInit {
+  private awardsService = inject(AwardsService);
   awards: Award[] = [];
-
-  constructor(private awardsService: AwardsService) {}
 
   ngOnInit() {
     this.awardsService.getAll().subscribe(a => {

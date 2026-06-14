@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { SkillItem, LanguageSkill, SkillsCategory } from '../models';
+import { SkillItem, LanguageSkill } from '../models';
 
 /**
  * SkillsService
@@ -63,8 +63,6 @@ export class SkillsService {
   tools$ = this.toolsSubject.asObservable();
   languages$ = this.languagesSubject.asObservable();
   softSkills$ = this.softSkillsSubject.asObservable();
-
-  constructor() {}
 
   /**
    * Get all programming skills

@@ -83,8 +83,6 @@ export class ProjectsService {
   private projectsSubject = new BehaviorSubject<Project[]>(this.projects);
   projects$ = this.projectsSubject.asObservable();
 
-  constructor() {}
-
   /**
    * Get all projects
    */

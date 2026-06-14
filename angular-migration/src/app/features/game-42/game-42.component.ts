@@ -66,77 +66,89 @@ interface Ripple {
         <div
           #boardContainer
           (click)="handleContainerClick($event)"
-          class="relative w-full aspect-video md:h-[400px] rounded-2xl border-2 border-dashed border-gray-300 dark:border-gray-800 bg-gray-50/50 dark:bg-black/40 overflow-hidden shadow-inner cursor-crosshair select-none"
+          (keydown.enter)="handleContainerClick($event)"
+          tabindex="0"
+          role="button"
+          aria-label="Game board"
+          class="relative w-full aspect-video md:h-[400px] rounded-2xl border-2 border-dashed border-gray-300 dark:border-gray-800 bg-gray-50/50 dark:bg-black/40 overflow-hidden shadow-inner cursor-crosshair select-none focus:outline-none"
         >
           <!-- Grid Overlay Pattern -->
           <div class="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.07] pointer-events-none"></div>
 
           <!-- Countdown Overlay Screen -->
-          <div
-            *ngIf="!gameStarted && !gameOver"
-            class="absolute inset-0 flex flex-col items-center justify-center bg-white/90 dark:bg-[#0a0f1d]/90 backdrop-blur-md z-10 transition-opacity duration-300"
-          >
-            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Get ready!</span>
-            <h1 class="text-6xl font-black text-teal-500 font-mono animate-scalePulse">
-              {{ startTimer > 0 ? startTimer : 'GO!' }}
-            </h1>
-          </div>
+          @if (!gameStarted && !gameOver) {
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center bg-white/90 dark:bg-[#0a0f1d]/90 backdrop-blur-md z-10 transition-opacity duration-300"
+            >
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Get ready!</span>
+              <h1 class="text-6xl font-black text-teal-500 font-mono animate-scalePulse">
+                {{ startTimer > 0 ? startTimer : 'GO!' }}
+              </h1>
+            </div>
+          }
 
           <!-- Game Over/Win Overlay Screen -->
-          <div
-            *ngIf="gameOver"
-            class="absolute inset-0 flex flex-col items-center justify-center bg-white/90 dark:bg-[#0a0f1d]/95 backdrop-blur-md z-10"
-          >
-            <span class="text-5xl mb-4 animate-bounce">
-              {{ gameWon ? '🏆' : '💀' }}
-            </span>
-            <h2
-              [ngClass]="{
-                'text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-500': gameWon,
-                'text-red-500': !gameWon
-              }"
-              class="text-3xl font-black uppercase tracking-wide mb-6"
+          @if (gameOver) {
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center bg-white/90 dark:bg-[#0a0f1d]/95 backdrop-blur-md z-10"
             >
-              {{ (gameWon ? 'game.win' : 'game.over') | translate }}
-            </h2>
-            <button
-              (click)="resetGame()"
-              class="px-6 py-2.5 bg-teal-500 text-white hover:bg-teal-600 font-bold text-sm rounded-xl active:scale-95 shadow-md shadow-teal-500/20 hover:shadow-teal-500/30 transition-all duration-200"
-            >
-              Play Again
-            </button>
-          </div>
+              <span class="text-5xl mb-4 animate-bounce">
+                {{ gameWon ? '🏆' : '💀' }}
+              </span>
+              <h2
+                [ngClass]="{
+                  'text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-500': gameWon,
+                  'text-red-500': !gameWon
+                }"
+                class="text-3xl font-black uppercase tracking-wide mb-6"
+              >
+                {{ (gameWon ? 'game.win' : 'game.over') | translate }}
+              </h2>
+              <button
+                (click)="resetGame()"
+                class="px-6 py-2.5 bg-teal-500 text-white hover:bg-teal-600 font-bold text-sm rounded-xl active:scale-95 shadow-md shadow-teal-500/20 hover:shadow-teal-500/30 transition-all duration-200"
+              >
+                Play Again
+              </button>
+            </div>
+          }
 
           <!-- Target Glowing Orb -->
-          <div
-            *ngIf="gameStarted && !gameOver"
-            (click)="handleTargetClick($event)"
-            [ngClass]="{ 'pop-animation': animateClick }"
-            [ngStyle]="{
-              'top': targetPosition.top,
-              'left': targetPosition.left
-            }"
-            class="absolute w-12 h-12 rounded-full cursor-pointer flex items-center justify-center select-none pointer-events-auto transform -translate-x-1/2 -translate-y-1/2"
-            style="transition: top 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), left 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);"
-          >
-            <!-- Glowing Ring -->
-            <div class="absolute inset-0 rounded-full bg-red-500 opacity-75 blur-md animate-ping"></div>
-            <!-- Core Orb -->
-            <div class="relative w-9 h-9 rounded-full bg-gradient-to-tr from-red-600 to-rose-400 border border-white/40 shadow-lg shadow-red-500/50 flex items-center justify-center">
-              <!-- Target Bullseye Inner Dot -->
-              <div class="w-3 h-3 rounded-full bg-white shadow-inner"></div>
+          @if (gameStarted && !gameOver) {
+            <div
+              (click)="handleTargetClick($event)"
+              (keydown.enter)="handleTargetClick($event)"
+              tabindex="0"
+              role="button"
+              aria-label="Target"
+              [ngClass]="{ 'pop-animation': animateClick }"
+              [ngStyle]="{
+                'top': targetPosition.top,
+                'left': targetPosition.left
+              }"
+              class="absolute w-12 h-12 rounded-full cursor-pointer flex items-center justify-center select-none pointer-events-auto transform -translate-x-1/2 -translate-y-1/2 focus:outline-none"
+              style="transition: top 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), left 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);"
+            >
+              <!-- Glowing Ring -->
+              <div class="absolute inset-0 rounded-full bg-red-500 opacity-75 blur-md animate-ping"></div>
+              <!-- Core Orb -->
+              <div class="relative w-9 h-9 rounded-full bg-gradient-to-tr from-red-600 to-rose-400 border border-white/40 shadow-lg shadow-red-500/50 flex items-center justify-center">
+                <!-- Target Bullseye Inner Dot -->
+                <div class="w-3 h-3 rounded-full bg-white shadow-inner"></div>
+              </div>
             </div>
-          </div>
+          }
 
           <!-- Click Ripples -->
-          <span
-            *ngFor="let ripple of ripples"
-            [ngStyle]="{
-              'left.px': ripple.x,
-              'top.px': ripple.y
-            }"
-            class="ripple"
-          ></span>
+          @for (ripple of ripples; track ripple.id) {
+            <span
+              [ngStyle]="{
+                'left.px': ripple.x,
+                'top.px': ripple.y
+              }"
+              class="ripple"
+            ></span>
+          }
         </div>
       </div>
     </app-container>
@@ -201,9 +213,9 @@ export class Game42Component implements OnInit, OnDestroy {
   gameStarted = false;
   ripples: Ripple[] = [];
 
-  private countdownInterval: any;
-  private gameTimerInterval: any;
-  private targetMoveInterval: any;
+  private countdownInterval: ReturnType<typeof setInterval> | undefined;
+  private gameTimerInterval: ReturnType<typeof setInterval> | undefined;
+  private targetMoveInterval: ReturnType<typeof setInterval> | undefined;
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
@@ -261,7 +273,7 @@ export class Game42Component implements OnInit, OnDestroy {
     this.targetPosition = { top, left };
   }
 
-  handleTargetClick(event: MouseEvent) {
+  handleTargetClick(event: Event) {
     event.stopPropagation(); // Avoid triggering container click
     if (this.gameOver || this.animateClick) return;
 
@@ -277,12 +289,17 @@ export class Game42Component implements OnInit, OnDestroy {
     }
   }
 
-  handleContainerClick(event: MouseEvent) {
+  handleContainerClick(event: Event) {
     if (!this.gameStarted || this.gameOver) return;
 
     const rect = this.boardContainer.nativeElement.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
+    let x = rect.width / 2;
+    let y = rect.height / 2;
+
+    if (event instanceof MouseEvent) {
+      x = event.clientX - rect.left;
+      y = event.clientY - rect.top;
+    }
     
     const ripple = { x, y, id: Date.now() };
     this.ripples.push(ripple);

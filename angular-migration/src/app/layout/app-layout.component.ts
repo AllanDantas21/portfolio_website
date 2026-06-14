@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -32,9 +32,8 @@ import { Subscription } from 'rxjs';
 })
 export class AppLayoutComponent implements OnInit, OnDestroy {
   theme: Theme = 'light';
+  private themeService = inject(ThemeService);
   private themeSub!: Subscription;
-
-  constructor(private themeService: ThemeService) {}
 
   ngOnInit() {
     this.themeSub = this.themeService.theme$.subscribe(t => {

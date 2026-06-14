@@ -19,7 +19,9 @@ import { scaleIn } from '../../shared/animations';
       class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-white hover:bg-opacity-90 transition-all duration-200"
       [attr.aria-label]="label"
     >
-      <span *ngIf="icon" class="text-lg">{{ icon }}</span>
+      @if (icon) {
+        <span class="text-lg">{{ icon }}</span>
+      }
       <span>{{ label }}</span>
     </a>
   `,

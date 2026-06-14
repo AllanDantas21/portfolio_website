@@ -32,8 +32,6 @@ export class AwardsService {
   private awardsSubject = new BehaviorSubject<Award[]>(this.awards);
   awards$ = this.awardsSubject.asObservable();
 
-  constructor() {}
-
   /**
    * Get all awards
    */

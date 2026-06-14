@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
@@ -27,7 +27,8 @@ import { fadeInUp } from '../../shared/animations';
 
       <!-- Projects Grid -->
       <div [@fadeInUp] class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-stretch">
-        <div *ngFor="let project of projects" class="h-full">
+        @for (project of projects; track project.id) {
+          <div class="h-full">
           <a
             [routerLink]="['/projects', project.id]"
             class="flex flex-col h-full bg-white dark:bg-[#1a2234] border border-gray-200/60 dark:border-gray-800/60 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 group"
@@ -57,6 +58,7 @@ import { fadeInUp } from '../../shared/animations';
             </p>
           </a>
         </div>
+        }
       </div>
     </app-container>
   `,
@@ -74,9 +76,8 @@ import { fadeInUp } from '../../shared/animations';
   animations: [fadeInUp]
 })
 export class ProjectsComponent implements OnInit {
+  private projectsService = inject(ProjectsService);
   projects: Project[] = [];
-
-  constructor(private projectsService: ProjectsService) {}
 
   ngOnInit() {
     this.projectsService.getAll().subscribe(p => {

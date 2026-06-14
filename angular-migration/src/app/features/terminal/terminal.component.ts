@@ -39,7 +39,11 @@ interface HistoryLine {
       <div
         [@fadeInUp]
         (click)="focusInput()"
-        class="w-full max-w-2xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-gray-200/50 dark:border-gray-800 bg-white/70 dark:bg-[#0a0f1d]/90 backdrop-blur-md transition-all duration-300 hover:shadow-teal-500/5"
+        (keydown.enter)="focusInput()"
+        tabindex="0"
+        role="button"
+        aria-label="Terminal CLI"
+        class="w-full max-w-2xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-gray-200/50 dark:border-gray-800 bg-white/70 dark:bg-[#0a0f1d]/90 backdrop-blur-md transition-all duration-300 hover:shadow-teal-500/5 focus:outline-none"
       >
         <!-- Window Title Bar -->
         <div class="flex items-center justify-between px-4 py-3 bg-gray-100 dark:bg-[#111827] border-b border-gray-200 dark:border-gray-800 select-none">
@@ -60,16 +64,20 @@ interface HistoryLine {
           class="p-5 h-[380px] overflow-y-auto font-mono text-sm leading-relaxed text-gray-800 dark:text-green-400 bg-transparent scrollbar-thin scrollbar-thumb-teal-500"
         >
           <!-- Lines -->
-          <div *ngFor="let line of history" class="mb-2.5">
-            <span *ngIf="line.isInput" class="text-teal-600 dark:text-teal-400 font-bold mr-2 select-none">❯</span>
-            <span
-              [ngClass]="{
-                'text-gray-900 dark:text-white font-semibold': line.isInput,
-                'text-gray-800 dark:text-gray-300': !line.isInput && !isGreenOutput(line.text)
-              }"
-              class="whitespace-pre-wrap"
-            >{{ line.text }}</span>
-          </div>
+          @for (line of history; track line.text) {
+            <div class="mb-2.5">
+              @if (line.isInput) {
+                <span class="text-teal-600 dark:text-teal-400 font-bold mr-2 select-none">❯</span>
+              }
+              <span
+                [ngClass]="{
+                  'text-gray-900 dark:text-white font-semibold': line.isInput,
+                  'text-gray-800 dark:text-gray-300': !line.isInput && !isGreenOutput(line.text)
+                }"
+                class="whitespace-pre-wrap"
+              >{{ line.text }}</span>
+            </div>
+          }
 
           <!-- Active Input Prompt -->
           <form (ngSubmit)="onSubmit($event)" class="flex items-center mt-3">
