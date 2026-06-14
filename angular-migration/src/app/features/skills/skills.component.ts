@@ -32,7 +32,6 @@ interface Tab {
       <!-- 1. Experience Timeline Section -->
       <section [@fadeInUp] class="mb-16">
         <h3 class="text-2xl font-bold mb-8 text-gray-900 dark:text-white flex items-center gap-2">
-          <span>💼</span>
           {{ 'skills.experienceTitle' | translate }}
         </h3>
         
@@ -45,7 +44,10 @@ interface Tab {
                  class="flex flex-col md:flex-row items-stretch justify-between w-full md:even:flex-row-reverse relative">
                  
               <!-- Content Card -->
-              <div class="w-full md:w-[45%] bg-white dark:bg-[#1a2234] border border-gray-200/60 dark:border-gray-800/60 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-teal-500/50 transition-all duration-300">
+              <div (mouseenter)="hoveredExp = exp.id"
+                   (mouseleave)="hoveredExp = null"
+                   [style.border-color]="hoveredExp === exp.id ? exp.color : ''"
+                   class="w-full md:w-[45%] bg-white dark:bg-[#1a2234] border border-gray-200/60 dark:border-gray-800/60 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
                 <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
                   <span class="text-xs font-bold text-teal-600 dark:text-teal-400 uppercase tracking-wider">
                     {{ 'skills.experiences.' + exp.id + '.year' | translate }}
@@ -83,9 +85,40 @@ interface Tab {
               </div>
               
               <!-- Central Icon Circle (desktop only) -->
-              <div class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full flex items-center justify-center border-4 border-white dark:border-[#111827] shadow z-10 text-base text-white hidden md:flex"
+              <div class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full flex items-center justify-center border-4 border-white dark:border-[#111827] shadow z-10 text-white hidden md:flex"
                    [style.background-color]="exp.color">
-                <span>{{ getExpIcon(exp.id) }}</span>
+                <ng-container [ngSwitch]="exp.id">
+                  <!-- Briefcase for ciandt-analyst -->
+                  <svg *ngSwitchCase="'ciandt-analyst'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                  <!-- Laptop for ciandt-intern -->
+                  <svg *ngSwitchCase="'ciandt-intern'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="2" y1="20" x2="22" y2="20"></line>
+                    <line x1="12" y1="17" x2="12" y2="20"></line>
+                  </svg>
+                  <!-- Building for fortytwo-rio -->
+                  <svg *ngSwitchCase="'fortytwo-rio'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                    <line x1="9" y1="22" x2="9" y2="16"></line>
+                    <line x1="15" y1="22" x2="15" y2="16"></line>
+                    <line x1="9" y1="16" x2="15" y2="16"></line>
+                    <path d="M8 6h2v2H8V6zm4 0h2v2h-2V6zm4 0h2v2h-2V6zM8 10h2v2H8v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"></path>
+                  </svg>
+                  <!-- Code for ruminante -->
+                  <svg *ngSwitchCase="'ruminante'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                  <!-- Default marker -->
+                  <svg *ngSwitchDefault viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                </ng-container>
               </div>
 
               <!-- Empty Spacer for desktop alignment -->
@@ -101,7 +134,6 @@ interface Tab {
       <!-- 2. Technical Skills Grid -->
       <section [@fadeInUp] class="mb-16">
         <h3 class="text-2xl font-bold mb-8 text-gray-900 dark:text-white flex items-center gap-2">
-          <span>🛠️</span>
           {{ 'skills.hardSkills' | translate }}
         </h3>
 
@@ -121,29 +153,35 @@ interface Tab {
         <!-- Skills Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
           <div *ngFor="let skill of getActiveSkills()" 
-               class="bg-white dark:bg-[#1a2234] border border-gray-200/60 dark:border-gray-800/60 rounded-xl p-5 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center gap-4">
+               (mouseenter)="hoveredCard = skill.name"
+               (mouseleave)="hoveredCard = null"
+               [style.border-color]="hoveredCard === skill.name ? skill.color : ''"
+               class="bg-white dark:bg-[#1a2234] border border-gray-200/60 dark:border-gray-800/60 rounded-xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center text-center gap-4">
             
-            <div class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-white shadow-sm flex-shrink-0"
-                 [style.background-color]="skill.color">
-              {{ skill.name.slice(0, 2) }}
+            <!-- Skill Icon -->
+            <div class="w-12 h-12 flex items-center justify-center">
+              <img *ngIf="getSkillIconSlug(skill.name)" 
+                   [src]="'https://cdn.simpleicons.org/' + getSkillIconSlug(skill.name) + '/' + (skill.name === 'Next.js' ? 'currentColor' : skill.color.replace('#', ''))" 
+                   class="w-12 h-12 object-contain"
+                   [alt]="skill.name" />
+              <svg *ngIf="!getSkillIconSlug(skill.name)" 
+                   [style.color]="skill.color"
+                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                   class="w-12 h-12">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
             </div>
             
-            <div class="flex-1 min-w-0">
-              <h4 class="text-base font-bold text-gray-900 dark:text-white truncate">
+            <!-- Title & Category -->
+            <div class="space-y-2">
+              <h4 class="text-lg font-bold text-gray-900 dark:text-white">
                 {{ skill.name }}
               </h4>
-              <span class="text-xs text-gray-500 dark:text-gray-400">
+              <span class="inline-block px-2.5 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/30 text-teal-600 dark:text-teal-400 text-xs font-bold uppercase tracking-wider">
                 {{ skill.category }}
               </span>
-              <div class="w-full bg-gray-100 dark:bg-gray-800/50 h-1.5 rounded-full mt-2 overflow-hidden">
-                <div class="h-full rounded-full transition-all duration-500"
-                     [style.width.%]="skill.level"
-                     [style.background-color]="skill.color"></div>
-              </div>
             </div>
-            <span class="text-xs font-bold text-gray-500 dark:text-gray-400 self-end mb-1">
-              {{ skill.level }}%
-            </span>
           </div>
         </div>
       </section>
@@ -154,13 +192,15 @@ interface Tab {
       <!-- 3. Languages Section -->
       <section [@fadeInUp] class="mb-16">
         <h3 class="text-2xl font-bold mb-8 text-gray-900 dark:text-white flex items-center gap-2">
-          <span>🌐</span>
           {{ 'skills.languages' | translate }}
         </h3>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div *ngFor="let lang of languages" 
-               class="bg-white dark:bg-[#1a2234] border border-gray-200/60 dark:border-gray-800/60 rounded-xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center justify-between gap-6">
+               (mouseenter)="hoveredLang = lang.language"
+               (mouseleave)="hoveredLang = null"
+               [style.border-color]="hoveredLang === lang.language ? '#2dd4bf' : ''"
+               class="bg-white dark:bg-[#1a2234] border border-gray-200/60 dark:border-gray-800/60 rounded-xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-between gap-6">
             <div>
               <h4 class="text-lg font-bold text-gray-900 dark:text-white">
                 {{ 'skills.languageSkills.' + lang.language | translate }}
@@ -188,17 +228,25 @@ interface Tab {
       <!-- 4. Soft Skills Section -->
       <section [@fadeInUp] class="mb-12">
         <h3 class="text-2xl font-bold mb-8 text-gray-900 dark:text-white flex items-center gap-2">
-          <span>🤝</span>
           {{ 'skills.softSkills' | translate }}
         </h3>
         
         <div class="bg-white dark:bg-[#1a2234] border border-gray-200/60 dark:border-gray-800/60 rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300">
-          <div class="flex flex-wrap gap-3 mb-6 justify-center">
-            <span *ngFor="let skill of softSkills" 
-                  [ngClass]="getSoftSkillClass(skill)"
-                  class="px-4 py-2 rounded-lg text-sm font-semibold tracking-wide border shadow-sm transition-all duration-200 hover:scale-105 select-none">
-              {{ 'skills.softSkillsList.' + skill | translate }}
-            </span>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div class="space-y-4">
+              <div *ngFor="let skill of softSkills.slice(0, 3)" 
+                   [ngClass]="getSoftSkillClass(skill)"
+                   class="px-4 py-2.5 rounded-lg text-sm font-semibold tracking-wide border shadow-sm transition-all duration-200 hover:scale-[1.02] select-none text-center md:text-left">
+                {{ 'skills.softSkillsList.' + skill | translate }}
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div *ngFor="let skill of softSkills.slice(3, 6)" 
+                   [ngClass]="getSoftSkillClass(skill)"
+                   class="px-4 py-2.5 rounded-lg text-sm font-semibold tracking-wide border shadow-sm transition-all duration-200 hover:scale-[1.02] select-none text-center md:text-left">
+                {{ 'skills.softSkillsList.' + skill | translate }}
+              </div>
+            </div>
           </div>
           
           <p class="text-center text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed max-w-xl mx-auto border-t border-gray-100 dark:border-gray-800/50 pt-4">
@@ -225,6 +273,10 @@ export class SkillsComponent implements OnInit {
     { id: 'web', label: 'skills.webDevelopment' },
     { id: 'tools', label: 'skills.toolsTechnologies' }
   ];
+
+  hoveredCard: string | null = null;
+  hoveredExp: string | null = null;
+  hoveredLang: string | null = null;
 
   constructor(
     private skillsService: SkillsService,
@@ -260,13 +312,27 @@ export class SkillsComponent implements OnInit {
     }
   }
 
-  getExpIcon(id: string): string {
-    switch (id) {
-      case 'ciandt-analyst': return '💼';
-      case 'ciandt-intern': return '💻';
-      case 'fortytwo-rio': return '🏢';
-      case 'ruminante': return '🚀';
-      default: return '📍';
+  getSkillIconSlug(name: string): string {
+    switch (name) {
+      case 'C': return 'c';
+      case 'C++': return 'cplusplus';
+      case 'Python': return 'python';
+      case 'Java': return 'java';
+      case 'Rust': return 'rust';
+      case 'TypeScript': return 'typescript';
+      case 'JavaScript': return 'javascript';
+      case 'React': return 'react';
+      case 'Next.js': return 'nextdotjs';
+      case 'Angular': return 'angular';
+      case 'Linux': return 'linux';
+      case 'Git': return 'git';
+      case 'Docker': return 'docker';
+      case 'Nginx': return 'nginx';
+      case 'Bash': return 'gnubash';
+      case 'Vim': return 'vim';
+      case 'SQL Server': return 'microsoftsqlserver';
+      case 'Prompt Flow': return 'microsoft';
+      default: return '';
     }
   }
 
