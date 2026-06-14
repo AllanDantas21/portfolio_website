@@ -25,8 +25,8 @@ interface NavItem {
   template: `
     <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b backdrop-blur-md"
          [ngClass]="{
-           'bg-white/40 dark:bg-[#111827]/40 border-gray-200/20 dark:border-gray-800/20': !isScrolled,
-           'bg-white/80 dark:bg-[#111827]/80 shadow-sm border-gray-200/50 dark:border-gray-800/50': isScrolled
+           'bg-white/40 dark:bg-app-bg-dark/40 border-gray-200/20 dark:border-gray-800/20': !isScrolled,
+           'bg-white/80 dark:bg-app-bg-dark/80 shadow-sm border-gray-200/50 dark:border-gray-800/50': isScrolled
          }">
       <div class="max-w-2xl mx-auto px-4 sm:px-6 py-2">
         <div class="flex items-center justify-between h-12">
@@ -91,7 +91,7 @@ interface NavItem {
       </div>
 
       <!-- Mobile Menu Dropdown -->
-      <div class="md:hidden transition-all duration-300 ease-in-out border-t border-gray-200/30 dark:border-gray-800/30 bg-white/95 dark:bg-[#111827]/95"
+      <div class="md:hidden transition-all duration-300 ease-in-out border-t border-gray-200/30 dark:border-gray-800/30 bg-white/95 dark:bg-app-bg-dark/95"
            [ngClass]="{
              'max-h-0 overflow-hidden opacity-0 invisible': !isMobileMenuOpen, 
              'max-h-[300px] opacity-100 visible py-2': isMobileMenuOpen

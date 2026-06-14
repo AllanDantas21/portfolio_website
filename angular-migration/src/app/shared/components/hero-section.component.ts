@@ -16,10 +16,10 @@ import { fadeInUp } from '../../shared/animations';
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
           {{ title }}
         </h1>
-        <p *ngIf="subtitle" class="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8">
+        <p *ngIf="subtitle" class="text-xl sm:text-2xl text-gray-800 dark:text-gray-300 mb-8 font-medium">
           {{ subtitle }}
         </p>
-        <div *ngIf="description" class="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+        <div *ngIf="description" class="text-lg text-gray-700 dark:text-gray-400 max-w-2xl mx-auto">
           {{ description }}
         </div>
       </div>
@@ -29,7 +29,7 @@ import { fadeInUp } from '../../shared/animations';
   animations: [fadeInUp]
 })
 export class HeroSectionComponent {
-  @Input() title: string = '';
+  @Input() title = '';
   @Input() subtitle?: string;
   @Input() description?: string;
 }

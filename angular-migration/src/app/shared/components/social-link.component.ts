@@ -27,7 +27,7 @@ import { scaleIn } from '../../shared/animations';
   animations: [scaleIn]
 })
 export class SocialLinkComponent {
-  @Input() href: string = '#';
-  @Input() label: string = '';
+  @Input() href = '#';
+  @Input() label = '';
   @Input() icon?: string;
 }

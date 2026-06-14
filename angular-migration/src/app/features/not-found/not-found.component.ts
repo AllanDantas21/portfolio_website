@@ -30,7 +30,7 @@ import { fadeInUp } from '../../shared/animations';
           <h1 class="text-3xl font-black text-gray-900 dark:text-white mb-3 tracking-tight">
             {{ 'notFound.title' | translate }}
           </h1>
-          <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
+          <p class="text-gray-700 dark:text-gray-400 text-sm sm:text-base leading-relaxed font-medium">
             {{ 'notFound.description' | translate }}
           </p>
         </div>

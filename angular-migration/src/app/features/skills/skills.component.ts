@@ -24,7 +24,7 @@ interface Tab {
         <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
           {{ 'skills.skillsTitle' | translate }}
         </h2>
-        <p class="text-gray-600 dark:text-gray-400 mt-2 max-w-xl mx-auto text-sm sm:text-base">
+        <p class="text-gray-700 dark:text-gray-400 mt-2 max-w-xl mx-auto text-sm sm:text-base font-medium">
           {{ 'skills.techIntro' | translate }}
         </p>
       </div>
@@ -37,7 +37,7 @@ interface Tab {
         
         <div class="relative">
           <!-- Central vertical line (desktop only) -->
-          <div class="absolute left-1/2 top-4 bottom-4 w-0.5 bg-gray-200 dark:bg-gray-800 -translate-x-1/2 hidden md:block"></div>
+          <div class="absolute left-1/2 top-4 bottom-4 w-0.5 bg-gray-400 dark:bg-gray-800 -translate-x-1/2 hidden md:block"></div>
           
           <div class="space-y-12 md:space-y-16 relative">
             <div *ngFor="let exp of experiences; let i = index" 
@@ -47,12 +47,12 @@ interface Tab {
               <div (mouseenter)="hoveredExp = exp.id"
                    (mouseleave)="hoveredExp = null"
                    [style.border-color]="hoveredExp === exp.id ? exp.color : ''"
-                   class="w-full md:w-[45%] bg-white dark:bg-[#1a2234] border border-gray-200/60 dark:border-gray-800/60 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                   class="w-full md:w-[45%] bg-white dark:bg-[#1a2234] border border-gray-300 dark:border-gray-800/80 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
                 <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
-                  <span class="text-xs font-bold text-teal-600 dark:text-teal-400 uppercase tracking-wider">
+                  <span class="text-xs font-bold text-teal-700 dark:text-teal-400 uppercase tracking-wider">
                     {{ 'skills.experiences.' + exp.id + '.year' | translate }}
                   </span>
-                  <span class="px-2.5 py-0.5 text-xs font-semibold rounded bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+                  <span class="px-2.5 py-0.5 text-xs font-bold rounded bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
                     {{ exp.company }}
                   </span>
                 </div>
@@ -61,23 +61,23 @@ interface Tab {
                   {{ 'skills.experiences.' + exp.id + '.title' | translate }}
                 </h4>
                 
-                <div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-4">
+                <div class="flex items-center gap-2 text-xs font-semibold text-gray-600 dark:text-gray-400 mb-4">
                   <span>{{ exp.type }}</span>
                   <span>•</span>
                   <span>{{ exp.location }}</span>
                 </div>
                 
-                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-5">
+                <p class="text-sm text-gray-800 dark:text-gray-300 leading-relaxed mb-5">
                   {{ 'skills.experiences.' + exp.id + '.description' | translate }}
                 </p>
                 
                 <div>
-                  <span class="block text-xs font-semibold text-gray-500 dark:text-gray-400 mb-2">
+                  <span class="block text-xs font-bold text-gray-700 dark:text-gray-400 mb-2">
                     {{ 'skills.technologies' | translate }}:
                   </span>
                   <div class="flex flex-wrap gap-1.5">
                     <span *ngFor="let tech of exp.technologies" 
-                          class="px-2 py-0.5 text-xs rounded border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-400">
+                          class="px-2.5 py-1 text-xs rounded border border-gray-300 dark:border-gray-700 bg-gray-100/40 dark:bg-gray-900/60 text-gray-700 dark:text-gray-300 font-medium">
                       {{ tech }}
                     </span>
                   </div>
@@ -129,7 +129,7 @@ interface Tab {
       </section>
 
       <!-- Divider -->
-      <div class="border-t border-gray-200/50 dark:border-gray-800/50 my-12"></div>
+      <div class="border-t border-gray-300 dark:border-gray-800/80 my-12"></div>
 
       <!-- 2. Technical Skills Grid -->
       <section [@fadeInUp] class="mb-16">
@@ -138,12 +138,12 @@ interface Tab {
         </h3>
 
         <!-- Categories Tabs -->
-        <div class="flex border-b border-gray-200 dark:border-gray-800 mb-8 overflow-x-auto">
+        <div class="flex border-b border-gray-300 dark:border-gray-800 mb-8 overflow-x-auto">
           <button *ngFor="let tab of tabs" 
                   (click)="activeTab = tab.id"
                   [ngClass]="{
-                    'border-teal-500 text-teal-600 dark:text-teal-400 font-bold': activeTab === tab.id,
-                    'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200': activeTab !== tab.id
+                    'border-teal-500 text-teal-700 dark:text-teal-400 font-bold': activeTab === tab.id,
+                    'border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200': activeTab !== tab.id
                   }"
                   class="py-3 px-6 border-b-2 font-semibold text-sm transition-all duration-200 whitespace-nowrap focus:outline-none">
             {{ tab.label | translate }}
@@ -156,7 +156,7 @@ interface Tab {
                (mouseenter)="hoveredCard = skill.name"
                (mouseleave)="hoveredCard = null"
                [style.border-color]="hoveredCard === skill.name ? skill.color : ''"
-               class="bg-white dark:bg-[#1a2234] border border-gray-200/60 dark:border-gray-800/60 rounded-xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center text-center gap-4">
+               class="bg-white dark:bg-[#1a2234] border border-gray-300 dark:border-gray-800/80 rounded-xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center text-center gap-4">
             
             <!-- Skill Icon -->
             <div class="w-12 h-12 flex items-center justify-center">
@@ -178,7 +178,7 @@ interface Tab {
               <h4 class="text-lg font-bold text-gray-900 dark:text-white">
                 {{ skill.name }}
               </h4>
-              <span class="inline-block px-2.5 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/30 text-teal-600 dark:text-teal-400 text-xs font-bold uppercase tracking-wider">
+              <span class="inline-block px-2.5 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/30 text-teal-800 dark:text-teal-400 text-xs font-bold uppercase tracking-wider border border-teal-200/50 dark:border-transparent">
                 {{ skill.category }}
               </span>
             </div>
@@ -187,7 +187,7 @@ interface Tab {
       </section>
 
       <!-- Divider -->
-      <div class="border-t border-gray-200/50 dark:border-gray-800/50 my-12"></div>
+      <div class="border-t border-gray-300 dark:border-gray-800/80 my-12"></div>
 
       <!-- 3. Languages Section -->
       <section [@fadeInUp] class="mb-16">
@@ -200,12 +200,12 @@ interface Tab {
                (mouseenter)="hoveredLang = lang.language"
                (mouseleave)="hoveredLang = null"
                [style.border-color]="hoveredLang === lang.language ? '#2dd4bf' : ''"
-               class="bg-white dark:bg-[#1a2234] border border-gray-200/60 dark:border-gray-800/60 rounded-xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-between gap-6">
+               class="bg-white dark:bg-[#1a2234] border border-gray-300 dark:border-gray-800/80 rounded-xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-between gap-6">
             <div>
               <h4 class="text-lg font-bold text-gray-900 dark:text-white">
                 {{ 'skills.languageSkills.' + lang.language | translate }}
               </h4>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 font-medium">
+              <p class="text-sm text-gray-700 dark:text-gray-400 mt-1 font-medium">
                 {{ 'skills.languageSkills.' + lang.description | translate }}
               </p>
             </div>
@@ -223,7 +223,7 @@ interface Tab {
       </section>
 
       <!-- Divider -->
-      <div class="border-t border-gray-200/50 dark:border-gray-800/50 my-12"></div>
+      <div class="border-t border-gray-300 dark:border-gray-800/80 my-12"></div>
 
       <!-- 4. Soft Skills Section -->
       <section [@fadeInUp] class="mb-12">
@@ -231,25 +231,25 @@ interface Tab {
           {{ 'skills.softSkills' | translate }}
         </h3>
         
-        <div class="bg-white dark:bg-[#1a2234] border border-gray-200/60 dark:border-gray-800/60 rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300">
+        <div class="bg-white dark:bg-[#1a2234] border border-gray-300 dark:border-gray-800/80 rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div class="space-y-4">
               <div *ngFor="let skill of softSkills.slice(0, 3)" 
                    [ngClass]="getSoftSkillClass(skill)"
-                   class="px-4 py-2.5 rounded-lg text-sm font-semibold tracking-wide border shadow-sm transition-all duration-200 hover:scale-[1.02] select-none text-center md:text-left">
+                   class="px-4 py-2.5 rounded-lg text-sm font-bold tracking-wide border shadow-sm transition-all duration-200 hover:scale-[1.02] select-none text-center md:text-left">
                 {{ 'skills.softSkillsList.' + skill | translate }}
               </div>
             </div>
             <div class="space-y-4">
               <div *ngFor="let skill of softSkills.slice(3, 6)" 
                    [ngClass]="getSoftSkillClass(skill)"
-                   class="px-4 py-2.5 rounded-lg text-sm font-semibold tracking-wide border shadow-sm transition-all duration-200 hover:scale-[1.02] select-none text-center md:text-left">
+                   class="px-4 py-2.5 rounded-lg text-sm font-bold tracking-wide border shadow-sm transition-all duration-200 hover:scale-[1.02] select-none text-center md:text-left">
                 {{ 'skills.softSkillsList.' + skill | translate }}
               </div>
             </div>
           </div>
           
-          <p class="text-center text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed max-w-xl mx-auto border-t border-gray-100 dark:border-gray-800/50 pt-4">
+          <p class="text-center text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed max-w-xl mx-auto border-t border-gray-200 dark:border-gray-800/50 pt-4">
             {{ 'skills.soft' | translate }}
           </p>
         </div>
@@ -339,19 +339,19 @@ export class SkillsComponent implements OnInit {
   getSoftSkillClass(skill: string): string {
     switch (skill) {
       case 'teamwork':
-        return 'bg-teal-500/10 text-teal-600 border-teal-200/50 dark:bg-teal-500/20 dark:text-teal-300 dark:border-teal-800/50';
+        return 'bg-teal-50/80 text-teal-800 border-teal-200/60 dark:bg-teal-500/20 dark:text-teal-300 dark:border-teal-800/50';
       case 'problemSolving':
-        return 'bg-cyan-500/10 text-cyan-600 border-cyan-200/50 dark:bg-cyan-500/20 dark:text-cyan-300 dark:border-cyan-800/50';
+        return 'bg-cyan-50/80 text-cyan-800 border-cyan-200/60 dark:bg-cyan-500/20 dark:text-cyan-300 dark:border-cyan-800/50';
       case 'selfLearning':
-        return 'bg-purple-500/10 text-purple-600 border-purple-200/50 dark:bg-purple-500/20 dark:text-purple-300 dark:border-purple-800/50';
+        return 'bg-purple-50/80 text-purple-800 border-purple-200/60 dark:bg-purple-500/20 dark:text-purple-300 dark:border-purple-800/50';
       case 'adaptability':
-        return 'bg-green-500/10 text-green-600 border-green-200/50 dark:bg-green-500/20 dark:text-green-300 dark:border-green-800/50';
+        return 'bg-green-50/80 text-green-800 border-green-200/60 dark:bg-green-500/20 dark:text-green-300 dark:border-green-800/50';
       case 'resilience':
-        return 'bg-orange-500/10 text-orange-600 border-orange-200/50 dark:bg-orange-500/20 dark:text-orange-300 dark:border-orange-800/50';
+        return 'bg-orange-50/80 text-orange-800 border-orange-200/60 dark:bg-orange-500/20 dark:text-orange-300 dark:border-orange-800/50';
       case 'communication':
-        return 'bg-pink-500/10 text-pink-600 border-pink-200/50 dark:bg-pink-500/20 dark:text-pink-300 dark:border-pink-800/50';
+        return 'bg-pink-50/80 text-pink-800 border-pink-200/60 dark:bg-pink-500/20 dark:text-pink-300 dark:border-pink-800/50';
       default:
-        return 'bg-gray-50 text-gray-600 border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700';
+        return 'bg-gray-50 text-gray-700 border-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700';
     }
   }
 }

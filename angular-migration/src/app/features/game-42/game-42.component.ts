@@ -27,7 +27,7 @@ interface Ripple {
         <h2 class="text-3xl font-bold text-gray-900 dark:text-white flex items-center justify-center gap-2">
           <span>🎯</span> Click 42
         </h2>
-        <p class="text-gray-600 dark:text-gray-400 mt-2 text-sm sm:text-base">
+        <p class="text-gray-700 dark:text-gray-400 mt-2 text-sm sm:text-base font-medium">
           Click the target 42 times before the timer runs out!
         </p>
       </div>
@@ -38,7 +38,7 @@ interface Ripple {
         <div class="w-full flex items-center justify-between px-6 py-4 mb-4 rounded-xl bg-white/40 dark:bg-gray-900/40 border border-gray-200/50 dark:border-gray-800/50 backdrop-blur-sm shadow-sm select-none">
           <div class="flex flex-col">
             <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">{{ 'game.score' | translate }}</span>
-            <span class="text-2xl font-black text-teal-600 dark:text-teal-400 font-mono">{{ score }} / 42</span>
+            <span class="text-2xl font-black text-teal-700 dark:text-teal-400 font-mono">{{ score }} / 42</span>
           </div>
 
           <div class="flex flex-col items-center">
@@ -56,7 +56,7 @@ interface Ripple {
 
           <button
             (click)="resetGame()"
-            class="px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg border border-teal-500/20 text-teal-600 dark:text-teal-400 hover:bg-teal-500/10 active:scale-95 transition-all duration-200"
+            class="px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg border border-teal-500/20 text-teal-700 dark:text-teal-400 hover:bg-teal-500/10 active:scale-95 transition-all duration-200"
           >
             {{ 'game.reset' | translate }}
           </button>

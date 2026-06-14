@@ -33,7 +33,7 @@ interface SocialLink {
           <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
             {{ 'general.name' | translate }}
           </h2>
-          <p class="text-gray-600 dark:text-gray-400 mt-1.5 text-sm sm:text-base">
+          <p class="text-gray-800 dark:text-gray-300 mt-1.5 text-sm sm:text-base font-medium">
             {{ 'general.title' | translate }}
           </p>
         </div>
@@ -57,7 +57,7 @@ interface SocialLink {
         <div class="text-center mt-8">
           <a
             routerLink="/projects"
-            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-teal-500 text-white hover:bg-teal-600 active:scale-95 transition-all duration-200 font-semibold text-sm shadow-sm hover:shadow-teal-500/20"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-teal-600 hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-600 text-white active:scale-95 transition-all duration-200 font-semibold text-sm shadow-sm hover:shadow-teal-500/20"
           >
             {{ 'description.portfolio' | translate }}
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
@@ -78,7 +78,7 @@ interface SocialLink {
               [href]="link.href"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-3 px-4 py-2 rounded-lg text-teal-600 dark:text-teal-400 font-semibold hover:bg-teal-500/10 active:scale-95 transition-all duration-200 text-sm sm:text-base"
+              class="inline-flex items-center gap-3 px-4 py-2 rounded-lg text-teal-700 dark:text-teal-400 font-semibold hover:bg-teal-600/10 active:scale-95 transition-all duration-200 text-sm sm:text-base"
             >
               <!-- Icon Container -->
               <span class="w-5 h-5 flex items-center justify-center flex-shrink-0">
@@ -106,14 +106,14 @@ interface SocialLink {
           </li>
         </ul>
       </section>
-
+ 
       <!-- CV Download Button Section -->
       <div [@fadeInUp] class="text-center py-4 border-t border-gray-100 dark:border-gray-900">
         <a
           [href]="'footer.resumeLink' | translate"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-teal-500 text-white hover:bg-teal-600 active:scale-95 transition-all duration-200 font-semibold text-sm shadow-sm hover:shadow-teal-500/20"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-teal-600 hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-600 text-white active:scale-95 transition-all duration-200 font-semibold text-sm shadow-sm hover:shadow-teal-500/20"
         >
           {{ 'navigation.resume' | translate }}
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">

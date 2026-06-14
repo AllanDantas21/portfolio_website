@@ -30,7 +30,7 @@ interface HistoryLine {
         <h2 class="text-3xl font-bold text-gray-900 dark:text-white flex items-center justify-center gap-2">
           <span>🐚</span> Terminal CLI
         </h2>
-        <p class="text-gray-600 dark:text-gray-400 mt-2 text-sm sm:text-base">
+        <p class="text-gray-700 dark:text-gray-400 mt-2 text-sm sm:text-base font-medium">
           {{ 'navigation.commands' | translate }}
         </p>
       </div>
@@ -65,7 +65,7 @@ interface HistoryLine {
             <span
               [ngClass]="{
                 'text-gray-900 dark:text-white font-semibold': line.isInput,
-                'text-gray-600 dark:text-gray-300': !line.isInput && !isGreenOutput(line.text)
+                'text-gray-800 dark:text-gray-300': !line.isInput && !isGreenOutput(line.text)
               }"
               class="whitespace-pre-wrap"
             >{{ line.text }}</span>
@@ -182,7 +182,7 @@ export class TerminalComponent implements OnInit, OnDestroy {
       return null;
     }
 
-    const commands: { [key: string]: string } = {
+    const commands: Record<string, string> = {
       help: this.translate.instant('terminal.help'),
       about: this.translate.instant('terminal.about'),
       skills: this.translate.instant('terminal.skills'),

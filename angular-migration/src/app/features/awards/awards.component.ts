@@ -53,13 +53,13 @@ import { fadeInUp } from '../../shared/animations';
               </h3>
 
               <!-- Year -->
-              <span class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-4 block">
+              <span class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-4 block">
                 {{ award.year }}
               </span>
 
               <!-- Scrollable Description -->
               <div class="max-h-[140px] overflow-y-auto no-scrollbar pr-1">
-                <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
+                <p class="text-sm sm:text-base text-gray-800 dark:text-gray-300 leading-relaxed text-justify">
                   {{ 'awards.' + award.id + '.description' | translate }}
                 </p>
               </div>
@@ -93,10 +93,10 @@ export class AwardsComponent implements OnInit {
 
   getBadgeClass(color: string): string {
     if (color === 'gold') {
-      return 'bg-amber-500/10 text-amber-600 border-amber-200/50 dark:bg-amber-500/20 dark:text-amber-300 dark:border-amber-800/50';
+      return 'bg-amber-500/10 text-amber-800 border-amber-200/50 dark:bg-amber-500/20 dark:text-amber-300 dark:border-amber-800/50';
     } else if (color === 'silver') {
-      return 'bg-slate-400/15 text-slate-600 border-slate-200/50 dark:bg-slate-400/20 dark:text-slate-300 dark:border-slate-700/50';
+      return 'bg-slate-400/15 text-slate-700 border-slate-200/50 dark:bg-slate-400/20 dark:text-slate-300 dark:border-slate-700/50';
     }
-    return 'bg-gray-100 text-gray-600 border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700';
+    return 'bg-gray-100 text-gray-800 border-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700';
   }
 }

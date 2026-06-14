@@ -22,7 +22,7 @@ import { Title } from '@angular/platform-browser';
       <div *ngIf="detail$ | async as detail; else loading" [@fadeInUp] class="w-full">
         <!-- Breadcrumb & Title Header -->
         <div class="flex items-center gap-2 text-sm sm:text-base font-semibold mb-8 flex-wrap select-none">
-          <a routerLink="/projects" class="text-teal-600 dark:text-teal-400 hover:underline">
+          <a routerLink="/projects" class="text-teal-700 dark:text-teal-400 hover:underline">
             Projects
           </a>
           <span class="text-gray-400 font-medium">
@@ -81,14 +81,14 @@ import { Title } from '@angular/platform-browser';
         <div class="mt-8 pt-6 border-t border-gray-150 dark:border-gray-900">
           <ul class="space-y-3">
             <li class="flex items-center gap-3 text-sm sm:text-base flex-wrap">
-              <span class="px-2 py-0.5 rounded bg-green-500/10 text-green-600 dark:text-green-400 font-bold text-xs uppercase tracking-wide">
+              <span class="px-2 py-0.5 rounded bg-green-500/10 text-green-800 dark:text-green-400 font-bold text-xs uppercase tracking-wide">
                 Repository
               </span>
               <a
                 [href]="detail.repoLink"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-1.5 text-teal-600 dark:text-teal-400 font-semibold hover:underline"
+                class="inline-flex items-center gap-1.5 text-teal-700 dark:text-teal-400 font-semibold hover:underline"
               >
                 {{ detail.repoLink }}
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">

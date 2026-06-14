@@ -16,7 +16,7 @@ import { Subscription } from 'rxjs';
   standalone: true,
   imports: [CommonModule, RouterModule, NavbarComponent, FooterComponent],
   template: `
-    <div class="min-h-screen flex flex-col bg-white dark:bg-[#111827] text-gray-800 dark:text-gray-100 transition-colors duration-300">
+    <div class="min-h-screen flex flex-col bg-app-bg-light dark:bg-app-bg-dark text-app-text-light dark:text-app-text-dark transition-colors duration-300">
       <app-navbar></app-navbar>
 
       <!-- Main Content Container -->

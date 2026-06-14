@@ -8,7 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [CommonModule, TranslateModule],
   template: `
     <footer class="border-t border-gray-200/50 dark:border-gray-800/50 py-8 mt-auto backdrop-blur-md">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 dark:text-gray-400 text-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-700 dark:text-gray-400 text-sm">
         <p>© {{ currentYear }} {{ 'general.name' | translate }}. All Rights Reserved.</p>
         <p class="mt-2 text-xs opacity-70">Built with Angular & Tailwind CSS.</p>
       </div>

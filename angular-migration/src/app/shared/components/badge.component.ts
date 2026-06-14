@@ -90,6 +90,6 @@ export type BadgeColor = 'gold' | 'silver' | 'bronze' | 'gray' | 'red' | 'green'
   `]
 })
 export class BadgeComponent {
-  @Input() label: string = '';
+  @Input() label = '';
   @Input() color: BadgeColor = 'gray';
 }

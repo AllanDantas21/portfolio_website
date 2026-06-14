@@ -41,7 +41,7 @@ import { fadeInUp } from '../../shared/animations';
                   class="w-28 h-28 object-contain select-none pointer-events-none filter drop-shadow-[0_4px_6px_rgba(0,0,0,0.15)]"
                 />
               </div>
-              <span class="px-2.5 py-0.5 rounded-full bg-gray-100 dark:bg-gray-800 text-xs font-bold text-gray-500 dark:text-gray-400 tracking-wider">
+              <span class="px-2.5 py-0.5 rounded-full bg-gray-100 dark:bg-gray-800 text-xs font-bold text-gray-700 dark:text-gray-300 tracking-wider">
                 {{ project.difficulty }}
               </span>
             </div>
@@ -52,7 +52,7 @@ import { fadeInUp } from '../../shared/animations';
             </h3>
 
             <!-- Short Description -->
-            <p class="text-sm text-center text-gray-600 dark:text-gray-400 leading-relaxed flex-grow">
+            <p class="text-sm text-center text-gray-700 dark:text-gray-300 leading-relaxed flex-grow">
               {{ 'projects.' + project.id + '.description' | translate }}
             </p>
           </a>

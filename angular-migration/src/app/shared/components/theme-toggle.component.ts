@@ -28,7 +28,7 @@ import { Subscription } from 'rxjs';
         *ngIf="theme === 'light'"
         (click)="toggleTheme()"
         [@themeAnim]
-        class="absolute p-2 rounded-lg bg-purple-500/10 text-purple-600 hover:bg-purple-500/20 transition-all duration-200 hover:scale-110 active:scale-95 focus:outline-none"
+        class="absolute p-2 rounded-lg bg-purple-500/10 text-purple-700 hover:bg-purple-500/20 transition-all duration-200 hover:scale-110 active:scale-95 focus:outline-none"
         [attr.aria-label]="'Switch to dark mode'"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">

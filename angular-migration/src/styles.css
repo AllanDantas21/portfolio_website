@@ -7,6 +7,10 @@
 @theme {
   --font-heading: "M PLUS Rounded 1c", sans-serif;
   --color-glass-teal: #88ccca;
+  --color-app-bg-light: #f0e7db;
+  --color-app-bg-dark: #202023;
+  --color-app-text-light: #202023;
+  --color-app-text-dark: #eeeeee;
 }
 
 /* Global styles */
