@@ -17,7 +17,7 @@ export class ExperienceService {
       title: 'Systems Analyst Jr',
       company: 'CI&T',
       description: 'Currently working as Systems Analyst Jr at CI&T, developing solutions with modern technologies.',
-      technologies: ['C#', 'AngularJS', 'Azure'],
+      technologies: ['C#', 'AngularJS'],
       color: '#2D3748',
       location: 'Rio de Janeiro, Brasil',
       type: 'Full-time'
@@ -28,7 +28,7 @@ export class ExperienceService {
       title: 'Software Engineering Intern',
       company: 'CI&T',
       description: 'Developed and maintained scalable microservices using Java and Spring Boot, applied TDD and DDD practices. Worked with AI agents using Python and Prompt Flow. Analytics with Looker Studio and data orchestration with Google Apps Script.',
-      technologies: ['Java', 'Spring Boot', 'Python', 'Prompt Flow', 'Looker Studio', 'Google Apps Script'],
+      technologies: ['Java', 'Spring Boot', 'Python', 'Prompt Flow', 'Looker Studio', 'Google Apps Script', 'TDD', 'DDD'],
       color: '#1A202C',
       location: 'Rio de Janeiro, Brasil · Remote',
       type: 'Part-time'
@@ -39,7 +39,7 @@ export class ExperienceService {
       title: 'Software Developer',
       company: '42 | RIO',
       description: 'Developed and automated data ingestion, transformation and validation processes. Optimized data pipeline for claims management at Austral insurance.',
-      technologies: ['Python', 'SQL Server', 'Dagster', 'Docker', 'Great Expectations', 'Linux'],
+      technologies: ['Python', 'Microsoft SQL Server', 'Dagster', 'Docker', 'Great Expectations', 'Linux', 'Git'],
       color: '#553C9A',
       location: 'Rio de Janeiro, Brasil',
       type: 'Internship'

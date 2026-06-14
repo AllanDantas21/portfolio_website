@@ -28,7 +28,7 @@ interface NavItem {
            'bg-white/40 dark:bg-[#111827]/40 border-gray-200/20 dark:border-gray-800/20': !isScrolled,
            'bg-white/80 dark:bg-[#111827]/80 shadow-sm border-gray-200/50 dark:border-gray-800/50': isScrolled
          }">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 py-2">
+      <div class="max-w-2xl mx-auto px-4 sm:px-6 py-2">
         <div class="flex items-center justify-between h-12">
           <!-- Logo & Brand -->
           <div class="flex-shrink-0">

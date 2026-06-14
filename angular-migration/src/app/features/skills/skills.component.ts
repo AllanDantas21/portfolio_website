@@ -6,7 +6,7 @@ import { SkillsService } from '../../shared/services/skills.service';
 import { ExperienceService } from '../../shared/services/experience.service';
 import { SkillItem, LanguageSkill, ExperienceItem } from '../../shared/models';
 import { fadeInUp } from '../../shared/animations';
-import { forkJoin } from 'rxjs';
+import { combineLatest } from 'rxjs';
 
 interface Tab {
   id: string;
@@ -18,7 +18,7 @@ interface Tab {
   standalone: true,
   imports: [CommonModule, TranslateModule, ContainerComponent],
   template: `
-    <app-container>
+    <app-container size="4xl">
       <!-- Header -->
       <div [@fadeInUp] class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
@@ -71,7 +71,7 @@ interface Tab {
                 
                 <div>
                   <span class="block text-xs font-semibold text-gray-500 dark:text-gray-400 mb-2">
-                    Tecnologias:
+                    {{ 'skills.technologies' | translate }}:
                   </span>
                   <div class="flex flex-wrap gap-1.5">
                     <span *ngFor="let tech of exp.technologies" 
@@ -102,7 +102,7 @@ interface Tab {
       <section [@fadeInUp] class="mb-16">
         <h3 class="text-2xl font-bold mb-8 text-gray-900 dark:text-white flex items-center gap-2">
           <span>🛠️</span>
-          Habilidades Técnicas
+          {{ 'skills.hardSkills' | translate }}
         </h3>
 
         <!-- Categories Tabs -->
@@ -114,7 +114,7 @@ interface Tab {
                     'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200': activeTab !== tab.id
                   }"
                   class="py-3 px-6 border-b-2 font-semibold text-sm transition-all duration-200 whitespace-nowrap focus:outline-none">
-            {{ tab.label }}
+            {{ tab.label | translate }}
           </button>
         </div>
 
@@ -163,10 +163,10 @@ interface Tab {
                class="bg-white dark:bg-[#1a2234] border border-gray-200/60 dark:border-gray-800/60 rounded-xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center justify-between gap-6">
             <div>
               <h4 class="text-lg font-bold text-gray-900 dark:text-white">
-                {{ 'skills.languageSkills.' + lang.language.toLowerCase() | translate }}
+                {{ 'skills.languageSkills.' + lang.language | translate }}
               </h4>
               <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 font-medium">
-                {{ 'skills.languageSkills.' + (lang.language.toLowerCase() === 'portuguese' ? 'nativeDescription' : 'englishDescription') | translate }}
+                {{ 'skills.languageSkills.' + lang.description | translate }}
               </p>
             </div>
             
@@ -197,7 +197,7 @@ interface Tab {
             <span *ngFor="let skill of softSkills" 
                   [ngClass]="getSoftSkillClass(skill)"
                   class="px-4 py-2 rounded-lg text-sm font-semibold tracking-wide border shadow-sm transition-all duration-200 hover:scale-105 select-none">
-              {{ 'skills.softSkillsList.' + getSoftSkillKey(skill) | translate }}
+              {{ 'skills.softSkillsList.' + skill | translate }}
             </span>
           </div>
           
@@ -221,9 +221,9 @@ export class SkillsComponent implements OnInit {
 
   activeTab = 'programming';
   tabs: Tab[] = [
-    { id: 'programming', label: 'Linguagens' },
-    { id: 'web', label: 'Web / Frameworks' },
-    { id: 'tools', label: 'Ferramentas & DevOps' }
+    { id: 'programming', label: 'skills.programmingLanguages' },
+    { id: 'web', label: 'skills.webDevelopment' },
+    { id: 'tools', label: 'skills.toolsTechnologies' }
   ];
 
   constructor(
@@ -233,7 +233,7 @@ export class SkillsComponent implements OnInit {
 
   ngOnInit() {
     // Fetch all skills and experiences
-    forkJoin({
+    combineLatest({
       programming: this.skillsService.getProgrammingSkills(),
       web: this.skillsService.getWebSkills(),
       tools: this.skillsService.getToolsSkills(),
@@ -270,21 +270,8 @@ export class SkillsComponent implements OnInit {
     }
   }
 
-  getSoftSkillKey(skill: string): string {
-    switch (skill) {
-      case 'Teamwork': return 'teamwork';
-      case 'Problem Solving': return 'problemSolving';
-      case 'Autonomous Learning': return 'selfLearning';
-      case 'Adaptability': return 'adaptability';
-      case 'Resilience': return 'resilience';
-      case 'Communication': return 'communication';
-      default: return skill.toLowerCase();
-    }
-  }
-
   getSoftSkillClass(skill: string): string {
-    const key = this.getSoftSkillKey(skill);
-    switch (key) {
+    switch (skill) {
       case 'teamwork':
         return 'bg-teal-500/10 text-teal-600 border-teal-200/50 dark:bg-teal-500/20 dark:text-teal-300 dark:border-teal-800/50';
       case 'problemSolving':

@@ -33,21 +33,23 @@ export class SkillsService {
     { name: 'Nginx', level: 70, category: 'Web Server', color: '#009639' },
     { name: 'Bash', level: 85, category: 'Shell', color: '#4EAA25' },
     { name: 'Vim', level: 80, category: 'Editor', color: '#019733' },
-    { name: 'SQL Server', level: 75, category: 'Database', color: '#CC2927' }
+    { name: 'SQL Server', level: 75, category: 'Database', color: '#CC2927' },
+    { name: 'Prompt Flow', level: 65, category: 'AI/ML', color: '#0078D4' },
+    { name: 'MCP', level: 70, category: 'Protocol', color: '#6366F1' }
   ];
 
   private languageSkills: LanguageSkill[] = [
-    { language: 'Portuguese', level: 100, description: 'Native' },
-    { language: 'English', level: 70, description: 'Intermediate' }
+    { language: 'portuguese', level: 100, description: 'nativeDescription' },
+    { language: 'english', level: 70, description: 'englishDescription' }
   ];
 
   private softSkills: string[] = [
-    'Teamwork',
-    'Problem Solving',
-    'Autonomous Learning',
-    'Adaptability',
-    'Resilience',
-    'Communication'
+    'teamwork',
+    'problemSolving',
+    'selfLearning',
+    'adaptability',
+    'resilience',
+    'communication'
   ];
 
   private programmingSubject = new BehaviorSubject<SkillItem[]>(this.programmingSkills);

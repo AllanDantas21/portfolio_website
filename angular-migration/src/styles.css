@@ -1,15 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700;900&display=swap');
+
 @import "tailwindcss";
+
+@theme {
+  --font-heading: "M PLUS Rounded 1c", sans-serif;
+  --color-glass-teal: #88ccca;
+}
 
 /* Global styles */
 :root {
-    --color-primary: #10b981;
-    /* teal-500 */
-    --color-secondary: #1f2937;
-    /* gray-800 */
-    --color-bg-light: #ffffff;
-    --color-bg-dark: #111827;
-    --color-text-light: #1f2937;
-    --color-text-dark: #f3f4f6;
+    --color-bg-light: #f0e7db;
+    --color-bg-dark: #202023;
+    --color-text-light: #202023;
+    --color-text-dark: #eeeeee;
+    --color-link-light: #3d7aed;
+    --color-link-dark: #ff63c3;
 }
 
 html {
@@ -17,15 +22,46 @@ html {
 }
 
 body {
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: 'M PLUS Rounded 1c', system-ui, -apple-system, sans-serif;
     background-color: var(--color-bg-light);
     color: var(--color-text-light);
-    transition: background-color 0.2s, color 0.2s;
+    transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 body.dark {
     background-color: var(--color-bg-dark);
     color: var(--color-text-dark);
+}
+
+/* Chakra UI Heading variants in Tailwind */
+h2, h3, h4, h5, h6 {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+/* Custom section-title styles matching theme.ts */
+.section-title, h3.section-title {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-color: #525252;
+    text-decoration-thickness: 4px;
+    margin-top: 12px;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+/* Link overrides */
+a {
+    transition: color 0.2s ease-in-out;
+}
+a:not([class*="bg-"]):not([class*="text-"]) {
+    color: var(--color-link-light);
+    text-underline-offset: 3px;
+}
+.dark a:not([class*="bg-"]):not([class*="text-"]) {
+    color: var(--color-link-dark);
 }
 
 /* Custom animations */
@@ -53,21 +89,10 @@ body.dark {
     }
 }
 
-/* Utility classes */
 .fade-in-up {
-    animation: fadeInUp 0.6s ease-out;
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .slide-in-left {
-    animation: slideInLeft 0.6s ease-out;
-}
-
-.dark-mode {
-    background-color: var(--color-bg-dark);
-    color: var(--color-text-dark);
-}
-
-.light-mode {
-    background-color: var(--color-bg-light);
-    color: var(--color-text-light);
+    animation: slideInLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }

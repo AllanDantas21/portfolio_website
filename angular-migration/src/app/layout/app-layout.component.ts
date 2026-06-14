@@ -20,7 +20,7 @@ import { Subscription } from 'rxjs';
       <app-navbar></app-navbar>
 
       <!-- Main Content Container -->
-      <main [@fadeInUp] class="flex-1 w-full max-w-3xl mx-auto px-4 sm:px-6 pt-20 pb-8">
+      <main [@fadeInUp] class="flex-1 w-full max-w-2xl mx-auto px-4 sm:px-6 pt-20 pb-8">
         <ng-content></ng-content>
       </main>
 
